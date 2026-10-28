@@ -5,6 +5,8 @@ results/*.pt
 results/*.npz
 results/probe/
 *.npy
+!data_smoke/*.npy
+
 
 # --- LaTeX intermediates ----------------------------------------------------
 paper/*.aux
