@@ -1,0 +1,182 @@
+[
+ {
+  "row": 7412,
+  "identity": "Shafal_Mosed",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9914506077766418,
+  "vacuity": 0.0519024059176445
+ },
+ {
+  "row": 2036,
+  "identity": "Demi_Moore",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9883533120155334,
+  "vacuity": 0.04812115430831909
+ },
+ {
+  "row": 4407,
+  "identity": "John_Negroponte",
+  "method": "",
+  "true": "faceswap",
+  "pred": "reenact",
+  "confidence": 0.9851832985877991,
+  "vacuity": 0.03716635704040527
+ },
+ {
+  "row": 592,
+  "identity": "Bernice_Wong",
+  "method": "",
+  "true": "faceswap",
+  "pred": "reenact",
+  "confidence": 0.971991777420044,
+  "vacuity": 0.06326346099376678
+ },
+ {
+  "row": 174,
+  "identity": "Alejandro_Toledo",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9719609618186951,
+  "vacuity": 0.06657981872558594
+ },
+ {
+  "row": 2881,
+  "identity": "Gary_Williams",
+  "method": "",
+  "true": "faceswap",
+  "pred": "reenact",
+  "confidence": 0.9704778790473938,
+  "vacuity": 0.07463276386260986
+ },
+ {
+  "row": 6152,
+  "identity": "Noer_Muis",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9657820463180542,
+  "vacuity": 0.04626893624663353
+ },
+ {
+  "row": 3289,
+  "identity": "Hillary_Clinton",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9611494541168213,
+  "vacuity": 0.06178805232048035
+ },
+ {
+  "row": 7937,
+  "identity": "Torri_Edwards",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9514074325561523,
+  "vacuity": 0.048751793801784515
+ },
+ {
+  "row": 1161,
+  "identity": "Chris_Neil",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9487743377685547,
+  "vacuity": 0.04013641178607941
+ },
+ {
+  "row": 2453,
+  "identity": "Drew_Gooden",
+  "method": "",
+  "true": "mask3d",
+  "pred": "synth",
+  "confidence": 0.9331591725349426,
+  "vacuity": 0.05271737650036812
+ },
+ {
+  "row": 1758,
+  "identity": "Colin_Powell",
+  "method": "",
+  "true": "print",
+  "pred": "reenact",
+  "confidence": 0.928743302822113,
+  "vacuity": 0.037596989423036575
+ },
+ {
+  "row": 6120,
+  "identity": "Nick_Nolte",
+  "method": "",
+  "true": "replay",
+  "pred": "print",
+  "confidence": 0.9264125227928162,
+  "vacuity": 0.044439371675252914
+ },
+ {
+  "row": 2015,
+  "identity": "Dawna_LoPiccolo",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9239177703857422,
+  "vacuity": 0.09582299739122391
+ },
+ {
+  "row": 3805,
+  "identity": "Jean_Chretien",
+  "method": "",
+  "true": "faceswap",
+  "pred": "reenact",
+  "confidence": 0.9235228300094604,
+  "vacuity": 0.0655437707901001
+ },
+ {
+  "row": 7572,
+  "identity": "Steven_Spielberg",
+  "method": "",
+  "true": "reenact",
+  "pred": "faceswap",
+  "confidence": 0.9211188554763794,
+  "vacuity": 0.09830557554960251
+ },
+ {
+  "row": 1885,
+  "identity": "Cristina_Torrens_Valero",
+  "method": "",
+  "true": "replay",
+  "pred": "print",
+  "confidence": 0.9208151698112488,
+  "vacuity": 0.05196147784590721
+ },
+ {
+  "row": 1985,
+  "identity": "David_Nalbandian",
+  "method": "",
+  "true": "faceswap",
+  "pred": "reenact",
+  "confidence": 0.9178109169006348,
+  "vacuity": 0.09935243427753448
+ },
+ {
+  "row": 2510,
+  "identity": "Edmund_Stoiber",
+  "method": "",
+  "true": "faceswap",
+  "pred": "reenact",
+  "confidence": 0.9162375926971436,
+  "vacuity": 0.09220661222934723
+ },
+ {
+  "row": 7573,
+  "identity": "Steven_Spielberg",
+  "method": "",
+  "true": "synth",
+  "pred": "mask3d",
+  "confidence": 0.9137605428695679,
+  "vacuity": 0.11343396455049515
+ }
+]

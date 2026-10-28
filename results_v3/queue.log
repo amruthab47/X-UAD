@@ -1,0 +1,23 @@
+2026-09-25 13:58:17 start xuad_P1_repro
+2026-09-25 13:58:17 start resnet18_P1_recipe_s0
+2026-09-25 13:58:17 start cdcn_P1_recipe_s0
+2026-09-25 15:27:57 done  cdcn_P1_recipe_s0 exit=0
+2026-09-25 15:27:57 start resnet18_P1_recipe_s1
+2026-09-25 23:57:22 done  resnet18_P1_recipe_s0 exit=0
+2026-09-25 23:57:22 start xuad_P1_recipe_s1
+2026-09-26 00:28:26 done  xuad_P1_repro exit=0
+2026-09-26 00:28:26 start cdcn_P1_recipe_s1
+skip xuad_P1_repro
+skip resnet18_P1_recipe_s0
+skip cdcn_P1_recipe_s0
+2026-10-11 18:27:40 start xuad_P1_recipe_s0
+2026-10-11 18:27:40 start resnet18_P1_recipe_s1
+2026-10-11 18:27:40 start xuad_P1_recipe_s1
+2026-10-11 22:26:26 done  resnet18_P1_recipe_s1 exit=0
+2026-10-11 22:26:26 start cdcn_P1_recipe_s1
+2026-10-11 23:08:58 done  xuad_P1_recipe_s1 exit=0
+2026-10-11 23:08:58 start resnet18_P1_recipe_s2
+2026-10-11 23:08:59 done  xuad_P1_recipe_s0 exit=0
+2026-10-11 23:08:59 start xuad_P1_recipe_s2
+2026-10-12 00:05:32 done  cdcn_P1_recipe_s1 exit=0
+2026-10-12 00:05:32 start cdcn_P1_recipe_s2

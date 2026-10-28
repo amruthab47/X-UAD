@@ -1,0 +1,11 @@
+== diagA_brier: model=xuad params=1.25M  train=7136 val=4800 test=9600  excl=()
+/root/xuad/xuad/losses.py:123: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  logs["cls"] = float(l_cls)
+  ep0 step40/444 cls=1.913 loc=1.153 basis=2.079 sup=0.977 pues=1.638 coh=0.720 total=6.547  72s
+  ep0 step80/444 cls=1.916 loc=1.130 basis=2.079 sup=0.974 pues=0.822 coh=0.478 total=6.413  142s
+  ep0 step120/444 cls=1.917 loc=1.115 basis=2.079 sup=0.977 pues=0.589 coh=0.320 total=6.370  213s
+[ep 0] val AUC=59.34 ACER=55.75 ACC=12.50 ECE=0.00 (315s)
+  ep1 step160/444 cls=2.677 loc=1.069 basis=2.080 sup=0.966 pues=0.000 coh=0.000 total=8.144  338s
+  ep1 step200/444 cls=2.677 loc=1.058 basis=2.079 sup=0.960 pues=0.000 coh=0.000 total=8.135  417s
+  ep1 step240/444 cls=2.677 loc=1.054 basis=2.077 sup=0.971 pues=0.000 coh=0.000 total=8.136  492s

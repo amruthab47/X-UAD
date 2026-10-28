@@ -1,0 +1,27 @@
+# --- data and model artefacts (regenerable; too large for git) --------------
+data/
+cache_*/
+results/*.pt
+results/*.npz
+results/probe/
+*.npy
+
+# --- LaTeX intermediates ----------------------------------------------------
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+paper/*.synctex.gz
+
+# --- python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# --- scratch ----------------------------------------------------------------
+/tmp/
+*.swp
+.DS_Store

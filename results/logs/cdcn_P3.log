@@ -1,0 +1,35 @@
+== cdcn_P3: model=cdcn params=0.53M  train=19200 val=4800 test=6100  excl=()
+{
+ "APCER": 2.286,
+ "BPCER": 89.286,
+ "ACER": 45.786,
+ "AUC": 71.706,
+ "EER": 34.741,
+ "ACC": 34.672,
+ "ACC_bin": 89.279,
+ "macroF1": 21.314,
+ "ECE": 47.999,
+ "Brier": 1.041,
+ "mean_vacuity": 0.173,
+ "threshold": 0.796,
+ "loc_IoU": 0.656,
+ "loc_Dice": 0.753,
+ "loc_pixel_AUC": 0.701,
+ "loc_per_class": {
+  "print": 0.9311618608117403,
+  "replay": 0.8197947718413208,
+  "mask3d": 0.6754110598547198,
+  "faceswap": 0.407030736742473,
+  "reenact": 0.23863761375306605,
+  "synth": 0.8621230795689062,
+  "mean_localisable": 0.44035980345008635
+ },
+ "params_M": 0.526,
+ "train_seconds": 0.012,
+ "model": "cdcn",
+ "protocol": "P3",
+ "epochs": 6,
+ "n_train": 19200,
+ "n_test": 6100,
+ "seed": 0
+}

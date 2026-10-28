@@ -1,0 +1,27 @@
+resnet18 {'params_M': 1.594216, 'gmacs': 0.367741184, 'latency_ms': 16.75293842951457}
+vit_tiny {'params_M': 0.637192, 'gmacs': 0.03103232, 'latency_ms': 2.893209457397461}
+cdcn {'params_M': 0.526113, 'gmacs': 0.069514432, 'latency_ms': 13.104577859242758}
+xuad {'params_M': 1.294064, 'gmacs': 0.11911488, 'latency_ms': 16.89646641413371}
+loc {'deletion': 0.9153611820191145, 'insertion': 0.9171217780560257, 'label': 'X-UAD localisation map'}
+rollout {'deletion': 0.9315048258751631, 'insertion': 0.9213489931076766, 'label': 'AQA attention rollout'}
+quantum {'deletion': 0.9055661838501692, 'insertion': 0.8987435024231673, 'label': 'Quantum evidence magnitude'}
+random {'deletion': 0.9460222642868759, 'insertion': 0.946284941956401, 'label': 'Random (control)'}
+{
+ "mean_gate": 0.30757540464401245,
+ "per_layer": [
+  0.27186834812164307,
+  0.003281822893768549,
+  0.4179823100566864,
+  0.5371685028076172
+ ],
+ "per_class": {
+  "bonafide": 0.30924785137176514,
+  "print": 0.43445345759391785,
+  "replay": 0.23144923150539398,
+  "mask3d": 0.28674447536468506,
+  "faceswap": 0.26743730902671814,
+  "reenact": 0.26653310656547546,
+  "synth": 0.28440386056900024,
+  "adversarial": 0.3942674696445465
+ }
+}

@@ -1,0 +1,35 @@
+== xuad_P3: model=xuad params=1.29M  train=19200 val=4800 test=6100  excl=()
+{
+ "APCER": 0.286,
+ "BPCER": 99.143,
+ "ACER": 49.714,
+ "AUC": 58.237,
+ "EER": 44.142,
+ "ACC": 22.607,
+ "ACC_bin": 88.574,
+ "macroF1": 8.657,
+ "ECE": 65.275,
+ "Brier": 1.347,
+ "mean_vacuity": 0.023,
+ "threshold": 0.86,
+ "loc_IoU": 0.726,
+ "loc_Dice": 0.802,
+ "loc_pixel_AUC": 0.543,
+ "loc_per_class": {
+  "print": 0.9974310651226783,
+  "replay": 0.99026886035313,
+  "mask3d": 0.7017702480062427,
+  "faceswap": 0.4171852756966973,
+  "reenact": 0.2571420819689108,
+  "synth": 0.9930276886035314,
+  "mean_localisable": 0.45869920189061686
+ },
+ "params_M": 1.294,
+ "train_seconds": 0.031,
+ "model": "xuad",
+ "protocol": "P3",
+ "epochs": 6,
+ "n_train": 19200,
+ "n_test": 6100,
+ "seed": 0
+}

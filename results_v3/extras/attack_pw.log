@@ -1,0 +1,8 @@
+xuad_P1_pairweighted 1 {'attack_detect_rate': 30.35714340209961, 'mean_vacuity': 0.32903099060058594, 'missed_flagged_by_u>=0.55': 0.0} {'mean_vacuity': 0.01737559214234352, 'class_kept_%': 99.4047622680664, 'attack_detect_rate': 100.0}
+xuad_P1_pairweighted 2 {'attack_detect_rate': 11.309523582458496, 'mean_vacuity': 0.19905871152877808, 'missed_flagged_by_u>=0.55': 0.0} {'mean_vacuity': 0.07456162571907043, 'class_kept_%': 53.57142639160156, 'attack_detect_rate': 100.0}
+xuad_P1_pairweighted 4 {'attack_detect_rate': 0.0, 'mean_vacuity': 0.04841487109661102, 'missed_flagged_by_u>=0.55': 0.0} {'mean_vacuity': 0.07699576765298843, 'class_kept_%': 32.14285659790039, 'attack_detect_rate': 79.76190185546875}
+xuad_P1_pairweighted 8 {'attack_detect_rate': 0.0, 'mean_vacuity': 0.002027318347245455, 'missed_flagged_by_u>=0.55': 0.0} {'mean_vacuity': 0.057204823940992355, 'class_kept_%': 37.5, 'attack_detect_rate': 64.8809585571289}
+cdcn_P1_recipe_s0 1 {'attack_detect_rate': 5.357142925262451, 'mean_vacuity': 0.07098463922739029, 'missed_flagged_by_u>=0.55': 0.6289308071136475} 
+cdcn_P1_recipe_s0 2 {'attack_detect_rate': 14.880951881408691, 'mean_vacuity': 0.11352626234292984, 'missed_flagged_by_u>=0.55': 2.7972028255462646} 
+cdcn_P1_recipe_s0 4 {'attack_detect_rate': 41.07143020629883, 'mean_vacuity': 0.17831605672836304, 'missed_flagged_by_u>=0.55': 2.0202019214630127} 
+cdcn_P1_recipe_s0 8 {'attack_detect_rate': 39.28571319580078, 'mean_vacuity': 0.10319633781909943, 'missed_flagged_by_u>=0.55': 0.0} 

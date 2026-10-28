@@ -1,0 +1,608 @@
+===== ground truth: bonafide =====
+Attack: Bonafide (genuine live capture)
+Confidence: 94%
+Risk: Low
+
+The sample is accepted as a genuine live capture with 94% posterior probability. The dominant quantum evidence mode is #3, whose learned selectivity is highest for 'bonafide' (activation 0.051), corroborating the class decision. Vacuity is low (0.05): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.30, i.e. 30% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: accept (risk score 0.08 -> Low).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "bonafide",
+ "predicted_id": 0,
+ "confidence": 0.9411171078681946,
+ "vacuity": 0.04655391722917557,
+ "is_attack": false,
+ "attack_probability": 0.05888289213180542,
+ "superclass": "none",
+ "risk_score": 0.0806032121181488,
+ "risk_level": "Low",
+ "decision": "accept",
+ "top_regions": [
+  {
+   "region": "mouth and chin",
+   "activation": 0.0029454906471073627
+  },
+  {
+   "region": "eye region",
+   "activation": 0.0022188557777553797
+  },
+  {
+   "region": "nose / midface",
+   "activation": 0.001259374083019793
+  }
+ ],
+ "spatial": {
+  "area": 0.0,
+  "dispersion": 0.8527222124710792,
+  "peak": 0.01620965264737606
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5495384335517883,
+  "azimuthal_anisotropy": 0.1842452883720398
+ },
+ "quantum_modes": [
+  {
+   "mode": 3,
+   "aligned_with": "bonafide",
+   "activation": 0.05091676861047745,
+   "selectivity": 2.4487611691585993
+  },
+  {
+   "mode": 0,
+   "aligned_with": "reenact",
+   "activation": 0.030817793682217598,
+   "selectivity": 1.8488821636067907
+  },
+  {
+   "mode": 6,
+   "aligned_with": "adversarial",
+   "activation": 0.029374748468399048,
+   "selectivity": 2.358540393925848
+  }
+ ],
+ "gate_mean": 0.3029680848121643,
+ "class_posterior": {
+  "bonafide": 0.9411171078681946,
+  "print": 0.0038425724487751722,
+  "replay": 0.002784081269055605,
+  "mask3d": 0.0022573780734091997,
+  "faceswap": 0.027452632784843445,
+  "reenact": 0.013049635104835033,
+  "synth": 0.004026744980365038,
+  "adversarial": 0.005469832569360733
+ }
+}
+
+===== ground truth: print =====
+Attack: Print attack
+Confidence: 98%
+Risk: Medium
+
+The sample is classified as a print attack (physical presentation attack) with 98% posterior probability; the probability that it is an attack of any kind is 99.8%. That class is characterised by periodic halftone screening and paper-substrate grain, with the high-frequency skin micro-texture of a live face missing. Evidence is concentrated in the right cheek (mean response 1.00), followed by mouth and chin, nose / midface; it covers 100% of the crop with a spatial dispersion of 1.00. The dominant quantum evidence mode is #4, whose learned selectivity is highest for 'print' (activation 0.044), corroborating the class decision. Vacuity is low (0.05): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.45, i.e. 45% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.71 -> Medium).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "print",
+ "predicted_id": 1,
+ "confidence": 0.9831345081329346,
+ "vacuity": 0.04663299024105072,
+ "is_attack": true,
+ "attack_probability": 0.9976357817649841,
+ "superclass": "physical presentation attack",
+ "risk_score": 0.7119197249412537,
+ "risk_level": "Medium",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "right cheek",
+   "activation": 0.9998461604118347
+  },
+  {
+   "region": "mouth and chin",
+   "activation": 0.9998111128807068
+  },
+  {
+   "region": "nose / midface",
+   "activation": 0.9997125267982483
+  }
+ ],
+ "spatial": {
+  "area": 1.0,
+  "dispersion": 0.9999998402079296,
+  "peak": 0.9999845027923584
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5260729193687439,
+  "azimuthal_anisotropy": 0.16482897102832794
+ },
+ "quantum_modes": [
+  {
+   "mode": 4,
+   "aligned_with": "print",
+   "activation": 0.043709997087717056,
+   "selectivity": 2.2774542205088273
+  },
+  {
+   "mode": 2,
+   "aligned_with": "replay",
+   "activation": 0.021201474592089653,
+   "selectivity": 1.8393992428965893
+  },
+  {
+   "mode": 7,
+   "aligned_with": "mask3d",
+   "activation": 0.00999357644468546,
+   "selectivity": 2.5149142753276683
+  }
+ ],
+ "gate_mean": 0.4486066699028015,
+ "class_posterior": {
+  "bonafide": 0.002364222425967455,
+  "print": 0.9831345081329346,
+  "replay": 0.001601340714842081,
+  "mask3d": 0.0027941518928855658,
+  "faceswap": 0.002494341228157282,
+  "reenact": 0.0011552784126251936,
+  "synth": 0.0021296364720910788,
+  "adversarial": 0.004326581489294767
+ }
+}
+
+===== ground truth: replay =====
+Attack: Replay attack
+Confidence: 98%
+Risk: Medium
+
+The sample is classified as a replay attack (physical presentation attack) with 98% posterior probability; the probability that it is an attack of any kind is 99.7%. That class is characterised by a sub-pixel display lattice aliasing into a moire beat, together with specular backlight glare and reduced dynamic range. Evidence is concentrated in the forehead (mean response 0.75), followed by eye region, nose / midface; it covers 100% of the crop with a spatial dispersion of 1.00. The dominant quantum evidence mode is #1, whose learned selectivity is highest for 'replay' (activation 0.074), corroborating the class decision. Vacuity is low (0.04): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.23, i.e. 23% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.71 -> Medium).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "replay",
+ "predicted_id": 2,
+ "confidence": 0.9831699728965759,
+ "vacuity": 0.03765176981687546,
+ "is_attack": true,
+ "attack_probability": 0.9970992207527161,
+ "superclass": "physical presentation attack",
+ "risk_score": 0.7097358107566833,
+ "risk_level": "Medium",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "forehead",
+   "activation": 0.752175509929657
+  },
+  {
+   "region": "eye region",
+   "activation": 0.7338913083076477
+  },
+  {
+   "region": "nose / midface",
+   "activation": 0.7159246206283569
+  }
+ ],
+ "spatial": {
+  "area": 1.0,
+  "dispersion": 0.9995855908030704,
+  "peak": 0.8076183199882507
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.49591147899627686,
+  "azimuthal_anisotropy": 0.1696612536907196
+ },
+ "quantum_modes": [
+  {
+   "mode": 1,
+   "aligned_with": "replay",
+   "activation": 0.07400862872600555,
+   "selectivity": 2.5934331027281434
+  },
+  {
+   "mode": 2,
+   "aligned_with": "replay",
+   "activation": 0.04573209956288338,
+   "selectivity": 1.8393992428965893
+  },
+  {
+   "mode": 0,
+   "aligned_with": "reenact",
+   "activation": 0.013615138828754425,
+   "selectivity": 1.8488821636067907
+  }
+ ],
+ "gate_mean": 0.2310343086719513,
+ "class_posterior": {
+  "bonafide": 0.002900792518630624,
+  "print": 0.0034774637315422297,
+  "replay": 0.9831699728965759,
+  "mask3d": 0.002367428969591856,
+  "faceswap": 0.0018015699461102486,
+  "reenact": 0.0017478966619819403,
+  "synth": 0.0024226722307503223,
+  "adversarial": 0.002112259157001972
+ }
+}
+
+===== ground truth: mask3d =====
+Attack: 3D mask attack
+Confidence: 99%
+Risk: High
+
+The sample is classified as a 3d mask attack (physical presentation attack) with 99% posterior probability; the probability that it is an attack of any kind is 99.8%. That class is characterised by locally flattened skin micro-texture with a broad specular sheen and a discontinuity at the mask rim. Evidence is concentrated in the forehead (mean response 0.87), followed by right cheek, nose / midface; it covers 63% of the crop with a spatial dispersion of 0.97. The dominant quantum evidence mode is #7, whose learned selectivity is highest for 'mask3d' (activation 0.059), corroborating the class decision. Vacuity is low (0.03): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.28, i.e. 28% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.93 -> High).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "mask3d",
+ "predicted_id": 3,
+ "confidence": 0.9886364340782166,
+ "vacuity": 0.03490890935063362,
+ "is_attack": true,
+ "attack_probability": 0.9982369542121887,
+ "superclass": "physical presentation attack",
+ "risk_score": 0.9275813698768616,
+ "risk_level": "High",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "forehead",
+   "activation": 0.868441104888916
+  },
+  {
+   "region": "right cheek",
+   "activation": 0.6743037104606628
+  },
+  {
+   "region": "nose / midface",
+   "activation": 0.6554557681083679
+  }
+ ],
+ "spatial": {
+  "area": 0.6326530612244898,
+  "dispersion": 0.9670234790196766,
+  "peak": 0.9661872982978821
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5288715958595276,
+  "azimuthal_anisotropy": 0.19382035732269287
+ },
+ "quantum_modes": [
+  {
+   "mode": 7,
+   "aligned_with": "mask3d",
+   "activation": 0.059466175734996796,
+   "selectivity": 2.5149142753276683
+  },
+  {
+   "mode": 6,
+   "aligned_with": "adversarial",
+   "activation": 0.02284223772585392,
+   "selectivity": 2.358540393925848
+  },
+  {
+   "mode": 5,
+   "aligned_with": "synth",
+   "activation": 0.02013404481112957,
+   "selectivity": 2.0087644272861294
+  }
+ ],
+ "gate_mean": 0.2813652455806732,
+ "class_posterior": {
+  "bonafide": 0.0017630341462790966,
+  "print": 0.0019479950424283743,
+  "replay": 0.0014467401197180152,
+  "mask3d": 0.9886364340782166,
+  "faceswap": 0.002485202858224511,
+  "reenact": 0.0014156815595924854,
+  "synth": 0.0011242348700761795,
+  "adversarial": 0.0011806153925135732
+ }
+}
+
+===== ground truth: faceswap =====
+Attack: Facial reenactment deepfake
+Confidence: 93%
+Risk: Medium
+
+The sample is classified as a facial reenactment deepfake (digital attack) with 93% posterior probability; the probability that it is an attack of any kind is 98.3%. That class is characterised by non-rigid warping confined to the mouth and eye regions with a local sharpness inconsistency. Evidence is concentrated in the mouth and chin (mean response 0.80), followed by nose / midface, eye region; it covers 27% of the crop with a spatial dispersion of 0.88. The dominant quantum evidence mode is #0, whose learned selectivity is highest for 'reenact' (activation 0.058), corroborating the class decision. Vacuity is low (0.10): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.26, i.e. 26% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.74 -> Medium).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "reenact",
+ "predicted_id": 5,
+ "confidence": 0.9306557774543762,
+ "vacuity": 0.09511810541152954,
+ "is_attack": true,
+ "attack_probability": 0.9831131100654602,
+ "superclass": "digital attack",
+ "risk_score": 0.7410306930541992,
+ "risk_level": "Medium",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "mouth and chin",
+   "activation": 0.7967777252197266
+  },
+  {
+   "region": "nose / midface",
+   "activation": 0.6931209564208984
+  },
+  {
+   "region": "eye region",
+   "activation": 0.6595906019210815
+  }
+ ],
+ "spatial": {
+  "area": 0.2697704081632653,
+  "dispersion": 0.8754956830773385,
+  "peak": 0.9968067407608032
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5530033111572266,
+  "azimuthal_anisotropy": 0.19176515936851501
+ },
+ "quantum_modes": [
+  {
+   "mode": 0,
+   "aligned_with": "reenact",
+   "activation": 0.05836060270667076,
+   "selectivity": 1.8488821636067907
+  },
+  {
+   "mode": 3,
+   "aligned_with": "bonafide",
+   "activation": 0.02500126138329506,
+   "selectivity": 2.4487611691585993
+  },
+  {
+   "mode": 4,
+   "aligned_with": "print",
+   "activation": 0.023067587986588478,
+   "selectivity": 2.2774542205088273
+  }
+ ],
+ "gate_mean": 0.2648198902606964,
+ "class_posterior": {
+  "bonafide": 0.016886908560991287,
+  "print": 0.010581121779978275,
+  "replay": 0.0010620574466884136,
+  "mask3d": 0.0003754987264983356,
+  "faceswap": 0.03714136779308319,
+  "reenact": 0.9306557774543762,
+  "synth": 0.0013702752767130733,
+  "adversarial": 0.0019270838238298893
+ }
+}
+
+===== ground truth: reenact =====
+Attack: Facial reenactment deepfake
+Confidence: 84%
+Risk: High
+
+The sample is classified as a facial reenactment deepfake (digital attack) with 84% posterior probability; the probability that it is an attack of any kind is 99.9%. That class is characterised by non-rigid warping confined to the mouth and eye regions with a local sharpness inconsistency. Evidence is concentrated in the mouth and chin (mean response 0.82), followed by eye region, nose / midface; it covers 27% of the crop with a spatial dispersion of 0.90. The dominant quantum evidence mode is #0, whose learned selectivity is highest for 'reenact' (activation 0.057), corroborating the class decision. Vacuity is low (0.19): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.26, i.e. 26% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.76 -> High).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "reenact",
+ "predicted_id": 5,
+ "confidence": 0.8353748917579651,
+ "vacuity": 0.18943598866462708,
+ "is_attack": true,
+ "attack_probability": 0.9993436336517334,
+ "superclass": "digital attack",
+ "risk_score": 0.7569965124130249,
+ "risk_level": "High",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "mouth and chin",
+   "activation": 0.8204841613769531
+  },
+  {
+   "region": "eye region",
+   "activation": 0.684684693813324
+  },
+  {
+   "region": "nose / midface",
+   "activation": 0.5821214318275452
+  }
+ ],
+ "spatial": {
+  "area": 0.26913265306122447,
+  "dispersion": 0.8993636510745608,
+  "peak": 0.994597315788269
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5455765724182129,
+  "azimuthal_anisotropy": 0.191919207572937
+ },
+ "quantum_modes": [
+  {
+   "mode": 0,
+   "aligned_with": "reenact",
+   "activation": 0.0565011240541935,
+   "selectivity": 1.8488821636067907
+  },
+  {
+   "mode": 7,
+   "aligned_with": "mask3d",
+   "activation": 0.02126004546880722,
+   "selectivity": 2.5149142753276683
+  },
+  {
+   "mode": 4,
+   "aligned_with": "print",
+   "activation": 0.020779410377144814,
+   "selectivity": 2.2774542205088273
+  }
+ ],
+ "gate_mean": 0.26243874430656433,
+ "class_posterior": {
+  "bonafide": 0.0006563441711477935,
+  "print": 0.07400619238615036,
+  "replay": 0.0017603266751393676,
+  "mask3d": 0.0009497998980805278,
+  "faceswap": 0.0831746757030487,
+  "reenact": 0.8353748917579651,
+  "synth": 0.0017347633838653564,
+  "adversarial": 0.0023430485744029284
+ }
+}
+
+===== ground truth: synth =====
+Attack: Fully synthetic (AI-generated) face
+Confidence: 99%
+Risk: High
+
+The sample is classified as a fully synthetic (ai-generated) face (digital attack) with 99% posterior probability; the probability that it is an attack of any kind is 99.9%. That class is characterised by a generator up-sampling fingerprint: periodic checkerboard structure and anisotropic peaks in the Fourier magnitude. Evidence is concentrated in the forehead (mean response 1.00), followed by right cheek, left cheek; it covers 100% of the crop with a spatial dispersion of 1.00. The dominant quantum evidence mode is #5, whose learned selectivity is highest for 'synth' (activation 0.066), corroborating the class decision. Vacuity is low (0.02): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.27, i.e. 27% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.90 -> High).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "synth",
+ "predicted_id": 6,
+ "confidence": 0.9851459264755249,
+ "vacuity": 0.023996395990252495,
+ "is_attack": true,
+ "attack_probability": 0.9991034269332886,
+ "superclass": "digital attack",
+ "risk_score": 0.9001977443695068,
+ "risk_level": "High",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "forehead",
+   "activation": 0.9998859763145447
+  },
+  {
+   "region": "right cheek",
+   "activation": 0.9998849630355835
+  },
+  {
+   "region": "left cheek",
+   "activation": 0.9996625781059265
+  }
+ ],
+ "spatial": {
+  "area": 1.0,
+  "dispersion": 0.9999994848324036,
+  "peak": 0.9999861717224121
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5331408381462097,
+  "azimuthal_anisotropy": 0.18610252439975739
+ },
+ "quantum_modes": [
+  {
+   "mode": 5,
+   "aligned_with": "synth",
+   "activation": 0.065882608294487,
+   "selectivity": 2.0087644272861294
+  },
+  {
+   "mode": 2,
+   "aligned_with": "replay",
+   "activation": 0.03522875905036926,
+   "selectivity": 1.8393992428965893
+  },
+  {
+   "mode": 3,
+   "aligned_with": "bonafide",
+   "activation": 0.027788186445832253,
+   "selectivity": 2.4487611691585993
+  }
+ ],
+ "gate_mean": 0.2748497724533081,
+ "class_posterior": {
+  "bonafide": 0.0008965497836470604,
+  "print": 0.0008582063019275665,
+  "replay": 0.0012501429300755262,
+  "mask3d": 0.008085224777460098,
+  "faceswap": 0.0011149775236845016,
+  "reenact": 0.0007069208077155054,
+  "synth": 0.9851459264755249,
+  "adversarial": 0.0019420672906562686
+ }
+}
+
+===== ground truth: adversarial =====
+Attack: Adversarial perturbation attack
+Confidence: 98%
+Risk: Critical
+
+The sample is classified as a adversarial perturbation attack (digital attack) with 98% posterior probability; the probability that it is an attack of any kind is 99.8%. That class is characterised by a low-amplitude, high-frequency perturbation that is spatially decorrelated from facial structure. Evidence is concentrated in the right cheek (mean response 0.85), followed by face boundary, eye region; it covers 100% of the crop with a spatial dispersion of 1.00. The dominant quantum evidence mode is #6, whose learned selectivity is highest for 'adversarial' (activation 0.056), corroborating the class decision. Vacuity is low (0.02): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.39, i.e. 39% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 1.06 -> Critical).
+
+EVIDENCE RECORD
+{
+ "predicted_class": "adversarial",
+ "predicted_id": 7,
+ "confidence": 0.9819071888923645,
+ "vacuity": 0.01724407821893692,
+ "is_attack": true,
+ "attack_probability": 0.9978389143943787,
+ "superclass": "digital attack",
+ "risk_score": 1.0641367435455322,
+ "risk_level": "Critical",
+ "decision": "reject",
+ "top_regions": [
+  {
+   "region": "right cheek",
+   "activation": 0.8483599424362183
+  },
+  {
+   "region": "face boundary",
+   "activation": 0.8450667262077332
+  },
+  {
+   "region": "eye region",
+   "activation": 0.8112543225288391
+  }
+ ],
+ "spatial": {
+  "area": 1.0,
+  "dispersion": 0.9996924403779011,
+  "peak": 0.9568637013435364
+ },
+ "spectral": {
+  "radial_peak_norm_freq": 0.5,
+  "radial_peak_prominence": -0.5083444714546204,
+  "azimuthal_anisotropy": 0.15104353427886963
+ },
+ "quantum_modes": [
+  {
+   "mode": 6,
+   "aligned_with": "adversarial",
+   "activation": 0.0559675432741642,
+   "selectivity": 2.358540393925848
+  },
+  {
+   "mode": 2,
+   "aligned_with": "replay",
+   "activation": 0.030074255540966988,
+   "selectivity": 1.8393992428965893
+  },
+  {
+   "mode": 7,
+   "aligned_with": "mask3d",
+   "activation": 0.01480764988809824,
+   "selectivity": 2.5149142753276683
+  }
+ ],
+ "gate_mean": 0.3944348990917206,
+ "class_posterior": {
+  "bonafide": 0.0021610765252262354,
+  "print": 0.0022283063735812902,
+  "replay": 0.0016197984805330634,
+  "mask3d": 0.002370708156377077,
+  "faceswap": 0.0026543166022747755,
+  "reenact": 0.0038936161436140537,
+  "synth": 0.003164958907291293,
+  "adversarial": 0.9819071888923645
+ }
+}
+

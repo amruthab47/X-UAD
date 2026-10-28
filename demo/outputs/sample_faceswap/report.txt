@@ -1,0 +1,18 @@
+Attack: Bonafide (genuine live capture)
+Confidence: 33%
+Risk: Medium
+
+The sample is accepted as a genuine live capture with 33% posterior probability. Evidence is concentrated in the nose / midface (mean response 0.63), followed by eye region, mouth and chin; it covers 22% of the crop with a spatial dispersion of 0.90. Vacuity is low (0.15): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.30, i.e. 30% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: accept (risk score 0.54 -> Medium).
+
+Full class-probability distribution:
+  bonafide      33.38%
+  print         27.94%
+  replay         0.05%
+  mask3d         0.01%
+  faceswap      18.94%
+  reenact       19.55%
+  synth          0.03%
+  adversarial    0.11%
+
+Face detected by Haar cascade: True
+Checkpoint used: results_region_pooled_detached/xuad_P1_regionpool_detached.pt

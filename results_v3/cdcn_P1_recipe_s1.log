@@ -1,0 +1,184 @@
+== cdcn_P1_recipe_s1: data=data model=cdcn params=0.53M  train=19200 val=4800 test=9600
+   classes kept=['adversarial', 'bonafide', 'faceswap', 'mask3d', 'print', 'reenact', 'replay', 'synth']  train-excluded=[]
+  ep0 step40/4800 cls=1.580 loc=1.129 bce=0.369 pcp=0.124 sup=0.966 total=2.751  41s
+  ep0 step80/4800 cls=1.561 loc=1.119 bce=0.364 pcp=0.124 sup=0.959 total=2.720  90s
+  ep0 step120/4800 cls=1.533 loc=1.119 bce=0.367 pcp=0.126 sup=0.958 total=2.694  141s
+  ep0 step160/4800 cls=1.494 loc=1.113 bce=0.367 pcp=0.128 sup=0.952 total=2.650  185s
+  ep0 step200/4800 cls=1.441 loc=1.109 bce=0.371 pcp=0.132 sup=0.944 total=2.594  222s
+  ep0 step240/4800 cls=1.383 loc=1.102 bce=0.367 pcp=0.138 sup=0.931 total=2.528  258s
+  ep0 step280/4800 cls=1.330 loc=1.094 bce=0.360 pcp=0.145 sup=0.917 total=2.463  294s
+  ep0 step320/4800 cls=1.279 loc=1.091 bce=0.361 pcp=0.152 sup=0.908 total=2.410  332s
+  ep0 step360/4800 cls=1.230 loc=1.087 bce=0.359 pcp=0.162 sup=0.897 total=2.354  368s
+  ep0 step400/4800 cls=1.181 loc=1.081 bce=0.355 pcp=0.171 sup=0.882 total=2.297  403s
+[ep 0] val AUC=81.13 ACER=51.08 ACC=53.44 ECE=6.17 (433s)
+  ep1 step440/4800 cls=0.671 loc=1.000 bce=0.303 pcp=0.278 sup=0.715 total=1.679  470s
+  ep1 step480/4800 cls=0.667 loc=1.001 bce=0.304 pcp=0.278 sup=0.708 total=1.674  509s
+  ep1 step520/4800 cls=0.650 loc=1.000 bce=0.302 pcp=0.284 sup=0.695 total=1.652  548s
+  ep1 step560/4800 cls=0.641 loc=0.994 bce=0.301 pcp=0.286 sup=0.688 total=1.638  587s
+  ep1 step600/4800 cls=0.629 loc=0.990 bce=0.300 pcp=0.289 sup=0.679 total=1.620  626s
+  ep1 step640/4800 cls=0.619 loc=0.988 bce=0.300 pcp=0.289 sup=0.674 total=1.607  665s
+  ep1 step680/4800 cls=0.604 loc=0.984 bce=0.297 pcp=0.292 sup=0.666 total=1.587  704s
+  ep1 step720/4800 cls=0.589 loc=0.978 bce=0.293 pcp=0.296 sup=0.657 total=1.563  742s
+  ep1 step760/4800 cls=0.578 loc=0.974 bce=0.288 pcp=0.299 sup=0.649 total=1.546  781s
+  ep1 step800/4800 cls=0.562 loc=0.968 bce=0.279 pcp=0.303 sup=0.636 total=1.519  828s
+[ep 1] val AUC=95.73 ACER=17.42 ACC=59.65 ECE=4.08 (861s)
+  ep2 step840/4800 cls=0.386 loc=0.909 bce=0.200 pcp=0.341 sup=0.485 total=1.229  899s
+  ep2 step880/4800 cls=0.395 loc=0.907 bce=0.185 pcp=0.338 sup=0.480 total=1.227  939s
+  ep2 step920/4800 cls=0.393 loc=0.899 bce=0.175 pcp=0.341 sup=0.470 total=1.212  975s
+  ep2 step960/4800 cls=0.382 loc=0.892 bce=0.161 pcp=0.342 sup=0.458 total=1.187  1013s
+  ep2 step1000/4800 cls=0.383 loc=0.887 bce=0.155 pcp=0.342 sup=0.458 total=1.181  1055s
+  ep2 step1040/4800 cls=0.367 loc=0.880 bce=0.141 pcp=0.342 sup=0.440 total=1.148  1100s
+  ep2 step1080/4800 cls=0.358 loc=0.876 bce=0.132 pcp=0.341 sup=0.428 total=1.130  1149s
+  ep2 step1120/4800 cls=0.351 loc=0.874 bce=0.127 pcp=0.343 sup=0.420 total=1.116  1192s
+  ep2 step1160/4800 cls=0.342 loc=0.870 bce=0.121 pcp=0.343 sup=0.411 total=1.099  1232s
+  ep2 step1200/4800 cls=0.334 loc=0.866 bce=0.115 pcp=0.342 sup=0.404 total=1.083  1273s
+[ep 2] val AUC=99.88 ACER=2.83 ACC=78.44 ECE=6.20 (1307s)
+  ep3 step1240/4800 cls=0.288 loc=0.811 bce=0.071 pcp=0.334 sup=0.349 total=0.965  1346s
+  ep3 step1280/4800 cls=0.276 loc=0.808 bce=0.061 pcp=0.336 sup=0.328 total=0.940  1384s
+  ep3 step1320/4800 cls=0.266 loc=0.805 bce=0.059 pcp=0.338 sup=0.322 total=0.926  1422s
+  ep3 step1360/4800 cls=0.258 loc=0.808 bce=0.056 pcp=0.338 sup=0.319 total=0.918  1463s
+  ep3 step1400/4800 cls=0.257 loc=0.806 bce=0.058 pcp=0.333 sup=0.318 total=0.915  1501s
+  ep3 step1440/4800 cls=0.258 loc=0.807 bce=0.057 pcp=0.330 sup=0.319 total=0.916  1541s
+  ep3 step1480/4800 cls=0.255 loc=0.804 bce=0.059 pcp=0.327 sup=0.318 total=0.912  1579s
+  ep3 step1520/4800 cls=0.248 loc=0.801 bce=0.057 pcp=0.322 sup=0.311 total=0.898  1618s
+  ep3 step1560/4800 cls=0.244 loc=0.798 bce=0.054 pcp=0.320 sup=0.307 total=0.890  1660s
+  ep3 step1600/4800 cls=0.239 loc=0.795 bce=0.052 pcp=0.316 sup=0.302 total=0.881  1697s
+[ep 3] val AUC=99.93 ACER=2.25 ACC=81.71 ECE=6.21 (1730s)
+  ep4 step1640/4800 cls=0.188 loc=0.760 bce=0.034 pcp=0.290 sup=0.255 total=0.781  1819s
+  ep4 step1680/4800 cls=0.196 loc=0.762 bce=0.038 pcp=0.286 sup=0.260 total=0.793  1896s
+  ep4 step1720/4800 cls=0.201 loc=0.766 bce=0.039 pcp=0.280 sup=0.263 total=0.801  1970s
+  ep4 step1760/4800 cls=0.200 loc=0.765 bce=0.038 pcp=0.277 sup=0.260 total=0.798  2042s
+  ep4 step1800/4800 cls=0.197 loc=0.764 bce=0.038 pcp=0.272 sup=0.256 total=0.792  2088s
+  ep4 step1840/4800 cls=0.201 loc=0.766 bce=0.039 pcp=0.272 sup=0.258 total=0.799  2127s
+  ep4 step1880/4800 cls=0.198 loc=0.765 bce=0.039 pcp=0.268 sup=0.256 total=0.793  2178s
+  ep4 step1920/4800 cls=0.199 loc=0.764 bce=0.041 pcp=0.267 sup=0.258 total=0.795  2215s
+  ep4 step1960/4800 cls=0.197 loc=0.763 bce=0.040 pcp=0.265 sup=0.253 total=0.791  2248s
+  ep4 step2000/4800 cls=0.195 loc=0.761 bce=0.040 pcp=0.262 sup=0.250 total=0.786  2288s
+[ep 4] val AUC=99.98 ACER=1.00 ACC=83.56 ECE=4.83 (2322s)
+  ep5 step2040/4800 cls=0.179 loc=0.759 bce=0.035 pcp=0.246 sup=0.224 total=0.756  2361s
+  ep5 step2080/4800 cls=0.166 loc=0.742 bce=0.028 pcp=0.238 sup=0.210 total=0.724  2399s
+  ep5 step2120/4800 cls=0.166 loc=0.738 bce=0.029 pcp=0.236 sup=0.210 total=0.721  2440s
+  ep5 step2160/4800 cls=0.164 loc=0.737 bce=0.029 pcp=0.236 sup=0.210 total=0.719  2481s
+  ep5 step2200/4800 cls=0.167 loc=0.739 bce=0.034 pcp=0.236 sup=0.213 total=0.727  2521s
+  ep5 step2240/4800 cls=0.163 loc=0.738 bce=0.033 pcp=0.230 sup=0.208 total=0.719  2557s
+  ep5 step2280/4800 cls=0.162 loc=0.738 bce=0.032 pcp=0.228 sup=0.205 total=0.716  2598s
+  ep5 step2320/4800 cls=0.158 loc=0.734 bce=0.030 pcp=0.227 sup=0.203 total=0.709  2639s
+  ep5 step2360/4800 cls=0.156 loc=0.732 bce=0.030 pcp=0.224 sup=0.199 total=0.703  2679s
+  ep5 step2400/4800 cls=0.154 loc=0.729 bce=0.029 pcp=0.221 sup=0.195 total=0.697  2724s
+[ep 5] val AUC=99.99 ACER=0.92 ACC=89.81 ECE=5.77 (2762s)
+  ep6 step2440/4800 cls=0.131 loc=0.733 bce=0.020 pcp=0.195 sup=0.171 total=0.661  2810s
+  ep6 step2480/4800 cls=0.138 loc=0.719 bce=0.021 pcp=0.199 sup=0.170 total=0.660  2858s
+  ep6 step2520/4800 cls=0.138 loc=0.724 bce=0.025 pcp=0.194 sup=0.167 total=0.664  2899s
+  ep6 step2560/4800 cls=0.142 loc=0.723 bce=0.024 pcp=0.195 sup=0.172 total=0.669  2943s
+  ep6 step2600/4800 cls=0.139 loc=0.721 bce=0.024 pcp=0.193 sup=0.171 total=0.665  2988s
+  ep6 step2640/4800 cls=0.136 loc=0.717 bce=0.024 pcp=0.191 sup=0.168 total=0.657  3036s
+  ep6 step2680/4800 cls=0.134 loc=0.715 bce=0.023 pcp=0.188 sup=0.166 total=0.652  3072s
+  ep6 step2720/4800 cls=0.131 loc=0.713 bce=0.023 pcp=0.185 sup=0.164 total=0.648  3118s
+  ep6 step2760/4800 cls=0.129 loc=0.709 bce=0.022 pcp=0.183 sup=0.160 total=0.641  3167s
+  ep6 step2800/4800 cls=0.127 loc=0.707 bce=0.022 pcp=0.182 sup=0.157 total=0.636  3218s
+[ep 6] val AUC=100.00 ACER=0.33 ACC=92.15 ECE=5.26 (3262s)
+  ep7 step2840/4800 cls=0.098 loc=0.689 bce=0.017 pcp=0.145 sup=0.127 total=0.581  3305s
+  ep7 step2880/4800 cls=0.105 loc=0.684 bce=0.019 pcp=0.156 sup=0.134 total=0.588  3342s
+  ep7 step2920/4800 cls=0.110 loc=0.689 bce=0.021 pcp=0.160 sup=0.137 total=0.599  3378s
+  ep7 step2960/4800 cls=0.110 loc=0.693 bce=0.021 pcp=0.158 sup=0.136 total=0.601  3414s
+  ep7 step3000/4800 cls=0.108 loc=0.691 bce=0.019 pcp=0.157 sup=0.133 total=0.596  3448s
+  ep7 step3040/4800 cls=0.107 loc=0.691 bce=0.018 pcp=0.157 sup=0.132 total=0.594  3491s
+  ep7 step3080/4800 cls=0.107 loc=0.691 bce=0.017 pcp=0.158 sup=0.132 total=0.594  3534s
+  ep7 step3120/4800 cls=0.107 loc=0.690 bce=0.017 pcp=0.156 sup=0.132 total=0.592  3572s
+  ep7 step3160/4800 cls=0.106 loc=0.689 bce=0.017 pcp=0.155 sup=0.132 total=0.591  3612s
+  ep7 step3200/4800 cls=0.104 loc=0.688 bce=0.017 pcp=0.153 sup=0.130 total=0.588  3651s
+[ep 7] val AUC=100.00 ACER=0.33 ACC=94.27 ECE=5.99 (3683s)
+  ep8 step3240/4800 cls=0.100 loc=0.677 bce=0.012 pcp=0.136 sup=0.124 total=0.570  3721s
+  ep8 step3280/4800 cls=0.094 loc=0.677 bce=0.011 pcp=0.136 sup=0.114 total=0.560  3842s
+  ep8 step3320/4800 cls=0.095 loc=0.678 bce=0.015 pcp=0.137 sup=0.115 total=0.564  3892s
+  ep8 step3360/4800 cls=0.094 loc=0.679 bce=0.015 pcp=0.138 sup=0.115 total=0.564  4033s
+  ep8 step3400/4800 cls=0.092 loc=0.679 bce=0.014 pcp=0.134 sup=0.114 total=0.561  4191s
+  ep8 step3440/4800 cls=0.090 loc=0.677 bce=0.014 pcp=0.134 sup=0.112 total=0.558  4254s
+  ep8 step3480/4800 cls=0.090 loc=0.674 bce=0.014 pcp=0.133 sup=0.111 total=0.554  4300s
+  ep8 step3520/4800 cls=0.090 loc=0.673 bce=0.014 pcp=0.133 sup=0.111 total=0.554  4343s
+  ep8 step3560/4800 cls=0.091 loc=0.672 bce=0.014 pcp=0.133 sup=0.112 total=0.555  4383s
+  ep8 step3600/4800 cls=0.089 loc=0.671 bce=0.014 pcp=0.132 sup=0.110 total=0.552  4424s
+[ep 8] val AUC=100.00 ACER=0.42 ACC=94.85 ECE=5.64 (4462s)
+  ep9 step3640/4800 cls=0.073 loc=0.675 bce=0.011 pcp=0.125 sup=0.098 total=0.532  4499s
+  ep9 step3680/4800 cls=0.073 loc=0.662 bce=0.013 pcp=0.120 sup=0.098 total=0.524  4539s
+  ep9 step3720/4800 cls=0.074 loc=0.664 bce=0.013 pcp=0.121 sup=0.098 total=0.526  4580s
+  ep9 step3760/4800 cls=0.074 loc=0.662 bce=0.012 pcp=0.120 sup=0.095 total=0.524  4622s
+  ep9 step3800/4800 cls=0.077 loc=0.661 bce=0.012 pcp=0.121 sup=0.094 total=0.526  4665s
+  ep9 step3840/4800 cls=0.076 loc=0.661 bce=0.012 pcp=0.120 sup=0.094 total=0.525  4708s
+  ep9 step3880/4800 cls=0.075 loc=0.660 bce=0.012 pcp=0.121 sup=0.094 total=0.523  4750s
+  ep9 step3920/4800 cls=0.074 loc=0.659 bce=0.012 pcp=0.118 sup=0.093 total=0.521  4792s
+  ep9 step3960/4800 cls=0.074 loc=0.659 bce=0.012 pcp=0.118 sup=0.094 total=0.521  4836s
+  ep9 step4000/4800 cls=0.074 loc=0.658 bce=0.012 pcp=0.118 sup=0.093 total=0.520  4884s
+[ep 9] val AUC=100.00 ACER=0.33 ACC=95.27 ECE=4.54 (4925s)
+  ep10 step4040/4800 cls=0.073 loc=0.648 bce=0.009 pcp=0.122 sup=0.085 total=0.509  4965s
+  ep10 step4080/4800 cls=0.071 loc=0.653 bce=0.010 pcp=0.118 sup=0.084 total=0.511  5009s
+  ep10 step4120/4800 cls=0.069 loc=0.651 bce=0.011 pcp=0.112 sup=0.081 total=0.506  5048s
+  ep10 step4160/4800 cls=0.067 loc=0.654 bce=0.010 pcp=0.110 sup=0.080 total=0.505  5089s
+  ep10 step4200/4800 cls=0.066 loc=0.652 bce=0.009 pcp=0.110 sup=0.079 total=0.502  5127s
+  ep10 step4240/4800 cls=0.065 loc=0.651 bce=0.010 pcp=0.108 sup=0.079 total=0.501  5167s
+  ep10 step4280/4800 cls=0.065 loc=0.653 bce=0.009 pcp=0.107 sup=0.079 total=0.501  5208s
+  ep10 step4320/4800 cls=0.064 loc=0.652 bce=0.010 pcp=0.106 sup=0.079 total=0.500  5243s
+  ep10 step4360/4800 cls=0.064 loc=0.652 bce=0.009 pcp=0.106 sup=0.078 total=0.499  5283s
+  ep10 step4400/4800 cls=0.063 loc=0.650 bce=0.009 pcp=0.106 sup=0.078 total=0.498  5323s
+[ep 10] val AUC=100.00 ACER=0.25 ACC=95.77 ECE=4.50 (5358s)
+  ep11 step4440/4800 cls=0.060 loc=0.662 bce=0.013 pcp=0.107 sup=0.078 total=0.503  5399s
+  ep11 step4480/4800 cls=0.056 loc=0.655 bce=0.011 pcp=0.101 sup=0.074 total=0.492  5447s
+  ep11 step4520/4800 cls=0.058 loc=0.651 bce=0.010 pcp=0.103 sup=0.075 total=0.492  5493s
+  ep11 step4560/4800 cls=0.059 loc=0.650 bce=0.010 pcp=0.102 sup=0.076 total=0.492  5533s
+  ep11 step4600/4800 cls=0.059 loc=0.648 bce=0.009 pcp=0.101 sup=0.076 total=0.491  5573s
+  ep11 step4640/4800 cls=0.060 loc=0.649 bce=0.009 pcp=0.102 sup=0.075 total=0.491  5614s
+  ep11 step4680/4800 cls=0.061 loc=0.650 bce=0.009 pcp=0.101 sup=0.077 total=0.494  5653s
+  ep11 step4720/4800 cls=0.062 loc=0.649 bce=0.009 pcp=0.101 sup=0.077 total=0.494  5694s
+  ep11 step4760/4800 cls=0.061 loc=0.647 bce=0.009 pcp=0.100 sup=0.076 total=0.491  5740s
+  ep11 step4800/4800 cls=0.061 loc=0.648 bce=0.009 pcp=0.101 sup=0.077 total=0.492  5782s
+[ep 11] val AUC=100.00 ACER=0.25 ACC=95.71 ECE=4.32 (5817s)
+{
+ "APCER": 0.417,
+ "BPCER": 0.333,
+ "ACER": 0.375,
+ "AUC": 99.992,
+ "EER": 0.25,
+ "ACC": 95.5,
+ "ACC_bin": 99.854,
+ "macroF1": 95.494,
+ "ECE": 4.593,
+ "Brier": 0.077,
+ "mean_vacuity": 0.091,
+ "threshold": 0.795,
+ "loc_IoU": 0.846,
+ "loc_Dice": 0.909,
+ "loc_pixel_AUC": 0.951,
+ "loc_per_class": {
+  "print": 0.9504127493694107,
+  "replay": 0.9238885863334098,
+  "mask3d": 0.7686404322996145,
+  "faceswap": 0.7627941830626369,
+  "reenact": 0.6905570523933316,
+  "synth": 0.979556007796377,
+  "mean_localisable": 0.740663889251861
+ },
+ "params_M": 0.526,
+ "train_seconds": 5824.291,
+ "data": "data",
+ "eval_only": false,
+ "checkpoint": "",
+ "data_test": "data",
+ "classes": [
+  "adversarial",
+  "bonafide",
+  "faceswap",
+  "mask3d",
+  "print",
+  "reenact",
+  "replay",
+  "synth"
+ ],
+ "model": "cdcn",
+ "protocol": "P1",
+ "deep_stem": false,
+ "hold_out_method": "",
+ "epochs": 12,
+ "n_train": 19200,
+ "n_test": 9600,
+ "seed": 1
+}

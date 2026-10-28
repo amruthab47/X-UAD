@@ -1,0 +1,18 @@
+Attack: Print attack
+Confidence: 100%
+Risk: Medium
+
+The sample is classified as a print attack (physical presentation attack) with 100% posterior probability; the probability that it is an attack of any kind is 99.8%. That class is characterised by periodic halftone screening and paper-substrate grain, with the high-frequency skin micro-texture of a live face missing. Evidence is concentrated in the left cheek (mean response 1.00), followed by forehead, right cheek; it covers 100% of the crop with a spatial dispersion of 1.00. Vacuity is low (0.03): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.41, i.e. 41% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.70 -> Medium).
+
+Full class-probability distribution:
+  bonafide       0.24%
+  print         99.57%
+  replay         0.19%
+  mask3d         0.00%
+  faceswap       0.00%
+  reenact        0.00%
+  synth          0.00%
+  adversarial    0.00%
+
+Face detected by Haar cascade: True
+Checkpoint used: results_region_pooled_detached/xuad_P1_regionpool_detached.pt

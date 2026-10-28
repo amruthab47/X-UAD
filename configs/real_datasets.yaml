@@ -1,0 +1,62 @@
+# Mapping of the public capture-based corpora onto the X-UAD taxonomy.
+# Implemented by xuad/data/real.py; run it with scripts/prepare_real.py.
+# Only the data layer changes; model / losses / engine / XAI are unchanged.
+#
+#   python scripts/prepare_real.py --root <dir> --corpus <adapter> --dry-run
+#   bash   scripts/run_real.sh     <dir> <adapter> <epochs> <tag>
+taxonomy: [bonafide, print, replay, mask3d, faceswap, reenact, synth, adversarial]
+
+datasets:
+  CASIA-FASD:      {classes: {1: print, 2: print, 3: replay}, split: subject_disjoint}
+  Replay-Attack:   {classes: {print: print, mobile: replay, highdef: replay}}
+  OULU-NPU:        {classes: {1: print, 2: print, 3: replay, 4: replay},
+                    protocols: [P1, P2, P3, P4]}
+  SiW-Mv2:         {classes: {Print: print, Replay: replay, HalfMask: mask3d,
+                              SiliconeMask: mask3d, PaperMask: mask3d,
+                              TransparentMask: mask3d, MannequinHead: mask3d,
+                              ObfuscationMakeup: mask3d, ImpersonationMakeup: mask3d,
+                              PaperGlasses: mask3d, PartialEye: mask3d,
+                              PartialMouth: mask3d, PartialFunnyeye: mask3d},
+                    note: "native leave-one-attack-out protocol -> use for P2"}
+  CelebA-Spoof:    {classes: {print: print, replay: replay, 3D: mask3d},
+                    note: "40 spoof-type annotations; also gives illumination/environment labels"}
+  FaceForensics++: {classes: {Deepfakes: faceswap, FaceSwap: faceswap,
+                              FaceShifter: faceswap, NeuralTextures: reenact,
+                              Face2Face: reenact},
+                    masks: true,
+                    note: "ships per-frame difference masks -> direct localisation GT"}
+  Celeb-DF-v2:     {classes: {synthesis: faceswap}}
+  DFDC:            {classes: {swap: faceswap, tts: reenact}}
+  UniAttackData:   {classes: {physical: [print, replay], digital: faceswap},
+                    note: "ID-consistent; use its P1/P2 splits directly"}
+  DiffusionFace:   {classes: {sd: synth, ddpm: synth}, note: "for the synth class"}
+
+protocols:
+  P1: {train: all_seen, test: all_seen}
+  P2: {leave_one_attack_out: [replay, mask3d, faceswap, synth, adversarial]}
+  P3: {train: [OULU-NPU, FaceForensics++], test: [CASIA-FASD, Celeb-DF-v2],
+       note: "cross-dataset / cross-domain"}
+
+adversarial:
+  surrogate: "4-layer VGG-style binary detector, trained on the train split only"
+  attack: PGD-Linf
+  epsilon: 0.0235       # 6/255
+  steps: 7
+  threat_model: transfer (black-box w.r.t. every evaluated detector)
+
+# --------------------------------------------------------------------------- #
+# adapter names accepted by --corpus (or "auto")
+adapters:
+  casia-fasd:     {masks: false, protocol: "train/test (validation carved from train)"}
+  replay-attack:  {masks: false, protocol: "train/devel/test"}
+  oulu-npu:       {masks: false, protocol: "Train_files/Dev_files/Test_files"}
+  siw-mv2:        {masks: false, protocol: "none shipped; subject-hash split"}
+  celeba-spoof:   {masks: false, protocol: "Data/train, Data/test",
+                   note: "pass --label-json metas/intra_test/train_label.json for the
+                          exact spoof-type mapping; without it every spoof maps to print"}
+  faceforensics:  {masks: true,  protocol: "none shipped; subject-hash split on the
+                                            target sequence id",
+                   note: "--compression raw|c23|c40"}
+  celeb-df:       {masks: false, protocol: "List_of_testing_videos.txt"}
+  dfdc:           {masks: false, protocol: "metadata.json"}
+  uniattackdata:  {masks: false, protocol: "train/dev/test directories"}

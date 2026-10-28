@@ -1,0 +1,48 @@
+{
+  "predicted_class": "bonafide",
+  "predicted_id": 0,
+  "confidence": 0.3338455855846405,
+  "vacuity": 0.14889076352119446,
+  "is_attack": false,
+  "attack_probability": 0.6661543846130371,
+  "superclass": "none",
+  "risk_score": 0.5382073521614075,
+  "risk_level": "Medium",
+  "decision": "accept",
+  "top_regions": [
+    {
+      "region": "nose / midface",
+      "activation": 0.6277859807014465
+    },
+    {
+      "region": "eye region",
+      "activation": 0.5108647346496582
+    },
+    {
+      "region": "mouth and chin",
+      "activation": 0.46019214391708374
+    }
+  ],
+  "spatial": {
+    "area": 0.22034438775510204,
+    "dispersion": 0.9028988083491435,
+    "peak": 0.9397108554840088
+  },
+  "spectral": {
+    "radial_peak_norm_freq": 0.5,
+    "radial_peak_prominence": -0.4791472852230072,
+    "azimuthal_anisotropy": 0.13258729875087738
+  },
+  "quantum_modes": [],
+  "gate_mean": 0.3036457896232605,
+  "class_posterior": {
+    "bonafide": 0.3338455855846405,
+    "print": 0.27937883138656616,
+    "replay": 0.00045645530917681754,
+    "mask3d": 7.881181954871863e-05,
+    "faceswap": 0.1893925815820694,
+    "reenact": 0.19548991322517395,
+    "synth": 0.0002542776637710631,
+    "adversarial": 0.0011035652132704854
+  }
+}

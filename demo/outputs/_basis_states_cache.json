@@ -1,0 +1,138 @@
+[
+ {
+  "basis": 0,
+  "class": "reenact",
+  "class_id": 5,
+  "selectivity": 2.5545788663335043,
+  "dispersion": 0.8237322665673895,
+  "class_response": {
+   "bonafide": 0.014125606504039488,
+   "print": 0.009359980946865635,
+   "replay": 0.010854373699513035,
+   "mask3d": 0.009412856421608856,
+   "faceswap": 0.01729467138648033,
+   "reenact": 0.06216030655538335,
+   "synth": 0.010407534592291889,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 1,
+  "class": "mask3d",
+  "class_id": 3,
+  "selectivity": 1.8640681570095432,
+  "dispersion": 0.8484459590680247,
+  "class_response": {
+   "bonafide": 0.005003602149477903,
+   "print": 0.006126611183087031,
+   "replay": 0.04736910328484964,
+   "mask3d": 0.05740719472152599,
+   "faceswap": 0.007501261034870849,
+   "reenact": 0.005144121947095674,
+   "synth": 0.024985598509802538,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 2,
+  "class": "synth",
+  "class_id": 6,
+  "selectivity": 2.180191509594684,
+  "dispersion": 0.7878990173448515,
+  "class_response": {
+   "bonafide": 0.00939542649016864,
+   "print": 0.011867278619952824,
+   "replay": 0.033683055120965706,
+   "mask3d": 0.015263481848481773,
+   "faceswap": 0.017937649260548985,
+   "reenact": 0.011266102356945766,
+   "synth": 0.05333759372725206,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 3,
+  "class": "bonafide",
+  "class_id": 0,
+  "selectivity": 2.530581475433854,
+  "dispersion": 0.8020449535664994,
+  "class_response": {
+   "bonafide": 0.09946854909261067,
+   "print": 0.006707359159338302,
+   "replay": 0.00620380654067233,
+   "mask3d": 0.02998138661833777,
+   "faceswap": 0.009912061395452303,
+   "reenact": 0.007581340916016523,
+   "synth": 0.020790836938163814,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 4,
+  "class": "mask3d",
+  "class_id": 3,
+  "selectivity": 1.665829727068675,
+  "dispersion": 0.8709795391024573,
+  "class_response": {
+   "bonafide": 0.011982176452875137,
+   "print": 0.046733969363613403,
+   "replay": 0.014654173799183058,
+   "mask3d": 0.05412031213442484,
+   "faceswap": 0.03012087502900292,
+   "reenact": 0.026479600326103324,
+   "synth": 0.025944994214703056,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 5,
+  "class": "replay",
+  "class_id": 2,
+  "selectivity": 1.5283632364699173,
+  "dispersion": 0.8641630993834003,
+  "class_response": {
+   "bonafide": 0.03807181659815968,
+   "print": 0.05015933254490728,
+   "replay": 0.05650260742159857,
+   "mask3d": 0.0041666895529066305,
+   "faceswap": 0.028109138721928877,
+   "reenact": 0.022112117313286838,
+   "synth": 0.003873401869307546,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 6,
+  "class": "print",
+  "class_id": 1,
+  "selectivity": 2.411922011065,
+  "dispersion": 0.8725026131330467,
+  "class_response": {
+   "bonafide": 0.004375478738675947,
+   "print": 0.04631288306436677,
+   "replay": 0.006577243245598199,
+   "mask3d": 0.013712991730890411,
+   "faceswap": 0.003532435731304919,
+   "reenact": 0.010820896090830074,
+   "synth": 0.01887334916083252,
+   "adversarial": 0.0
+  }
+ },
+ {
+  "basis": 7,
+  "class": "faceswap",
+  "class_id": 4,
+  "selectivity": 1.5936934171788433,
+  "dispersion": 0.8481479768993889,
+  "class_response": {
+   "bonafide": 0.014966596511827,
+   "print": 0.010482638318469559,
+   "replay": 0.014233484972214354,
+   "mask3d": 0.028331068114957947,
+   "faceswap": 0.03284820015816128,
+   "reenact": 0.022859481765943414,
+   "synth": 0.006255663493100335,
+   "adversarial": 0.0
+  }
+ }
+]

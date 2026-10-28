@@ -1,0 +1,54 @@
+== xuad_no_aqa_P2.faceswap: model=xuad_no_aqa params=1.29M  train=4382 val=4200 test=9600  excl=(4,)
+  ep0 step40/455 conf=0.603 cls=2.653 loc=1.176 basis=1.990 sup=0.995 pues=0.607 coh=0.726 total=4.200  49s
+  ep0 step80/455 conf=0.607 cls=2.416 loc=1.136 basis=1.864 sup=0.932 pues=0.574 coh=0.464 total=3.881  98s
+[ep 0] val AUC=78.19 ACER=47.17 ACC=54.19 ECE=5.66 (139s)
+  ep1 step120/455 conf=0.588 cls=1.674 loc=1.083 basis=1.406 sup=0.732 pues=0.644 coh=0.000 total=2.959  174s
+  ep1 step160/455 conf=0.579 cls=1.579 loc=1.069 basis=1.299 sup=0.711 pues=0.596 coh=0.006 total=2.818  221s
+[ep 1] val AUC=82.92 ACER=57.25 ACC=71.33 ECE=6.57 (274s)
+  ep2 step200/455 conf=0.521 cls=1.253 loc=1.017 basis=0.935 sup=0.577 pues=0.521 coh=0.000 total=2.348  295s
+  ep2 step240/455 conf=0.528 cls=1.162 loc=0.979 basis=0.869 sup=0.524 pues=0.505 coh=0.000 total=2.199  341s
+[ep 2] val AUC=90.37 ACER=40.17 ACC=78.74 ECE=3.14 (409s)
+  ep3 step280/455 conf=0.503 cls=0.981 loc=0.940 basis=0.707 sup=0.416 pues=0.563 coh=0.000 total=1.931  417s
+  ep3 step320/455 conf=0.489 cls=1.030 loc=0.937 basis=0.719 sup=0.463 pues=0.487 coh=0.000 total=1.984  464s
+  ep3 step360/455 conf=0.488 cls=1.012 loc=0.933 basis=0.698 sup=0.461 pues=0.474 coh=0.000 total=1.956  510s
+[ep 3] val AUC=91.85 ACER=37.08 ACC=81.40 ECE=3.09 (542s)
+  ep4 step400/455 conf=0.452 cls=0.889 loc=0.890 basis=0.616 sup=0.399 pues=0.431 coh=0.000 total=1.762  585s
+  ep4 step440/455 conf=0.450 cls=0.892 loc=0.883 basis=0.617 sup=0.402 pues=0.430 coh=0.000 total=1.761  634s
+[ep 4] val AUC=91.72 ACER=45.42 ACC=82.31 ECE=3.44 (680s)
+{
+ "APCER": 67.25,
+ "BPCER": 12.417,
+ "ACER": 39.833,
+ "AUC": 89.469,
+ "EER": 18.345,
+ "ACC": 71.396,
+ "ACC_bin": 78.531,
+ "macroF1": 68.131,
+ "ECE": 7.363,
+ "Brier": 0.397,
+ "mean_vacuity": 0.328,
+ "threshold": 0.799,
+ "loc_IoU": 0.752,
+ "loc_Dice": 0.836,
+ "loc_pixel_AUC": 0.898,
+ "loc_per_class": {
+  "print": 0.9087329454253611,
+  "replay": 0.9480552052281586,
+  "mask3d": 0.6937023957725841,
+  "faceswap": 0.5318198858176147,
+  "reenact": 0.5209067828229672,
+  "synth": 0.9086003783535888,
+  "mean_localisable": 0.5821430214710553
+ },
+ "unseen_AUROC_vacuity": 41.402,
+ "unseen_detect_rate": 32.75,
+ "seen_detect_rate": 84.653,
+ "params_M": 1.286,
+ "train_seconds": 681.399,
+ "model": "xuad_no_aqa",
+ "protocol": "P2.faceswap",
+ "epochs": 5,
+ "n_train": 4382,
+ "n_test": 9600,
+ "seed": 0
+}

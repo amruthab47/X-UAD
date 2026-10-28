@@ -1,0 +1,49 @@
+== xuad_no_loc_ab: model=xuad params=1.29M  train=3592 val=4800 test=9600  excl=()
+  ep0 step40/370 conf=0.599 cls=2.752 basis=2.076 sup=0.964 pues=0.595 coh=0.688 total=3.604  61s
+[ep 0] val AUC=69.56 ACER=52.25 ACC=44.77 ECE=5.56 (166s)
+  ep1 step80/370 conf=0.528 cls=1.824 basis=1.550 sup=0.685 pues=0.649 coh=0.000 total=2.482  175s
+  ep1 step120/370 conf=0.561 cls=1.913 basis=1.515 sup=0.743 pues=0.604 coh=0.000 total=2.575  239s
+[ep 1] val AUC=66.80 ACER=60.17 ACC=47.00 ECE=18.21 (327s)
+  ep2 step160/370 conf=0.593 cls=1.636 basis=1.262 sup=0.683 pues=0.577 coh=0.000 total=2.243  346s
+  ep2 step200/370 conf=0.594 cls=1.680 basis=1.263 sup=0.695 pues=0.550 coh=0.001 total=2.287  405s
+[ep 2] val AUC=83.46 ACER=41.83 ACC=64.48 ECE=3.64 (482s)
+  ep3 step240/370 conf=0.578 cls=1.436 basis=1.108 sup=0.545 pues=0.560 coh=0.000 total=1.961  510s
+  ep3 step280/370 conf=0.576 cls=1.395 basis=1.055 sup=0.526 pues=0.537 coh=0.000 total=1.897  578s
+[ep 3] val AUC=87.52 ACER=36.25 ACC=69.88 ECE=4.15 (664s)
+  ep4 step320/370 conf=0.534 cls=1.289 basis=0.964 sup=0.483 pues=0.432 coh=0.000 total=1.739  706s
+  ep4 step360/370 conf=0.535 cls=1.269 basis=0.957 sup=0.470 pues=0.453 coh=0.000 total=1.717  775s
+[ep 4] val AUC=88.76 ACER=34.83 ACC=70.62 ECE=3.41 (844s)
+{
+ "APCER": 49.75,
+ "BPCER": 17.417,
+ "ACER": 33.583,
+ "AUC": 89.171,
+ "EER": 18.476,
+ "ACC": 70.562,
+ "ACC_bin": 81.083,
+ "macroF1": 68.78,
+ "ECE": 2.406,
+ "Brier": 0.351,
+ "mean_vacuity": 0.397,
+ "threshold": 0.818,
+ "loc_IoU": 0.579,
+ "loc_Dice": 0.696,
+ "loc_pixel_AUC": 0.526,
+ "loc_per_class": {
+  "print": 0.8126397328594358,
+  "replay": 0.8986972598027975,
+  "mask3d": 0.4762039895689434,
+  "faceswap": 0.33416844640393367,
+  "reenact": 0.21990980804837507,
+  "synth": 0.7298318906214172,
+  "mean_localisable": 0.34342741467375065
+ },
+ "params_M": 1.294,
+ "train_seconds": 845.268,
+ "model": "xuad",
+ "protocol": "P1",
+ "epochs": 5,
+ "n_train": 3592,
+ "n_test": 9600,
+ "seed": 0
+}

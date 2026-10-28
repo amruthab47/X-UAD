@@ -1,0 +1,54 @@
+== xuad_P2.mask3d: model=xuad params=1.29M  train=4382 val=4200 test=9600  excl=(3,)
+  ep0 step40/455 conf=0.630 cls=2.640 loc=1.148 basis=1.994 sup=0.942 pues=0.619 coh=0.690 total=4.155  64s
+  ep0 step80/455 conf=0.602 cls=2.328 loc=1.130 basis=1.837 sup=0.867 pues=0.639 coh=0.584 total=3.769  128s
+[ep 0] val AUC=79.84 ACER=43.17 ACC=49.38 ECE=7.34 (185s)
+  ep1 step120/455 conf=0.599 cls=1.663 loc=1.073 basis=1.406 sup=0.612 pues=0.689 coh=0.006 total=2.911  233s
+  ep1 step160/455 conf=0.582 cls=1.566 loc=1.064 basis=1.292 sup=0.562 pues=0.660 coh=0.002 total=2.762  296s
+[ep 1] val AUC=80.49 ACER=46.25 ACC=61.83 ECE=5.84 (371s)
+  ep2 step200/455 conf=0.548 cls=1.387 loc=1.001 basis=1.001 sup=0.485 pues=0.482 coh=0.001 total=2.456  401s
+  ep2 step240/455 conf=0.535 cls=1.340 loc=0.977 basis=0.950 sup=0.467 pues=0.480 coh=0.000 total=2.376  466s
+[ep 2] val AUC=85.03 ACER=46.50 ACC=68.64 ECE=3.73 (565s)
+  ep3 step280/455 conf=0.579 cls=1.450 loc=0.941 basis=0.940 sup=0.491 pues=0.393 coh=0.000 total=2.455  577s
+  ep3 step320/455 conf=0.512 cls=1.224 loc=0.897 basis=0.792 sup=0.402 pues=0.383 coh=0.000 total=2.138  640s
+  ep3 step360/455 conf=0.510 cls=1.184 loc=0.876 basis=0.761 sup=0.383 pues=0.361 coh=0.000 total=2.069  704s
+[ep 3] val AUC=93.21 ACER=30.42 ACC=74.24 ECE=2.32 (752s)
+  ep4 step400/455 conf=0.482 cls=1.028 loc=0.813 basis=0.656 sup=0.296 pues=0.332 coh=0.000 total=1.818  817s
+  ep4 step440/455 conf=0.469 cls=1.012 loc=0.807 basis=0.662 sup=0.297 pues=0.315 coh=0.000 total=1.798  885s
+[ep 4] val AUC=95.30 ACER=23.75 ACC=78.81 ECE=4.90 (960s)
+{
+ "APCER": 32.75,
+ "BPCER": 10.083,
+ "ACER": 21.417,
+ "AUC": 95.818,
+ "EER": 11.0,
+ "ACC": 69.01,
+ "ACC_bin": 88.708,
+ "macroF1": 65.033,
+ "ECE": 11.106,
+ "Brier": 0.463,
+ "mean_vacuity": 0.327,
+ "threshold": 0.776,
+ "loc_IoU": 0.792,
+ "loc_Dice": 0.866,
+ "loc_pixel_AUC": 0.88,
+ "loc_per_class": {
+  "print": 0.9338633627608346,
+  "replay": 0.9819099690437972,
+  "mask3d": 0.6339766918167961,
+  "faceswap": 0.656209848254869,
+  "reenact": 0.5881098952028011,
+  "synth": 0.95645350836964,
+  "mean_localisable": 0.6260988117581553
+ },
+ "unseen_AUROC_vacuity": 32.757,
+ "unseen_detect_rate": 88.083,
+ "seen_detect_rate": 88.611,
+ "params_M": 1.294,
+ "train_seconds": 961.733,
+ "model": "xuad",
+ "protocol": "P2.mask3d",
+ "epochs": 5,
+ "n_train": 4382,
+ "n_test": 9600,
+ "seed": 0
+}

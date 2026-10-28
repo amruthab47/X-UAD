@@ -1,0 +1,18 @@
+Attack: Bonafide (genuine live capture)
+Confidence: 100%
+Risk: Low
+
+The sample is accepted as a genuine live capture with 100% posterior probability. The dominant quantum evidence mode is #3, whose learned selectivity is highest for 'bonafide' (activation 0.117), corroborating the class decision. Vacuity is low (0.00): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.35, i.e. 35% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: accept (risk score 0.00 -> Low).
+
+Full class-probability distribution:
+  bonafide      99.95%
+  print          0.04%
+  replay         0.00%
+  mask3d         0.00%
+  faceswap       0.02%
+  reenact        0.00%
+  synth          0.00%
+  adversarial    0.00%
+
+Face detected by Haar cascade: True
+Checkpoint used: results_region_pooled_detached/xuad_P1_regionpool_detached.pt

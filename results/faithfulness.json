@@ -1,0 +1,22 @@
+{
+ "loc": {
+  "deletion": 0.9153611820191145,
+  "insertion": 0.9171217780560257,
+  "label": "X-UAD localisation map"
+ },
+ "rollout": {
+  "deletion": 0.9315048258751631,
+  "insertion": 0.9213489931076766,
+  "label": "AQA attention rollout"
+ },
+ "quantum": {
+  "deletion": 0.9055661838501692,
+  "insertion": 0.8987435024231673,
+  "label": "Quantum evidence magnitude"
+ },
+ "random": {
+  "deletion": 0.9460222642868759,
+  "insertion": 0.946284941956401,
+  "label": "Random (control)"
+ }
+}

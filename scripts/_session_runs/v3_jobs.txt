@@ -1,0 +1,28 @@
+# tag  followed by run_experiment.py arguments. One job per line, run in order, 3 at a time.
+# 1. reproduction of Table I with the current code (original recipe, 10 epochs)
+xuad_P1_repro --model xuad --protocol P1 --epochs 10
+# 2. baselines under the 12-epoch recipe of results_region_pooled_detached (X-UAD s0 already exists)
+resnet18_P1_recipe_s0 --model resnet18 --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --seed 0
+cdcn_P1_recipe_s0 --model cdcn --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --seed 0
+# 2b. X-UAD seed 0 under the same recipe, current code + data (replaces the older-campaign run)
+xuad_P1_recipe_s0 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --region-pool --seed 0
+# 3. seeds 1 and 2 for the 12-epoch recipe, all three models
+resnet18_P1_recipe_s1 --model resnet18 --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --seed 1
+xuad_P1_recipe_s1 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --region-pool --seed 1
+cdcn_P1_recipe_s1 --model cdcn --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --seed 1
+resnet18_P1_recipe_s2 --model resnet18 --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --seed 2
+xuad_P1_recipe_s2 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --region-pool --seed 2
+cdcn_P1_recipe_s2 --model cdcn --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine --seed 2
+# 4. leave-one-attack-out at the full P1 budget (original recipe, 10 epochs, no subsample)
+resnet18_P2full.replay --model resnet18 --protocol P2.replay --epochs 10
+xuad_P2full.replay --model xuad --protocol P2.replay --epochs 10
+cdcn_P2full.replay --model cdcn --protocol P2.replay --epochs 10
+resnet18_P2full.mask3d --model resnet18 --protocol P2.mask3d --epochs 10
+xuad_P2full.mask3d --model xuad --protocol P2.mask3d --epochs 10
+cdcn_P2full.mask3d --model cdcn --protocol P2.mask3d --epochs 10
+resnet18_P2full.faceswap --model resnet18 --protocol P2.faceswap --epochs 10
+xuad_P2full.faceswap --model xuad --protocol P2.faceswap --epochs 10
+cdcn_P2full.faceswap --model cdcn --protocol P2.faceswap --epochs 10
+resnet18_P2full.adversarial --model resnet18 --protocol P2.adversarial --epochs 10
+xuad_P2full.adversarial --model xuad --protocol P2.adversarial --epochs 10
+cdcn_P2full.adversarial --model cdcn --protocol P2.adversarial --epochs 10

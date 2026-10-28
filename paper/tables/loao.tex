@@ -1,0 +1,21 @@
+\begin{tabular}{llccccc}
+\toprule
+Metric & Method & Replay & 3D mask & Face-swap & Adversarial & Mean \\
+\midrule
+\multirow{3}{*}{ACER (\%)$\downarrow$} & ResNet-18~\cite{he2016resnet} & 51.96 & 30.38 & 49.96 & 30.71 & 40.75 \\
+ & CDCN++~\cite{yu2020cdcn} & 25.67 & 39.92 & 25.25 & 25.58 & 29.10 \\
+ & \textbf{X-UAD (proposed)} & 26.79 & 21.42 & 38.33 & 39.67 & 31.55 \\
+\midrule
+\multirow{3}{*}{ACC$_8$ (\%)$\uparrow$} & ResNet-18~\cite{he2016resnet} & 53.94 & 62.66 & 51.39 & 61.53 & 57.38 \\
+ & CDCN++~\cite{yu2020cdcn} & 60.62 & 65.07 & 73.23 & 63.84 & 65.69 \\
+ & \textbf{X-UAD (proposed)} & 60.95 & 69.01 & 73.34 & 57.59 & 65.22 \\
+\midrule
+\multirow{3}{*}{Unseen detection rate (\%)$\uparrow$} & ResNet-18~\cite{he2016resnet} & 100.00 & 61.67 & 37.17 & 99.92 & 74.69 \\
+ & CDCN++~\cite{yu2020cdcn} & 93.08 & 34.25 & 60.33 & 93.08 & 70.19 \\
+ & \textbf{X-UAD (proposed)} & 88.00 & 88.08 & 35.58 & 98.17 & 77.46 \\
+\midrule
+\multirow{3}{*}{Novelty AUROC (\%)$\uparrow$} & ResNet-18~\cite{he2016resnet} & 35.29 & 56.69 & 74.40 & 36.88 & 50.82 \\
+ & CDCN++~\cite{yu2020cdcn} & 49.28 & 66.57 & 81.66 & 55.08 & 63.15 \\
+ & \textbf{X-UAD (proposed)} & 71.03 & 50.41 & 87.86 & 43.04 & 63.09 \\
+\bottomrule
+\end{tabular}

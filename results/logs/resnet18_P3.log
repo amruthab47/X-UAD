@@ -1,0 +1,23 @@
+== resnet18_P3: model=resnet18 params=1.59M  train=19200 val=4800 test=6100  excl=()
+{
+ "APCER": 0.0,
+ "BPCER": 99.571,
+ "ACER": 49.786,
+ "AUC": 39.436,
+ "EER": 59.739,
+ "ACC": 21.508,
+ "ACC_bin": 88.574,
+ "macroF1": 7.478,
+ "ECE": 66.59,
+ "Brier": 1.381,
+ "mean_vacuity": 0.119,
+ "threshold": 0.767,
+ "params_M": 1.594,
+ "train_seconds": 0.025,
+ "model": "resnet18",
+ "protocol": "P3",
+ "epochs": 6,
+ "n_train": 19200,
+ "n_test": 6100,
+ "seed": 0
+}

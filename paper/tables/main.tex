@@ -1,0 +1,11 @@
+\begin{tabular}{lcccccccccc}
+\toprule
+Method & Params & ACER$\downarrow$ & APCER$\downarrow$ & BPCER$\downarrow$ & AUC$\uparrow$ & EER$\downarrow$ & ACC$_8\uparrow$ & F1$_{\text{macro}}\uparrow$ & ECE$\downarrow$ & ECE$_{\text{TS}}\downarrow$ \\
+ & (M) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) \\
+\midrule
+ResNet-18~\cite{he2016resnet} & 1.59 & 1.88 & 3.08 & 0.67 & 99.95 & 0.67 & \textbf{96.93} & \textbf{96.92} & \textbf{2.35} & \textbf{0.34} \\
+ViT-Tiny~\cite{dosovitskiy2021vit}$^{\dagger}$ & 0.64 & 49.75 & 60.67 & 38.83 & 73.43 & 34.65 & 51.27 & 46.04 & 0.67 & -- \\
+CDCN++~\cite{yu2020cdcn} & 0.53 & 0.46 & 0.42 & \textbf{0.50} & \textbf{99.99} & \textbf{0.33} & 95.19 & 95.17 & 5.07 & 0.46 \\
+\textbf{X-UAD (proposed)} & 1.29 & \textbf{0.42} & \textbf{0.33} & \textbf{0.50} & 99.98 & 0.42 & 94.06 & 94.06 & 5.17 & 0.60 \\
+\bottomrule
+\end{tabular}

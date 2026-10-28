@@ -1,0 +1,49 @@
+== xuad_no_spec_ab: model=xuad_no_spec params=1.11M  train=3592 val=4800 test=9600  excl=()
+  ep0 step40/370 conf=0.592 cls=2.736 loc=1.144 basis=2.090 sup=0.962 pues=0.591 coh=0.601 total=4.275  65s
+[ep 0] val AUC=66.89 ACER=53.42 ACC=34.38 ECE=19.03 (167s)
+  ep1 step80/370 conf=0.599 cls=2.039 loc=1.059 basis=1.741 sup=0.762 pues=0.582 coh=0.006 total=3.396  177s
+  ep1 step120/370 conf=0.591 cls=1.946 loc=1.083 basis=1.611 sup=0.764 pues=0.653 coh=0.003 total=3.293  238s
+[ep 1] val AUC=70.18 ACER=60.75 ACC=51.40 ECE=6.34 (328s)
+  ep2 step160/370 conf=0.586 cls=1.656 loc=1.047 basis=1.348 sup=0.632 pues=0.548 coh=0.000 total=2.893  347s
+  ep2 step200/370 conf=0.586 cls=1.599 loc=1.035 basis=1.277 sup=0.610 pues=0.565 coh=0.000 total=2.807  411s
+[ep 2] val AUC=84.71 ACER=45.83 ACC=65.00 ECE=2.62 (493s)
+  ep3 step240/370 conf=0.545 cls=1.419 loc=0.977 basis=1.115 sup=0.566 pues=0.503 coh=0.000 total=2.529  521s
+  ep3 step280/370 conf=0.532 cls=1.341 loc=0.973 basis=1.039 sup=0.504 pues=0.496 coh=0.000 total=2.410  584s
+[ep 3] val AUC=86.48 ACER=35.08 ACC=69.54 ECE=1.99 (654s)
+  ep4 step320/370 conf=0.530 cls=1.330 loc=0.944 basis=0.972 sup=0.486 pues=0.477 coh=0.000 total=2.357  689s
+  ep4 step360/370 conf=0.529 cls=1.307 loc=0.948 basis=0.969 sup=0.480 pues=0.457 coh=0.000 total=2.330  754s
+[ep 4] val AUC=88.05 ACER=32.42 ACC=70.73 ECE=3.65 (812s)
+{
+ "APCER": 44.75,
+ "BPCER": 17.5,
+ "ACER": 31.125,
+ "AUC": 88.441,
+ "EER": 18.994,
+ "ACC": 70.667,
+ "ACC_bin": 80.427,
+ "macroF1": 68.92,
+ "ECE": 3.125,
+ "Brier": 0.358,
+ "mean_vacuity": 0.44,
+ "threshold": 0.833,
+ "loc_IoU": 0.777,
+ "loc_Dice": 0.86,
+ "loc_pixel_AUC": 0.896,
+ "loc_per_class": {
+  "print": 0.9177976668195369,
+  "replay": 0.9794270236184361,
+  "mask3d": 0.7043821737866128,
+  "faceswap": 0.691599154206328,
+  "reenact": 0.5403685257566039,
+  "synth": 0.8302568218298555,
+  "mean_localisable": 0.6454499512498483
+ },
+ "params_M": 1.112,
+ "train_seconds": 813.532,
+ "model": "xuad_no_spec",
+ "protocol": "P1",
+ "epochs": 5,
+ "n_train": 3592,
+ "n_test": 9600,
+ "seed": 0
+}

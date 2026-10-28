@@ -1,0 +1,7 @@
+# Revision-3b: the X-UAD variant chosen by VALIDATION ACER (pair-weighted refinement),
+# re-run with the current code at 3 seeds, same 12-epoch recipe as the baselines.
+# deep-stem pilot (1.35M params, fewer than ResNet-18's 1.59M); kept only if it wins on VALIDATION
+xuad_P1_dspw_s0 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine-weighted --deep-stem --seed 0
+xuad_P1_pw_s0 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine-weighted --seed 0
+xuad_P1_pw_s1 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine-weighted --seed 1
+xuad_P1_pw_s2 --model xuad --protocol P1 --epochs 12 --focal-gamma 2.0 --select-by acc_f1_acer_guard --refine-weighted --seed 2

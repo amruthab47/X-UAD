@@ -1,0 +1,57 @@
+== xuad_P1_recipe_s2: data=data model=xuad params=1.30M  train=19200 val=4800 test=9600
+   classes kept=['adversarial', 'bonafide', 'faceswap', 'mask3d', 'print', 'reenact', 'replay', 'synth']  train-excluded=[]
+  ep0 step40/4800 conf=0.606 cls=2.282 loc=1.184 basis=2.114 bce=0.385 pcp=0.128 sup=0.973 pues=0.642 coh=0.693 total=4.052  120s
+  ep0 step80/4800 conf=0.569 cls=2.244 loc=1.147 basis=2.086 bce=0.371 pcp=0.127 sup=0.960 pues=0.570 coh=0.681 total=3.971  257s
+  ep0 step120/4800 conf=0.554 cls=2.213 loc=1.130 basis=2.065 bce=0.365 pcp=0.130 sup=0.953 pues=0.544 coh=0.643 total=3.919  386s
+  ep0 step160/4800 conf=0.571 cls=2.146 loc=1.124 basis=2.041 bce=0.367 pcp=0.134 sup=0.947 pues=0.556 coh=0.509 total=3.841  512s
+  ep0 step200/4800 conf=0.576 cls=2.053 loc=1.121 basis=2.015 bce=0.365 pcp=0.145 sup=0.934 pues=0.592 coh=0.407 total=3.734  657s
+  ep0 step240/4800 conf=0.580 cls=1.978 loc=1.118 basis=1.990 bce=0.362 pcp=0.153 sup=0.920 pues=0.623 coh=0.340 total=3.646  783s
+  ep0 step280/4800 conf=0.585 cls=1.906 loc=1.113 basis=1.961 bce=0.356 pcp=0.163 sup=0.903 pues=0.638 coh=0.293 total=3.557  886s
+  ep0 step320/4800 conf=0.586 cls=1.844 loc=1.109 basis=1.933 bce=0.353 pcp=0.172 sup=0.884 pues=0.651 coh=0.257 total=3.479  1007s
+  ep0 step360/4800 conf=0.591 cls=1.787 loc=1.104 basis=1.902 bce=0.346 pcp=0.181 sup=0.866 pues=0.654 coh=0.228 total=3.403  1121s
+  ep0 step400/4800 conf=0.594 cls=1.736 loc=1.098 basis=1.868 bce=0.342 pcp=0.190 sup=0.850 pues=0.656 coh=0.206 total=3.334  1328s
+[ep 0] val AUC=87.89 ACER=32.25 ACC=57.35 ECE=4.46 (1562s)
+  ep1 step440/4800 conf=0.625 cls=1.293 loc=1.033 basis=1.479 bce=0.298 pcp=0.269 sup=0.715 pues=0.669 coh=0.000 total=2.714  1755s
+  ep1 step480/4800 conf=0.619 cls=1.257 loc=1.017 basis=1.426 bce=0.293 pcp=0.278 sup=0.697 pues=0.652 coh=0.000 total=2.649  1874s
+  ep1 step520/4800 conf=0.621 cls=1.246 loc=1.012 basis=1.386 bce=0.296 pcp=0.280 sup=0.694 pues=0.640 coh=0.000 total=2.625  1994s
+  ep1 step560/4800 conf=0.620 cls=1.224 loc=1.004 basis=1.344 bce=0.291 pcp=0.283 sup=0.679 pues=0.645 coh=0.000 total=2.581  2116s
+  ep1 step600/4800 conf=0.618 cls=1.218 loc=0.999 basis=1.312 bce=0.284 pcp=0.285 sup=0.670 pues=0.627 coh=0.000 total=2.557  2241s
+  ep1 step640/4800 conf=0.615 cls=1.202 loc=0.990 basis=1.275 bce=0.281 pcp=0.286 sup=0.662 pues=0.623 coh=0.000 total=2.522  2378s
+  ep1 step680/4800 conf=0.614 cls=1.186 loc=0.983 basis=1.242 bce=0.276 pcp=0.290 sup=0.653 pues=0.613 coh=0.000 total=2.489  2497s
+  ep1 step720/4800 conf=0.612 cls=1.179 loc=0.979 basis=1.222 bce=0.277 pcp=0.291 sup=0.651 pues=0.609 coh=0.000 total=2.475  2614s
+  ep1 step760/4800 conf=0.609 cls=1.167 loc=0.970 basis=1.199 bce=0.272 pcp=0.293 sup=0.643 pues=0.596 coh=0.000 total=2.447  2727s
+  ep1 step800/4800 conf=0.606 cls=1.155 loc=0.965 basis=1.176 bce=0.270 pcp=0.295 sup=0.637 pues=0.586 coh=0.000 total=2.422  2849s
+[ep 1] val AUC=90.97 ACER=24.75 ACC=55.50 ECE=12.43 (2939s)
+  ep2 step840/4800 conf=0.577 cls=1.018 loc=0.882 basis=0.951 bce=0.236 pcp=0.310 sup=0.555 pues=0.425 coh=0.000 total=2.143  3056s
+  ep2 step880/4800 conf=0.570 cls=0.982 loc=0.877 basis=0.918 bce=0.227 pcp=0.321 sup=0.536 pues=0.435 coh=0.000 total=2.088  3178s
+  ep2 step920/4800 conf=0.580 cls=1.001 loc=0.884 basis=0.924 bce=0.239 pcp=0.322 sup=0.550 pues=0.409 coh=0.000 total=2.120  3303s
+  ep2 step960/4800 conf=0.580 cls=0.991 loc=0.884 basis=0.909 bce=0.236 pcp=0.323 sup=0.545 pues=0.402 coh=0.000 total=2.104  3418s
+  ep2 step1000/4800 conf=0.579 cls=0.993 loc=0.884 basis=0.902 bce=0.235 pcp=0.320 sup=0.546 pues=0.404 coh=0.000 total=2.104  3533s
+  ep2 step1040/4800 conf=0.575 cls=0.984 loc=0.881 basis=0.892 bce=0.232 pcp=0.321 sup=0.542 pues=0.393 coh=0.000 total=2.087  3657s
+  ep2 step1080/4800 conf=0.573 cls=0.974 loc=0.879 basis=0.881 bce=0.231 pcp=0.322 sup=0.538 pues=0.386 coh=0.000 total=2.071  3778s
+  ep2 step1120/4800 conf=0.571 cls=0.965 loc=0.875 basis=0.870 bce=0.229 pcp=0.322 sup=0.535 pues=0.382 coh=0.000 total=2.055  3890s
+  ep2 step1160/4800 conf=0.570 cls=0.959 loc=0.872 basis=0.866 bce=0.225 pcp=0.324 sup=0.530 pues=0.380 coh=0.000 total=2.042  4000s
+  ep2 step1200/4800 conf=0.567 cls=0.944 loc=0.868 basis=0.854 bce=0.221 pcp=0.324 sup=0.524 pues=0.373 coh=0.000 total=2.018  4112s
+[ep 2] val AUC=97.49 ACER=13.33 ACC=67.10 ECE=3.04 (4189s)
+  ep3 step1240/4800 conf=0.548 cls=0.834 loc=0.814 basis=0.738 bce=0.192 pcp=0.329 sup=0.467 pues=0.283 coh=0.000 total=1.816  4305s
+  ep3 step1280/4800 conf=0.543 cls=0.819 loc=0.815 basis=0.725 bce=0.184 pcp=0.330 sup=0.451 pues=0.295 coh=0.000 total=1.791  4418s
+  ep3 step1320/4800 conf=0.535 cls=0.811 loc=0.813 basis=0.720 bce=0.171 pcp=0.328 sup=0.442 pues=0.273 coh=0.000 total=1.770  4534s
+  ep3 step1360/4800 conf=0.537 cls=0.815 loc=0.814 basis=0.721 bce=0.173 pcp=0.332 sup=0.447 pues=0.282 coh=0.000 total=1.778  4654s
+  ep3 step1400/4800 conf=0.531 cls=0.807 loc=0.813 basis=0.718 bce=0.165 pcp=0.331 sup=0.444 pues=0.268 coh=0.000 total=1.762  4783s
+  ep3 step1440/4800 conf=0.525 cls=0.794 loc=0.808 basis=0.710 bce=0.157 pcp=0.331 sup=0.433 pues=0.269 coh=0.000 total=1.737  4927s
+  ep3 step1480/4800 conf=0.520 cls=0.785 loc=0.806 basis=0.703 bce=0.152 pcp=0.332 sup=0.428 pues=0.255 coh=0.000 total=1.720  5051s
+  ep3 step1520/4800 conf=0.518 cls=0.780 loc=0.803 basis=0.699 bce=0.148 pcp=0.331 sup=0.425 pues=0.248 coh=0.000 total=1.709  5158s
+  ep3 step1560/4800 conf=0.513 cls=0.766 loc=0.799 basis=0.686 bce=0.141 pcp=0.332 sup=0.417 pues=0.241 coh=0.000 total=1.682  5266s
+  ep3 step1600/4800 conf=0.510 cls=0.759 loc=0.797 basis=0.680 bce=0.136 pcp=0.329 sup=0.413 pues=0.235 coh=0.000 total=1.668  5371s
+[ep 3] val AUC=99.64 ACER=7.75 ACC=78.38 ECE=8.42 (5437s)
+  ep4 step1640/4800 conf=0.469 cls=0.652 loc=0.750 basis=0.564 bce=0.082 pcp=0.321 sup=0.346 pues=0.114 coh=0.000 total=1.448  5541s
+  ep4 step1680/4800 conf=0.461 cls=0.634 loc=0.749 basis=0.553 bce=0.075 pcp=0.315 sup=0.336 pues=0.098 coh=0.000 total=1.417  5646s
+  ep4 step1720/4800 conf=0.452 cls=0.622 loc=0.749 basis=0.551 bce=0.073 pcp=0.314 sup=0.331 pues=0.084 coh=0.000 total=1.401  5750s
+  ep4 step1760/4800 conf=0.449 cls=0.617 loc=0.755 basis=0.547 bce=0.070 pcp=0.313 sup=0.327 pues=0.078 coh=0.000 total=1.394  5855s
+  ep4 step1800/4800 conf=0.445 cls=0.612 loc=0.749 basis=0.546 bce=0.069 pcp=0.311 sup=0.325 pues=0.078 coh=0.000 total=1.385  5957s
+  ep4 step1840/4800 conf=0.445 cls=0.612 loc=0.747 basis=0.543 bce=0.066 pcp=0.311 sup=0.325 pues=0.091 coh=0.000 total=1.382  6059s
+  ep4 step1880/4800 conf=0.444 cls=0.614 loc=0.748 basis=0.545 bce=0.067 pcp=0.309 sup=0.326 pues=0.091 coh=0.000 total=1.386  6164s
+  ep4 step1920/4800 conf=0.440 cls=0.606 loc=0.746 basis=0.537 bce=0.066 pcp=0.309 sup=0.321 pues=0.091 coh=0.000 total=1.373  6272s
+  ep4 step1960/4800 conf=0.438 cls=0.601 loc=0.746 basis=0.534 bce=0.065 pcp=0.310 sup=0.319 pues=0.086 coh=0.000 total=1.366  6390s
+  ep4 step2000/4800 conf=0.436 cls=0.595 loc=0.745 basis=0.530 bce=0.064 pcp=0.308 sup=0.318 pues=0.082 coh=0.000 total=1.356  6501s
+[ep 4] val AUC=99.96 ACER=1.92 ACC=81.88 ECE=7.53 (6571s)

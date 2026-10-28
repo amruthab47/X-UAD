@@ -1,0 +1,7 @@
+== diagE_ce: model=xuad params=1.27M  train=7136 val=4800 test=9600  excl=()
+  ep0 step40/296 cls=2.907 loc=1.161 basis=2.099 sup=0.978 pues=0.518 coh=0.715 total=8.861  73s
+  ep0 step80/296 cls=2.812 loc=1.136 basis=1.992 sup=0.946 pues=0.486 coh=0.551 total=8.564  142s
+  ep0 step120/296 cls=2.717 loc=1.125 basis=1.875 sup=0.918 pues=0.497 coh=0.374 total=8.283  213s
+[ep 0] val AUC=65.13 ACER=59.92 ACC=41.50 ECE=13.24 (323s)
+  ep1 step160/296 cls=2.353 loc=1.079 basis=1.341 sup=0.752 pues=0.655 coh=0.000 total=7.189  347s
+  ep1 step200/296 cls=2.368 loc=1.079 basis=1.375 sup=0.740 pues=0.684 coh=0.000 total=7.236  430s

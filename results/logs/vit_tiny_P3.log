@@ -1,0 +1,23 @@
+== vit_tiny_P3: model=vit_tiny params=0.64M  train=19200 val=4800 test=6100  excl=()
+{
+ "APCER": 0.857,
+ "BPCER": 99.143,
+ "ACER": 50.0,
+ "AUC": 58.158,
+ "EER": 44.931,
+ "ACC": 27.82,
+ "ACC_bin": 88.328,
+ "macroF1": 11.22,
+ "ECE": 66.09,
+ "Brier": 1.352,
+ "mean_vacuity": 0.061,
+ "threshold": 0.799,
+ "params_M": 0.637,
+ "train_seconds": 0.013,
+ "model": "vit_tiny",
+ "protocol": "P3",
+ "epochs": 6,
+ "n_train": 19200,
+ "n_test": 6100,
+ "seed": 0
+}

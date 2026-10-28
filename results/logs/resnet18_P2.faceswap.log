@@ -1,0 +1,42 @@
+== resnet18_P2.faceswap: model=resnet18 params=1.59M  train=4382 val=4200 test=9600  excl=(4,)
+  ep0 step40/455 cls=1.624 sup=0.945 total=1.907  84s
+  ep0 step80/455 cls=1.431 sup=0.870 total=1.692  173s
+[ep 0] val AUC=66.06 ACER=62.92 ACC=30.29 ECE=57.41 (318s)
+  ep1 step120/455 cls=1.298 sup=0.813 total=1.541  436s
+  ep1 step160/455 cls=1.253 sup=0.786 total=1.488  601s
+[ep 1] val AUC=70.91 ACER=50.58 ACC=33.71 ECE=40.64 (792s)
+  ep2 step200/455 cls=1.109 sup=0.728 total=1.328  865s
+  ep2 step240/455 cls=1.144 sup=0.734 total=1.364  1026s
+[ep 2] val AUC=64.39 ACER=59.33 ACC=39.14 ECE=22.77 (1249s)
+  ep3 step280/455 cls=1.073 sup=0.673 total=1.274  1276s
+  ep3 step320/455 cls=1.058 sup=0.686 total=1.264  1354s
+  ep3 step360/455 cls=1.044 sup=0.674 total=1.246  1434s
+[ep 3] val AUC=76.24 ACER=50.00 ACC=56.57 ECE=2.21 (1543s)
+  ep4 step400/455 cls=0.994 sup=0.649 total=1.189  1690s
+  ep4 step440/455 cls=0.983 sup=0.643 total=1.176  1849s
+[ep 4] val AUC=77.01 ACER=50.17 ACC=59.05 ECE=1.68 (2000s)
+{
+ "APCER": 63.5,
+ "BPCER": 36.417,
+ "ACER": 49.958,
+ "AUC": 72.979,
+ "EER": 34.881,
+ "ACC": 51.385,
+ "ACC_bin": 65.875,
+ "macroF1": 46.89,
+ "ECE": 4.857,
+ "Brier": 0.552,
+ "mean_vacuity": 0.456,
+ "threshold": 0.773,
+ "unseen_AUROC_vacuity": 48.116,
+ "unseen_detect_rate": 37.167,
+ "seen_detect_rate": 71.042,
+ "params_M": 1.594,
+ "train_seconds": 2001.556,
+ "model": "resnet18",
+ "protocol": "P2.faceswap",
+ "epochs": 5,
+ "n_train": 4382,
+ "n_test": 9600,
+ "seed": 0
+}

@@ -1,0 +1,48 @@
+{
+  "predicted_class": "print",
+  "predicted_id": 1,
+  "confidence": 0.9956756234169006,
+  "vacuity": 0.02799713797867298,
+  "is_attack": true,
+  "attack_probability": 0.9976240396499634,
+  "superclass": "physical presentation attack",
+  "risk_score": 0.7043129205703735,
+  "risk_level": "Medium",
+  "decision": "reject",
+  "top_regions": [
+    {
+      "region": "left cheek",
+      "activation": 0.9997089505195618
+    },
+    {
+      "region": "forehead",
+      "activation": 0.9995768070220947
+    },
+    {
+      "region": "right cheek",
+      "activation": 0.9994266629219055
+    }
+  ],
+  "spatial": {
+    "area": 1.0,
+    "dispersion": 0.9999998402079296,
+    "peak": 0.9999593496322632
+  },
+  "spectral": {
+    "radial_peak_norm_freq": 0.5,
+    "radial_peak_prominence": -0.4206370413303375,
+    "azimuthal_anisotropy": 0.14473797380924225
+  },
+  "quantum_modes": [],
+  "gate_mean": 0.40773823857307434,
+  "class_posterior": {
+    "bonafide": 0.0023759391624480486,
+    "print": 0.9956756234169006,
+    "replay": 0.0019151987507939339,
+    "mask3d": 1.114932274504099e-06,
+    "faceswap": 4.472904038266279e-06,
+    "reenact": 1.0008472600020468e-05,
+    "synth": 1.0903548172791488e-05,
+    "adversarial": 6.7679006860998925e-06
+  }
+}

@@ -1,0 +1,7 @@
+== diagD_hyb: model=xuad params=1.27M  train=7136 val=4800 test=9600  excl=()
+  ep0 step40/444 cls=1.425 loc=1.157 basis=2.059 sup=0.977 pues=0.564 coh=0.716 total=5.125  71s
+  ep0 step80/444 cls=1.376 loc=1.130 basis=1.910 sup=0.939 pues=0.558 coh=0.625 total=4.936  147s
+  ep0 step120/444 cls=1.317 loc=1.115 basis=1.787 sup=0.895 pues=0.584 coh=0.417 total=4.733  218s
+[ep 0] val AUC=70.91 ACER=51.08 ACC=45.62 ECE=9.53 (314s)
+  ep1 step160/444 cls=1.553 loc=1.064 basis=1.374 sup=0.781 pues=0.499 coh=0.000 total=5.174  336s
+  ep1 step200/444 cls=1.574 loc=1.067 basis=1.389 sup=0.786 pues=0.565 coh=0.000 total=5.244  413s

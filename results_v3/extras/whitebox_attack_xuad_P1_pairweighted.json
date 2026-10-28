@@ -1,0 +1,87 @@
+{
+ "n_attack": 168,
+ "n_bonafide": 48,
+ "steps": 10,
+ "eps_255": [
+  1,
+  2,
+  4,
+  8
+ ],
+ "xuad_P1_pairweighted": {
+  "threshold_from_val": 0.8304840650684262,
+  "clean": {
+   "attack_detect_rate": 100.0,
+   "mean_vacuity_attack": 0.06361881643533707,
+   "mean_vacuity_bonafide": 0.018988069146871567
+  },
+  "evasion_eps1": {
+   "attack_detect_rate": 30.35714340209961,
+   "mean_vacuity": 0.32903099060058594,
+   "missed_flagged_by_u>=0.55": 0.0
+  },
+  "false_confidence_eps1": {
+   "mean_vacuity": 0.01737559214234352,
+   "class_kept_%": 99.4047622680664,
+   "attack_detect_rate": 100.0
+  },
+  "evasion_eps2": {
+   "attack_detect_rate": 11.309523582458496,
+   "mean_vacuity": 0.19905871152877808,
+   "missed_flagged_by_u>=0.55": 0.0
+  },
+  "false_confidence_eps2": {
+   "mean_vacuity": 0.07456162571907043,
+   "class_kept_%": 53.57142639160156,
+   "attack_detect_rate": 100.0
+  },
+  "evasion_eps4": {
+   "attack_detect_rate": 0.0,
+   "mean_vacuity": 0.04841487109661102,
+   "missed_flagged_by_u>=0.55": 0.0
+  },
+  "false_confidence_eps4": {
+   "mean_vacuity": 0.07699576765298843,
+   "class_kept_%": 32.14285659790039,
+   "attack_detect_rate": 79.76190185546875
+  },
+  "evasion_eps8": {
+   "attack_detect_rate": 0.0,
+   "mean_vacuity": 0.002027318347245455,
+   "missed_flagged_by_u>=0.55": 0.0
+  },
+  "false_confidence_eps8": {
+   "mean_vacuity": 0.057204823940992355,
+   "class_kept_%": 37.5,
+   "attack_detect_rate": 64.8809585571289
+  }
+ },
+ "cdcn_P1_recipe_s0": {
+  "threshold_from_val": 0.6292134831460674,
+  "clean": {
+   "attack_detect_rate": 100.0,
+   "mean_vacuity_attack": 0.0983385220170021,
+   "mean_vacuity_bonafide": 0.011712498962879181
+  },
+  "evasion_eps1": {
+   "attack_detect_rate": 5.357142925262451,
+   "mean_vacuity": 0.07098463922739029,
+   "missed_flagged_by_u>=0.55": 0.6289308071136475
+  },
+  "evasion_eps2": {
+   "attack_detect_rate": 14.880951881408691,
+   "mean_vacuity": 0.11352626234292984,
+   "missed_flagged_by_u>=0.55": 2.7972028255462646
+  },
+  "evasion_eps4": {
+   "attack_detect_rate": 41.07143020629883,
+   "mean_vacuity": 0.17831605672836304,
+   "missed_flagged_by_u>=0.55": 2.0202019214630127
+  },
+  "evasion_eps8": {
+   "attack_detect_rate": 39.28571319580078,
+   "mean_vacuity": 0.10319633781909943,
+   "missed_flagged_by_u>=0.55": 0.0
+  }
+ }
+}

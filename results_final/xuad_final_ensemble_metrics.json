@@ -1,0 +1,278 @@
+{
+  "ensemble_description": "unweighted probability-average of 7 already-trained P1 models (all except the original full_retry baseline)",
+  "constituent_models": [
+    "improved_retry",
+    "hierarchical",
+    "refined_REF",
+    "4pair",
+    "pairweighted",
+    "regionpool_nondet",
+    "regionpool_det"
+  ],
+  "n_constituents": 7,
+  "weights": "uniform (1/7 each), fixed, not fit to any data",
+  "n_test_samples": 9600,
+  "ACC": 96.23958333333333,
+  "macroF1": 96.24097831504179,
+  "AUC": 99.99,
+  "ACER": 0.5,
+  "APCER": 0.5833333333333334,
+  "BPCER": 0.4166666666666667,
+  "EER": 0.33333333333333337,
+  "ECE": 8.890646339394152,
+  "Brier": 0.08129619061946869,
+  "mean_vacuity": 0.07079780846834183,
+  "threshold": 0.7587274420709801,
+  "threshold_source": "EER threshold computed on the VALIDATION ensemble (not test)",
+  "n_errors": 361,
+  "bonafide_recall": 0.9958333333333333,
+  "per_class": {
+    "bonafide": {
+      "precision": 0.9941763727121464,
+      "recall": 0.9958333333333333,
+      "f1": 0.9950041631973355,
+      "support": 1200
+    },
+    "print": {
+      "precision": 0.9442165709598032,
+      "recall": 0.9591666666666666,
+      "f1": 0.9516329061595701,
+      "support": 1200
+    },
+    "replay": {
+      "precision": 0.9695431472081218,
+      "recall": 0.955,
+      "f1": 0.9622166246851385,
+      "support": 1200
+    },
+    "mask3d": {
+      "precision": 0.9496344435418359,
+      "recall": 0.9741666666666666,
+      "f1": 0.9617441382147265,
+      "support": 1200
+    },
+    "faceswap": {
+      "precision": 0.9189412737799835,
+      "recall": 0.9258333333333333,
+      "f1": 0.9223744292237444,
+      "support": 1200
+    },
+    "reenact": {
+      "precision": 0.9506276150627615,
+      "recall": 0.9466666666666667,
+      "f1": 0.948643006263048,
+      "support": 1200
+    },
+    "synth": {
+      "precision": 0.9733218588640276,
+      "recall": 0.9425,
+      "f1": 0.9576629974597798,
+      "support": 1200
+    },
+    "adversarial": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1200
+    }
+  },
+  "confusion_matrix": [
+    [
+      1195,
+      0,
+      1,
+      0,
+      2,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1151,
+      19,
+      0,
+      24,
+      4,
+      0,
+      0
+    ],
+    [
+      1,
+      29,
+      1146,
+      3,
+      16,
+      3,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1169,
+      3,
+      2,
+      25,
+      0
+    ],
+    [
+      1,
+      30,
+      7,
+      2,
+      1111,
+      47,
+      2,
+      0
+    ],
+    [
+      1,
+      9,
+      2,
+      0,
+      52,
+      1136,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      6,
+      57,
+      1,
+      3,
+      1131,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1200
+    ]
+  ],
+  "confusion_matrix_normalized": [
+    [
+      0.9958333333333333,
+      0.0,
+      0.0008333333333333334,
+      0.0,
+      0.0016666666666666668,
+      0.0,
+      0.0016666666666666668,
+      0.0
+    ],
+    [
+      0.0016666666666666668,
+      0.9591666666666666,
+      0.015833333333333335,
+      0.0,
+      0.02,
+      0.0033333333333333335,
+      0.0,
+      0.0
+    ],
+    [
+      0.0008333333333333334,
+      0.024166666666666666,
+      0.955,
+      0.0025,
+      0.013333333333333334,
+      0.0025,
+      0.0016666666666666668,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0008333333333333334,
+      0.9741666666666666,
+      0.0025,
+      0.0016666666666666668,
+      0.020833333333333332,
+      0.0
+    ],
+    [
+      0.0008333333333333334,
+      0.025,
+      0.005833333333333334,
+      0.0016666666666666668,
+      0.9258333333333333,
+      0.03916666666666667,
+      0.0016666666666666668,
+      0.0
+    ],
+    [
+      0.0008333333333333334,
+      0.0075,
+      0.0016666666666666668,
+      0.0,
+      0.043333333333333335,
+      0.9466666666666667,
+      0.0,
+      0.0
+    ],
+    [
+      0.0016666666666666668,
+      0.0,
+      0.005,
+      0.0475,
+      0.0008333333333333334,
+      0.0025,
+      0.9425,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "class_order": [
+    "bonafide",
+    "print",
+    "replay",
+    "mask3d",
+    "faceswap",
+    "reenact",
+    "synth",
+    "adversarial"
+  ],
+  "localisation": {
+    "note": "ensemble has no native localisation map (only classification probabilities are averaged); reporting the strongest single constituent model's localisation quality instead, per instruction",
+    "source_model": "regionpool_det",
+    "loc_IoU": 0.8886719631788962,
+    "loc_Dice": 0.9348517340048179,
+    "loc_pixel_AUC": 0.9692026962451462,
+    "loc_per_class": {
+      "print": 0.9519748910800275,
+      "replay": 0.9686962565925247,
+      "mask3d": 0.861534508100213,
+      "faceswap": 0.7868859080158669,
+      "reenact": 0.7734739231499136,
+      "synth": 0.9894662921348315,
+      "mean_localisable": 0.8072981130886645
+    }
+  },
+  "per_type_apcer": {
+    "print": 0.0016666666666666668,
+    "replay": 0.005,
+    "mask3d": 0.0,
+    "faceswap": 0.005833333333333334,
+    "reenact": 0.0025,
+    "synth": 0.0025,
+    "adversarial": 0.0
+  }
+}

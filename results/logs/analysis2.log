@@ -1,0 +1,4 @@
+loc {'deletion': 0.9226322192698718, 'insertion': 0.9317662794142962, 'label': 'X-UAD localisation map'}
+rollout {'deletion': 0.934849675372243, 'insertion': 0.9243601340800525, 'label': 'AQA attention rollout'}
+quantum {'deletion': 0.9177925903350116, 'insertion': 0.8986987728625536, 'label': 'Quantum evidence magnitude'}
+random {'deletion': 0.9460486371070147, 'insertion': 0.9461462039500477, 'label': 'Random (control)'}

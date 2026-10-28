@@ -1,0 +1,162 @@
+{
+ "model": "xuad_P1_repro",
+ "per_family_n": 48,
+ "families": {
+  "print": {
+   "deletion_loc": 0.9337573647499084,
+   "deletion_rnd": 0.9429424405097961,
+   "insertion_loc": 0.925529420375824,
+   "insertion_rnd": 0.9437100291252136,
+   "deletion_gain": 0.009185094386339188,
+   "deletion_gain_CI95": [
+    0.004345797002315521,
+    0.014054295606911182
+   ],
+   "insertion_gain": -0.018180549144744873,
+   "insertion_gain_CI95": [
+    -0.027718452736735344,
+    -0.010665124282240868
+   ],
+   "score_unperturbed": 0.9984496235847473,
+   "score_fully_blurred": 0.09956890344619751
+  },
+  "replay": {
+   "deletion_loc": 0.9382197260856628,
+   "deletion_rnd": 0.9441037178039551,
+   "insertion_loc": 0.9356691241264343,
+   "insertion_rnd": 0.9462011456489563,
+   "deletion_gain": 0.005884015467017889,
+   "deletion_gain_CI95": [
+    0.002607106463983655,
+    0.009517552331089973
+   ],
+   "insertion_gain": -0.010532124899327755,
+   "insertion_gain_CI95": [
+    -0.01325402595102787,
+    -0.007997235283255577
+   ],
+   "score_unperturbed": 0.9966009259223938,
+   "score_fully_blurred": 0.06415525823831558
+  },
+  "mask3d": {
+   "deletion_loc": 0.9521500468254089,
+   "deletion_rnd": 0.9495313763618469,
+   "insertion_loc": 0.9366331100463867,
+   "insertion_rnd": 0.9504426121711731,
+   "deletion_gain": -0.0026185724418610334,
+   "deletion_gain_CI95": [
+    -0.0037164264358580112,
+    -0.0014978164108470082
+   ],
+   "insertion_gain": -0.013809628784656525,
+   "insertion_gain_CI95": [
+    -0.017543084919452667,
+    -0.010523118078708649
+   ],
+   "score_unperturbed": 0.9976458549499512,
+   "score_fully_blurred": 0.08674514293670654
+  },
+  "faceswap": {
+   "deletion_loc": 0.9325029850006104,
+   "deletion_rnd": 0.94573974609375,
+   "insertion_loc": 0.9158161282539368,
+   "insertion_rnd": 0.943890392780304,
+   "deletion_gain": 0.013236778788268566,
+   "deletion_gain_CI95": [
+    0.009028798900544643,
+    0.018190553411841393
+   ],
+   "insertion_gain": -0.02807428129017353,
+   "insertion_gain_CI95": [
+    -0.03985051065683365,
+    -0.017659852281212807
+   ],
+   "score_unperturbed": 0.9663150310516357,
+   "score_fully_blurred": 0.09866175800561905
+  },
+  "reenact": {
+   "deletion_loc": 0.9297301173210144,
+   "deletion_rnd": 0.9436729550361633,
+   "insertion_loc": 0.9287481307983398,
+   "insertion_rnd": 0.9415690302848816,
+   "deletion_gain": 0.01394287496805191,
+   "deletion_gain_CI95": [
+    0.00837930478155613,
+    0.01997695304453373
+   ],
+   "insertion_gain": -0.012820928357541561,
+   "insertion_gain_CI95": [
+    -0.01914556324481964,
+    -0.007027427665889263
+   ],
+   "score_unperturbed": 0.9873746037483215,
+   "score_fully_blurred": 0.09149891883134842
+  },
+  "synth": {
+   "deletion_loc": 0.9449378848075867,
+   "deletion_rnd": 0.9474442601203918,
+   "insertion_loc": 0.9379584193229675,
+   "insertion_rnd": 0.946807861328125,
+   "deletion_gain": 0.002506433753296733,
+   "deletion_gain_CI95": [
+    -0.0006939679733477533,
+    0.006221494171768427
+   ],
+   "insertion_gain": -0.008849390782415867,
+   "insertion_gain_CI95": [
+    -0.013125156983733177,
+    -0.005188007839024067
+   ],
+   "score_unperturbed": 0.9879105091094971,
+   "score_fully_blurred": 0.0709194764494896
+  },
+  "adversarial": {
+   "deletion_loc": 0.9422004818916321,
+   "deletion_rnd": 0.9472441673278809,
+   "insertion_loc": 0.9459953904151917,
+   "insertion_rnd": 0.9471142888069153,
+   "deletion_gain": 0.0050436765886843204,
+   "deletion_gain_CI95": [
+    0.003037329064682126,
+    0.007459137588739395
+   ],
+   "insertion_gain": -0.0011189257493242621,
+   "insertion_gain_CI95": [
+    -0.0021190866827964783,
+    -0.00015827699098736048
+   ],
+   "score_unperturbed": 0.9976879954338074,
+   "score_fully_blurred": 0.06229202821850777
+  }
+ },
+ "region": {
+  "n": 144,
+  "deletion_loc": 0.9381277561187744,
+  "deletion_rnd": 0.9463146924972534,
+  "insertion_loc": 0.9270657300949097,
+  "insertion_rnd": 0.9453007578849792,
+  "deletion_gain_CI95": [
+   0.005468428134918213,
+   0.011049049906432629
+  ],
+  "insertion_gain_CI95": [
+   -0.023047558963298798,
+   -0.013857897371053696
+  ]
+ },
+ "whole": {
+  "n": 192,
+  "deletion_loc": 0.9397788047790527,
+  "deletion_rnd": 0.9454336166381836,
+  "insertion_loc": 0.936288058757782,
+  "insertion_rnd": 0.9459583163261414,
+  "deletion_gain_CI95": [
+   0.0038384064100682735,
+   0.007539141923189163
+  ],
+  "insertion_gain_CI95": [
+   -0.01223345659673214,
+   -0.007218483369797468
+  ]
+ }
+}

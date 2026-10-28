@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>X-UAD Results</title>
+<meta name="description" content="X-UAD: explainable unified face attack detection. Results and live demo.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#18202c; --muted:#5a6475; --line:#dde1e8;
+  --accent:#2446b8; --accent-soft:#e6ebfa;
+  --phys:#b4540f; --phys-soft:#fbeee3; --digi:#6b3fb0; --digi-soft:#f0e9fa;
+  --good:#1d7a4a; --warn:#a66a00; --bad:#b3261e;
+  --fig:#ffffff;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#11151c; --surface:#181e27; --ink:#e7eaf0; --muted:#9aa4b5; --line:#2b3340;
+    --accent:#8aa6ff; --accent-soft:#1f2a4a;
+    --phys:#f0a060; --phys-soft:#3a2716; --digi:#bd9cf2; --digi-soft:#2c2140;
+    --good:#5cc28b; --warn:#e0b050; --bad:#f07a70; --fig:#f4f5f7;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#11151c; --surface:#181e27; --ink:#e7eaf0; --muted:#9aa4b5; --line:#2b3340;
+  --accent:#8aa6ff; --accent-soft:#1f2a4a;
+  --phys:#f0a060; --phys-soft:#3a2716; --digi:#bd9cf2; --digi-soft:#2c2140;
+  --good:#5cc28b; --warn:#e0b050; --bad:#f07a70; --fig:#f4f5f7;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .in{max-width:1080px;margin:0 auto;padding-inline:20px;display:flex;gap:4px 18px;flex-wrap:wrap;padding-block:10px;font-size:14px}
+nav a{color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+nav .brand{color:var(--ink);font-family:var(--mono);font-weight:500;margin-right:auto}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header{padding-block:48px 28px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--serif);font-weight:650;font-size:clamp(28px,4.4vw,44px);line-height:1.15;margin:10px 0 14px;text-wrap:balance;max-width:24ch}
+h2{font-family:var(--serif);font-weight:650;font-size:clamp(24px,3vw,30px);line-height:1.2;margin:0 0 8px;text-wrap:balance}
+h3{font-size:17px;font-weight:600;margin:0 0 6px}
+.lede{font-size:18px;color:var(--muted);max-width:64ch;margin:0}
+section{padding-block:44px 8px;border-top:1px solid var(--line);margin-top:36px;scroll-margin-top:60px}
+header+section{border-top:0;margin-top:0}
+.sub{color:var(--muted);max-width:68ch;margin:0 0 24px}
+p{max-width:68ch}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:28px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.kpi .v{font-family:var(--mono);font-size:30px;font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi.main{border-color:var(--accent);background:var(--accent-soft)}
+.kpi.main .v{color:var(--accent);font-size:38px}
+.kpi .l{font-size:14px;font-weight:600;margin-top:6px}
+.kpi .d{font-size:13px;color:var(--muted);line-height:1.4;margin-top:2px}
+
+.fig{background:var(--fig);border:1px solid var(--line);border-radius:8px;padding:12px;margin:0}
+.fig img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;max-width:72ch}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:14.5px;line-height:1.5}
+.step b{display:block;font-size:15px;margin-bottom:4px}
+.step b::before{counter-increment:s;content:counter(s);font-family:var(--mono);color:var(--accent);margin-right:8px}
+
+.tax{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:20px}
+.tax .grp{border-radius:8px;padding:14px 16px;border:1px solid var(--line);background:var(--surface)}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:99px;margin:3px 4px 0 0}
+.t-gen{background:var(--accent-soft);color:var(--accent)}
+.t-phys{background:var(--phys-soft);color:var(--phys)}
+.t-digi{background:var(--digi-soft);color:var(--digi)}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.r,th.r{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+tr.ours td{background:var(--accent-soft);font-weight:600}
+.pill{font-family:var(--sans);font-size:12px;padding:2px 8px;border-radius:99px;font-weight:600}
+.p-good{color:var(--good);border:1px solid var(--good)}
+.p-bad{color:var(--bad);border:1px solid var(--bad)}
+.p-mid{color:var(--warn);border:1px solid var(--warn)}
+
+.bars{display:grid;gap:10px;margin-top:8px}
+.bar{display:grid;grid-template-columns:minmax(120px,210px) 1fr 72px;gap:12px;align-items:center;font-size:14px}
+.bar .track{height:22px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;background:var(--muted)}
+.bar.best .fill{background:var(--accent)}
+.bar.best{font-weight:600}
+.bar .val{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.axisnote{font-size:13px;color:var(--muted);margin-top:8px}
+
+.cm td{text-align:center;font-family:var(--mono);font-size:13px;padding:8px 6px;min-width:52px}
+.cm th{text-align:center;padding:8px 6px}
+.cm th.rowh{text-align:right}
+
+.sample{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:start}
+.pics{display:flex;gap:10px}
+.pics figure{margin:0;flex:1}
+.pics img{width:100%;image-rendering:pixelated;border-radius:6px;border:1px solid var(--line);display:block}
+.pics figcaption{margin-top:4px;font-size:12.5px}
+.verdict{font-family:var(--mono);font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:12px 0;line-height:1.7}
+.verdict b{font-weight:500}
+.expl{font-size:14.5px;color:var(--ink);line-height:1.6}
+.probs{display:grid;gap:4px;margin-top:10px;font-size:13px}
+.probs > div{display:grid;grid-template-columns:90px 1fr 58px;gap:8px;align-items:center}
+.probs .t{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.probs .f{height:100%;background:var(--accent)}
+.probs span:last-child{font-family:var(--mono);text-align:right}
+
+.lim{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;padding:0;list-style:none;margin:0}
+.lim li{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:6px;padding:12px 14px;font-size:14.5px;line-height:1.5}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px;max-width:80ch}
+/* ---- live demo ---- */
+.status{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin-bottom:16px;min-height:24px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--warn);flex:none}
+.status.ready .dot{background:var(--good)}
+.status.error .dot{background:var(--bad)}
+.status.error{color:var(--bad)}
+.demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:20px;align-items:start}
+@media (max-width:820px){.demo{grid-template-columns:1fr}}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;border:2px dashed var(--line);border-radius:8px;padding:22px 16px;background:var(--surface);cursor:pointer;transition:border-color .15s,background .15s}
+.drop:hover,.drop.over,.drop:focus-within{border-color:var(--accent);background:var(--accent-soft)}
+.drop strong{font-size:15px}
+.drop span{font-size:13px;color:var(--muted)}
+.drop input{position:absolute;width:1px;height:1px;opacity:0}
+.btn{font:inherit;font-size:14px;font-weight:600;color:#fff;background:var(--accent);border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.gal-h{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.thumb{position:relative;padding:0;border:2px solid transparent;border-radius:6px;background:none;cursor:pointer;overflow:hidden;font:inherit}
+.thumb img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px}
+.thumb span{position:absolute;left:0;right:0;bottom:0;font-size:11px;font-family:var(--mono);color:#fff;background:rgba(10,14,20,.68);padding:2px 4px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.thumb:hover{border-color:var(--line)}
+.thumb.active{border-color:var(--accent)}
+.thumb:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.thumb:disabled{cursor:progress;opacity:.6}
+.res{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;gap:16px}
+.res[aria-busy="true"]{opacity:.55}
+.imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.imgs figure{margin:0}
+.imgs canvas{display:block;width:100%;aspect-ratio:1;border-radius:6px;border:1px solid var(--line);background:var(--bg)}
+.imgs figcaption{font-size:12.5px;margin-top:4px}
+.verdict-row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline}
+.verdict-row .cls{font-family:var(--serif);font-size:24px;font-weight:650;line-height:1.2}
+.chip{display:inline-block;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid currentColor}
+.chip.low{color:var(--good)}.chip.medium{color:var(--warn)}.chip.high,.chip.critical{color:var(--bad)}
+.chip.truth-ok{color:var(--good)}.chip.truth-bad{color:var(--bad)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.fact{border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.fact .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.fact .v{font-family:var(--mono);font-size:18px;font-variant-numeric:tabular-nums}
+.meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;background:var(--accent)}
+.probs2{display:grid;gap:5px;font-size:13.5px}
+.probs2 > div{display:grid;grid-template-columns:96px 1fr 62px;gap:10px;align-items:center}
+.probs2 .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.probs2 .f{height:100%;background:var(--muted)}
+.probs2 .top .f{background:var(--accent)}
+.probs2 .top span:first-child{font-weight:600}
+.probs2 span:last-child{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.explain{font-size:14.5px;line-height:1.65;margin:0;max-width:none}
+.meta{font-size:12.5px;color:var(--muted);font-family:var(--mono);line-height:1.6}
+.warnbox{font-size:13.5px;border:1px solid var(--warn);color:var(--ink);background:color-mix(in srgb,var(--warn) 10%,transparent);border-radius:6px;padding:8px 12px}
+.empty{color:var(--muted);font-size:14.5px;padding:28px 8px;text-align:center}
+footer{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+@media (max-width:520px){.bar{grid-template-columns:1fr 60px}.bar .lab{grid-column:1/-1}}
+</style>
+
+<style>
+body{margin:0;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <span class="brand">X-UAD</span>
+  <a href="#try">Try the model</a><a href="#overview">Overview</a><a href="#architecture">Architecture</a><a href="#results">Results</a><a href="#localisation">Localisation</a><a href="#outputs">Model outputs</a><a href="#comparison">Comparison</a><a href="#limitations">Limitations</a>
+</div></nav>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Project review · Results</div>
+  <h1>X-UAD: one model for physical and digital face attacks</h1>
+  <p class="lede">An explainable hybrid vision transformer that classifies a face image into 8 classes. For each decision it also reports its uncertainty, shows where the attack evidence is, and writes an explanation built only from its own measured outputs.</p>
+  <div class="kpis">
+    <div class="kpi main"><div class="v">0.42%</div><div class="l">ACER</div><div class="d">Attack vs genuine, ISO/IEC 30107-3 &middot; level with CDCN++ (0.46%)</div></div>
+    <div class="kpi"><div class="v">99.98%</div><div class="l">AUC</div><div class="d">Attack vs genuine</div></div>
+    <div class="kpi"><div class="v">80.1%</div><div class="l">Localisation IoU</div><div class="d">Region-level, full test set &middot; CDCN++ 73.2%</div></div>
+    <div class="kpi"><div class="v">94.06%</div><div class="l">8-class accuracy</div><div class="d">Below ResNet-18 (96.93%) and CDCN++ (95.19%)</div></div>
+  </div>
+</header>
+
+<section id="try">
+  <h2>Try the model</h2>
+  <p class="sub">Upload a face image or pick a test image. A trained X-UAD checkpoint (the region-pooled variant: 94.58% 8-class accuracy, 0.58% ACER) runs in this browser tab and shows the attack type, confidence, risk, uncertainty, where the evidence is, and its written explanation.</p>
+  <div class="status" id="status" role="status" aria-live="polite"><span class="dot"></span><span id="status-text">Loading the model…</span></div>
+  <div class="demo">
+    <div>
+      <label class="drop" id="drop" for="file">
+        <input type="file" id="file" accept="image/*">
+        <strong>Upload a face image</strong>
+        <span>Click to choose, or drop a JPG or PNG here. One clearly visible face works best.</span>
+      </label>
+      <div class="gal-h">Or pick a test image (true class shown)</div>
+      <div class="gallery" id="gallery"></div>
+      <p class="note">Test images are 128 × 128 benchmark crops chosen by position in the test set, not by result. They go through exactly the processing used to measure accuracy. Other photos go through face detection first, as in the Python demo.</p>
+    </div>
+    <div class="res" id="res" aria-busy="false">
+      <div class="empty" id="empty">Results appear here. The first test image runs automatically once the model has loaded.</div>
+      <div id="out" hidden>
+        <div class="imgs">
+          <figure><canvas id="c-crop" width="112" height="112"></canvas><figcaption>Face crop fed to the model</figcaption></figure>
+          <figure><canvas id="c-heat" width="112" height="112"></canvas><figcaption>Evidence heatmap</figcaption></figure>
+          <figure><canvas id="c-over" width="112" height="112"></canvas><figcaption>Heatmap over the face</figcaption></figure>
+        </div>
+        <div style="display:grid;gap:14px;margin-top:16px">
+          <div class="verdict-row"><span class="cls" id="r-cls"></span><span class="chip" id="r-risk"></span><span class="chip" id="r-truth" hidden></span></div>
+          <div class="facts">
+            <div class="fact"><div class="k">Confidence</div><div class="v" id="r-conf"></div><div class="meter"><i id="m-conf"></i></div></div>
+            <div class="fact"><div class="k">Attack probability</div><div class="v" id="r-atk"></div><div class="meter"><i id="m-atk"></i></div></div>
+            <div class="fact"><div class="k">Uncertainty (vacuity)</div><div class="v" id="r-vac"></div><div class="meter"><i id="m-vac"></i></div></div>
+            <div class="fact"><div class="k">Decision</div><div class="v" id="r-dec" style="font-size:15px"></div></div>
+          </div>
+          <div class="warnbox" id="r-warn" hidden></div>
+          <div>
+            <div class="gal-h" style="margin-top:0">Class probabilities</div>
+            <div class="probs2" id="r-probs"></div>
+          </div>
+          <div>
+            <div class="gal-h" style="margin-top:0">Model explanation</div>
+            <p class="explain" id="r-text"></p>
+          </div>
+          <div class="meta" id="r-meta"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="overview">
+  <h2>The problem and the 8 classes</h2>
+  <p class="sub">Face recognition systems face two kinds of attack that are usually handled by separate detectors. X-UAD handles both in one model, with one decision and one audit trail.</p>
+  <div class="tax">
+    <div class="grp"><h3>Genuine</h3><span class="tag t-gen">bonafide</span></div>
+    <div class="grp"><h3>Physical presentation attacks</h3><span class="tag t-phys">print</span><span class="tag t-phys">replay</span><span class="tag t-phys">mask3d</span></div>
+    <div class="grp"><h3>Digital attacks</h3><span class="tag t-digi">faceswap</span><span class="tag t-digi">reenact</span><span class="tag t-digi">synth</span><span class="tag t-digi">adversarial</span></div>
+  </div>
+  <figure class="fig">
+    <img src="img/taxonomy.png" alt="Grid of example faces for each of the 8 classes, with the ground-truth evidence mask under each">
+    <figcaption>Each attack class with its ground-truth evidence mask. The masks mark where the attack changed the image and are used to train the localisation head. Print and synth change the whole frame; face-swap changes the inner face; reenact changes the eyes and mouth.</figcaption>
+  </figure>
+  <div class="grid3" style="margin-top:20px">
+    <div class="card"><h3>Dataset</h3><p style="margin:0;font-size:14.5px">Real faces from LFW (13,233 images, 5,749 people). Attacks are synthesised by our code, and the adversarial class is crafted with PGD. <span class="num">33,600</span> images, balanced across 8 classes.</p></div>
+    <div class="card"><h3>Split</h3><p style="margin:0;font-size:14.5px"><span class="num">19,200 / 4,800 / 9,600</span> train / validation / test. Identity-disjoint: no person appears in more than one split.</p></div>
+    <div class="card"><h3>Research gap</h3><p style="margin:0;font-size:14.5px">Existing unified detectors give one uncalibrated score, no localisation for digital attacks, and no explanation that can be checked against the decision. X-UAD adds all three in one forward pass.</p></div>
+  </div>
+</section>
+
+<section id="architecture">
+  <h2>Architecture</h2>
+  <p class="sub">Read left to right. One face crop goes in, and one forward pass produces the attack type, uncertainty, a heatmap and an explanation.</p>
+  <div class="tbl" style="background:var(--fig);padding:12px">
+    <img src="img/architecture.png" alt="X-UAD architecture diagram" style="display:block;min-width:720px;width:100%">
+  </div>
+  <div class="steps">
+    <div class="step"><b>Face crop</b>112 × 112 colour image of the face.</div>
+    <div class="step"><b>Two branches</b>Central-difference CNN for texture (print dots, mask smoothness). FFT branch for frequency patterns (moiré, GAN checkerboard).</div>
+    <div class="step"><b>Tokens</b>49 spatial + 4 spectral + 1 class token, each 128-dimensional.</div>
+    <div class="step"><b>Adaptive Quantum Attention ×4</b>Mixes standard attention with a Born-rule (squared-overlap) channel through a learned gate for each head. Quantum-inspired maths on a normal CPU, not quantum hardware.</div>
+    <div class="step"><b>Outputs</b>Evidential head (class + uncertainty u = K/S), localisation decoder (56 × 56 heatmap), evidence record, grounded explanation.</div>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Results</h2>
+  <p class="sub">Protocol P1: all 8 classes seen in training, 9,600-image test set. X-UAD, CDCN++ and ResNet-18 trained with the same 12-epoch recipe, seed 0. Threshold set on the validation split.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>8-class accuracy, same recipe</h3>
+      <div class="bars" id="prog"></div>
+      <div class="axisnote">Bars start at 85% so the differences are visible. X-UAD is behind both CNN baselines on this metric (McNemar p &lt; 0.0001 for both).</div>
+    </div>
+    <div class="card">
+      <h3>X-UAD metrics (model reported in the paper)</h3>
+      <div class="tbl" style="border:0">
+        <table>
+          <tbody>
+            <tr><td>ACER</td><td class="r">0.42%</td></tr>
+            <tr><td>APCER / BPCER</td><td class="r">0.33% / 0.50%</td></tr>
+            <tr><td>AUC (attack vs genuine)</td><td class="r">99.98%</td></tr>
+            <tr><td>EER</td><td class="r">0.42%</td></tr>
+            <tr><td>Accuracy (8-class)</td><td class="r">94.06%</td></tr>
+            <tr><td>Macro-F1</td><td class="r">94.06%</td></tr>
+            <tr><td>ECE / after temperature scaling</td><td class="r">5.17% / 0.60%</td></tr>
+            <tr><td>Errors (8-class)</td><td class="r">570 / 9,600</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">Per-class performance</h3>
+  <div class="grid2">
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Class</th><th>Type</th><th class="r">Precision</th><th class="r">Recall</th><th class="r">F1</th></tr></thead>
+        <tbody id="perclass"></tbody>
+      </table>
+    </div>
+    <figure class="fig">
+      <img src="img/p1_confusion.png" alt="Row-normalised confusion matrix of X-UAD">
+      <figcaption>Row-normalised confusion (%). Face-swap is the weakest class (F1 0.88), mostly confused with reenact.</figcaption>
+    </figure>
+  </div>
+
+  <h3 style="margin-top:32px">Confusion matrix</h3>
+  <p class="sub" style="margin-bottom:12px">Rows are the true class and columns the predicted class. Correct predictions are on the diagonal. Darker cells mean more images.</p>
+  <div class="tbl"><table class="cm" id="cm"></table></div>
+  <p class="note">Largest confusions: synth → mask3d (90), faceswap → reenact (67), reenact → faceswap (65), mask3d → synth (55), faceswap → print (48), replay → print (40). Synth and mask3d both use bilateral-filter smoothing in the synthesiser, so part of this overlap comes from the dataset design.</p>
+
+  <div class="grid2" style="margin-top:28px">
+    <figure class="fig">
+      <img src="img/p1_roc_det.png" alt="ROC and DET curves for X-UAD, CDCN++ and ResNet-18">
+      <figcaption><b>ROC and DET.</b> All three detectors are close to the ceiling on seen attacks (AUC 99.95&ndash;99.99%).</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="img/p1_calibration.png" alt="Reliability diagrams and uncertainty distributions">
+      <figcaption><b>Calibration.</b> Before correction ResNet-18 is best calibrated (ECE 2.35%, CDCN++ 5.07%, X-UAD 5.17%). Temperature scaling brings all three under 1%, so calibration does not separate them. Right: X-UAD's vacuity next to the baselines' 1 &minus; max softmax.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="localisation">
+  <h2>Where the evidence is</h2>
+  <p class="sub">The localisation head draws a heatmap of the attacked region. It is trained against the real pixel mask for both physical and digital attacks, not a depth-map proxy.</p>
+  <div class="tbl" style="background:var(--fig);padding:12px">
+    <img src="img/qualitative.png" alt="Input, predicted evidence, ground truth and attention rollout for each class" style="display:block;min-width:720px;width:100%">
+  </div>
+  <p class="note">Rows: input image, the model's predicted evidence map, the ground-truth mask, and the attention map. Figure from the earlier 10-epoch model. The localiser is not perfect: on this face-swap it predicts an eye/mouth pattern rather than the blending ellipse.</p>
+  <div class="tbl" style="margin-top:16px">
+    <table>
+      <thead><tr><th>IoU, full test set</th><th class="r">print</th><th class="r">replay</th><th class="r">mask3d</th><th class="r">faceswap</th><th class="r">reenact</th><th class="r">synth</th><th class="r">Region-level mean</th></tr></thead>
+      <tbody>
+        <tr><td>CDCN++</td><td class="r">96.4%</td><td class="r">93.9%</td><td class="r">76.5%</td><td class="r">75.4%</td><td class="r">67.7%</td><td class="r">97.7%</td><td class="r">73.2%</td></tr>
+        <tr class="ours"><td>X-UAD</td><td class="r">98.1%</td><td class="r">96.9%</td><td class="r">84.2%</td><td class="r">78.8%</td><td class="r">77.2%</td><td class="r">98.2%</td><td class="r"><b>80.1%</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="outputs">
+  <h2>What the model outputs</h2>
+  <p class="sub">Saved outputs from the inference script, run on test images with the demo checkpoint. Test images were chosen by position in the test set, not by result. Every number in the explanation comes from the model's own output.</p>
+  <div class="sample" id="samples"></div>
+</section>
+
+<section id="comparison">
+  <h2>Comparison</h2>
+  <h3>Same data, same training budget</h3>
+  <p class="sub" style="margin-bottom:12px">Trained by us with the same 12-epoch recipe on the same split, seed 0. This is the only direct comparison. ViT-Tiny was not retrained (original 10-epoch run).</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Method</th><th class="r">Accuracy</th><th class="r">ACER</th><th class="r">AUC</th><th class="r">ECE</th><th class="r">ECE (temp. scaled)</th><th class="r">Loc. IoU</th></tr></thead>
+      <tbody>
+        <tr><td>ViT-Tiny (10-epoch)</td><td class="r">51.27%</td><td class="r">49.75%</td><td class="r">73.43%</td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td></tr>
+        <tr><td>CDCN++</td><td class="r">95.19%</td><td class="r">0.46%</td><td class="r">99.99%</td><td class="r">5.07%</td><td class="r">0.46%</td><td class="r">73.2%</td></tr>
+        <tr><td>ResNet-18</td><td class="r">96.93%</td><td class="r">1.88%</td><td class="r">99.95%</td><td class="r">2.35%</td><td class="r">0.34%</td><td class="r">&mdash;</td></tr>
+        <tr class="ours"><td>X-UAD</td><td class="r">94.06%</td><td class="r">0.42%</td><td class="r">99.98%</td><td class="r">5.17%</td><td class="r">0.60%</td><td class="r">80.1%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">On ACER X-UAD and CDCN++ are statistically tied (they disagree on 22 test images, 10 vs 12, McNemar p = 0.83); both beat ResNet-18 clearly. X-UAD has the best localisation by about 7 IoU points, and gives up 1&ndash;3 points of 8-class accuracy. It received more tuning than the baselines: seven X-UAD variants were trained and the one with the lowest validation ACER is reported.</p>
+
+  <h3 style="margin-top:28px">Published work (context only)</h3>
+  <p class="sub" style="margin-bottom:12px">These papers use different datasets, so this is not a head-to-head. It shows that our error rates fall in the same range as published unified detectors.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Work</th><th>Venue</th><th>Dataset</th><th class="r">Seen ACER</th><th class="r">Unseen ACER</th></tr></thead>
+      <tbody>
+        <tr><td>Facevengers (CLIP+VAE, ViT-L)</td><td>ICCVW 2025</td><td>UniAttackData+</td><td class="r">0.144%</td><td class="r">—</td></tr>
+        <tr><td>TeleAI (CLIP contrastive)</td><td>ICCVW 2025</td><td>UniAttackData+</td><td class="r">0.178%</td><td class="r">—</td></tr>
+                <tr><td>UniAttackDetection</td><td>IJCAI 2024</td><td>UniAttackData</td><td class="r">0.52%</td><td class="r">22.42%</td></tr>
+        <tr class="ours"><td>X-UAD</td><td>This work</td><td>LFW-derived (simulated)</td><td class="r">0.42%</td><td class="r">31.55%*</td></tr>
+        <tr><td>Auxiliary (Depth)</td><td>IJCAI'24 baseline</td><td>UniAttackData</td><td class="r">1.13%</td><td class="r">42.98%</td></tr>
+        <tr><td>ResNet-50</td><td>IJCAI'24 baseline</td><td>UniAttackData</td><td class="r">1.35%</td><td class="r">34.60%</td></tr>
+        <tr><td>CDCN</td><td>IJCAI'24 baseline</td><td>UniAttackData</td><td class="r">1.40%</td><td class="r">34.33%</td></tr>
+        <tr><td>FFD</td><td>IJCAI'24 baseline</td><td>UniAttackData</td><td class="r">2.01%</td><td class="r">44.20%</td></tr>
+        <tr><td>ViT-B/16</td><td>IJCAI'24 baseline</td><td>UniAttackData</td><td class="r">5.92%</td><td class="r">33.69%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">*Unseen ACER is the mean over 4 leave-one-attack-out folds, reduced 5-epoch budget. Every method, published or ours, drops sharply on attack types it has not seen; that remains the open problem.</p>
+
+  <h3 style="margin-top:28px">Capabilities</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Capability</th><th>UniAttackDetection</th><th>FFAA / M2F2-Det</th><th>CDCN</th><th>X-UAD</th></tr></thead>
+      <tbody>
+        <tr><td>Physical + digital in one model</td><td><span class="pill p-good">yes</span></td><td><span class="pill p-mid">partial</span></td><td><span class="pill p-bad">no</span></td><td><span class="pill p-good">yes</span></td></tr>
+        <tr><td>Uncertainty output for unknown attacks</td><td><span class="pill p-bad">no</span></td><td><span class="pill p-bad">no</span></td><td><span class="pill p-bad">no</span></td><td><span class="pill p-good">yes</span></td></tr>
+        <tr><td>Localisation for digital attacks</td><td><span class="pill p-bad">no</span></td><td><span class="pill p-mid">rarely</span></td><td><span class="pill p-mid">depth proxy</span></td><td><span class="pill p-good">yes</span></td></tr>
+        <tr><td>Natural-language explanation</td><td><span class="pill p-bad">no</span></td><td><span class="pill p-good">yes</span></td><td><span class="pill p-bad">no</span></td><td><span class="pill p-good">yes</span></td></tr>
+        <tr><td>Explanation checked against the decision</td><td>—</td><td><span class="pill p-bad">no</span></td><td>—</td><td><span class="pill p-good">yes</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="limitations">
+  <h2>Limitations</h2>
+  <p class="sub">Stated up front.</p>
+  <ul class="lim">
+    <li>Attacks are synthesised on LFW faces. No real captured spoof dataset has been evaluated yet; adapters for 9 public corpora are written and tested on mock data.</li>
+    <li>No state-of-the-art claim. Results are on our own benchmark, not a shared public one.</li>
+    <li>Single random seed and single split; all training on CPU. Multi-seed runs are in progress.</li>
+    <li>X-UAD trails both CNN baselines on 8-class accuracy, and has no calibration advantage once the baselines are temperature-scaled.</li>
+    <li>Under a white-box attack both X-UAD and CDCN++ lose most of their detection, and X-UAD's uncertainty can be pushed down without changing its decision.</li>
+    <li>The localisation map passes the deletion test but does worse than a random control on insertion.</li>
+    <li>Cross-domain transfer fails for every model tested, X-UAD included.</li>
+  </ul>
+</section>
+
+<footer>X-UAD · Explainable Hybrid Vision Transformer with Adaptive Quantum Attention and Evidence-Grounded Reasoning for Unified Face Attack Detection. All figures and numbers come from the project's saved results.</footer>
+</div>
+
+<script>
+(function(){
+  var prog=[
+    ["ResNet-18",96.93,false],
+    ["CDCN++",95.19,false],
+    ["X-UAD",94.06,true]
+  ];
+  var lo=85,hi=100,h="";
+  prog.forEach(function(p){
+    var w=((p[1]-lo)/(hi-lo)*100).toFixed(1);
+    h+='<div class="bar'+(p[2]?' best':'')+'"><span class="lab">'+p[0]+'</span><div class="track"><div class="fill" style="width:'+w+'%"></div></div><span class="val">'+p[1].toFixed(2)+'%</span></div>';
+  });
+  document.getElementById("prog").innerHTML=h;
+
+  var cls=["bonafide","print","replay","mask3d","faceswap","reenact","synth","adversarial"];
+  var type=["t-gen","t-phys","t-phys","t-phys","t-digi","t-digi","t-digi","t-digi"];
+  var pr=[[.9975,.9908,.9941],[.9138,.9633,.9379],[.9584,.9225,.9401],[.9092,.9425,.9255],[.8893,.8767,.8829],[.9298,.9275,.9287],[.9385,.9025,.9201],[.9909,.9992,.995]];
+  var tl={"t-gen":"genuine","t-phys":"physical","t-digi":"digital"};
+  h="";
+  cls.forEach(function(c,i){
+    h+='<tr><td>'+c+'</td><td><span class="tag '+type[i]+'">'+tl[type[i]]+'</span></td>'+pr[i].map(function(v){return '<td class="r">'+v.toFixed(3)+'</td>';}).join("")+'</tr>';
+  });
+  document.getElementById("perclass").innerHTML=h;
+
+  var cm=[[1189,2,2,1,2,0,3,1],[1,1156,8,3,23,7,0,2],[1,40,1107,8,27,5,7,5],[0,1,4,1131,8,1,55,0],[0,48,16,11,1052,67,6,0],[1,16,5,0,65,1113,0,0],[0,1,13,90,6,4,1083,3],[0,1,0,0,0,0,0,1199]];
+  h='<thead><tr><th class="rowh">true ↓ / pred →</th>'+cls.map(function(c){return '<th>'+c+'</th>';}).join("")+'</tr></thead><tbody>';
+  cm.forEach(function(row,i){
+    h+='<tr><th class="rowh">'+cls[i]+'</th>';
+    row.forEach(function(v,j){
+      var a,style;
+      if(i===j){a=0.25+0.6*(v/1200);style='background:color-mix(in srgb, var(--accent) '+Math.round(a*100)+'%, transparent);color:var(--ink);font-weight:500';}
+      else if(v>0){a=Math.min(0.75,0.12+v/60);style='background:color-mix(in srgb, var(--bad) '+Math.round(a*100)+'%, transparent);color:var(--ink)';}
+      else{style='color:var(--muted)';}
+      h+='<td style="'+style+'">'+v+'</td>';
+    });
+    h+='</tr>';
+  });
+  document.getElementById("cm").innerHTML=h+'</tbody>';
+
+  var samples=[
+    {name:"Print attack",crop:"img/print_crop.png",ov:"img/print_overlay.png",
+     head:["Print attack","100%","Medium"],
+     text:"The sample is classified as a print attack (physical presentation attack) with 100% posterior probability; the probability that it is an attack of any kind is 99.8%. That class is characterised by periodic halftone screening and paper-substrate grain, with the high-frequency skin micro-texture of a live face missing. Evidence is concentrated in the left cheek (mean response 1.00), followed by forehead, right cheek; it covers 100% of the crop with a spatial dispersion of 1.00. Vacuity is low (0.03): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.41, i.e. 41% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: reject (risk score 0.70 -> Medium).",
+     p:[0.24,99.57,0.19,0,0,0,0,0]},
+    {name:"Genuine face",crop:"img/bonafide_crop.png",ov:"img/bonafide_overlay.png",
+     head:["Bonafide (genuine live capture)","100%","Low"],
+     text:"The sample is accepted as a genuine live capture with 100% posterior probability. The dominant quantum evidence mode is #3, whose learned selectivity is highest for 'bonafide' (activation 0.117), corroborating the class decision. Vacuity is low (0.00): the evidence is strong and consistent with a single known family. The adaptive attention gate settled at 0.35, i.e. 35% of the attention score came from the Born (interference) channel rather than the classical dot product. Recommended action: accept (risk score 0.00 -> Low).",
+     p:[99.95,0.04,0,0,0.02,0,0,0]}
+  ];
+  h="";
+  samples.forEach(function(s){
+    h+='<div class="card"><h3>'+s.name+'</h3><div class="pics"><figure><img src="'+s.crop+'" alt="'+s.name+' input crop"><figcaption>Input crop</figcaption></figure><figure><img src="'+s.ov+'" alt="'+s.name+' evidence heatmap"><figcaption>Evidence heatmap</figcaption></figure></div>';
+    h+='<div class="verdict">Attack: <b>'+s.head[0]+'</b><br>Confidence: <b>'+s.head[1]+'</b><br>Risk: <b>'+s.head[2]+'</b></div>';
+    h+='<div class="expl">'+s.text+'</div><div class="probs">';
+    cls.forEach(function(c,i){h+='<div><span>'+c+'</span><div class="t"><div class="f" style="width:'+s.p[i]+'%"></div></div><span>'+s.p[i].toFixed(2)+'%</span></div>';});
+    h+='</div></div>';
+  });
+  document.getElementById("samples").innerHTML=h;
+})();
+</script>
+
+<script src="lib/ort.min.js"></script>
+<script>
+/* X-UAD browser pipeline: a line-by-line port of demo/run_demo.py preprocessing,
+   xuad/xai/evidence.py and xuad/xai/reasoning.py. Model inference itself runs the
+   exported ONNX graph of the same checkpoint. */
+(function (root) {
+  "use strict";
+
+  var CLASSES = ["bonafide", "print", "replay", "mask3d", "faceswap", "reenact", "synth", "adversarial"];
+  var SUPERCLASS = [0, 1, 1, 1, 2, 2, 2, 2];
+  var SUPER = { 0: "none", 1: "physical presentation attack", 2: "digital attack" };
+  var PRETTY = {
+    bonafide: "Bonafide (genuine live capture)",
+    print: "Print attack",
+    replay: "Replay attack",
+    mask3d: "3D mask attack",
+    faceswap: "Face-swap deepfake",
+    reenact: "Facial reenactment deepfake",
+    synth: "Fully synthetic (AI-generated) face",
+    adversarial: "Adversarial perturbation attack"
+  };
+  var MECHANISM = {
+    print: "periodic halftone screening and paper-substrate grain, with the high-frequency skin micro-texture of a live face missing",
+    replay: "a sub-pixel display lattice aliasing into a moire beat, together with specular backlight glare and reduced dynamic range",
+    mask3d: "locally flattened skin micro-texture with a broad specular sheen and a discontinuity at the mask rim",
+    faceswap: "a blending boundary around the inner face and a resolution mismatch between the pasted region and the surrounding frame",
+    reenact: "non-rigid warping confined to the mouth and eye regions with a local sharpness inconsistency",
+    synth: "a generator up-sampling fingerprint: periodic checkerboard structure and anisotropic peaks in the Fourier magnitude",
+    adversarial: "a low-amplitude, high-frequency perturbation that is spatially decorrelated from facial structure"
+  };
+  var RISK_BANDS = [[0.35, "Low"], [0.75, "Medium"], [0.95, "High"], [10.0, "Critical"]];
+  var REGIONS = [
+    ["forehead", 0.20, 0.05, 0.80, 0.30],
+    ["eye region", 0.13, 0.28, 0.87, 0.50],
+    ["nose / midface", 0.30, 0.42, 0.70, 0.68],
+    ["mouth and chin", 0.25, 0.65, 0.75, 0.93],
+    ["left cheek", 0.03, 0.42, 0.32, 0.78],
+    ["right cheek", 0.68, 0.42, 0.97, 0.78],
+    ["face boundary", 0, 0, 1, 1]
+  ];
+  var STORE = 128, IMG = 112, LOC = 56;
+
+  // Python's round(): half to even
+  function pyRound(x) {
+    var f = Math.floor(x), d = x - f;
+    if (d > 0.5) return f + 1;
+    if (d < 0.5) return f;
+    return (f % 2 === 0) ? f : f + 1;
+  }
+  function trunc(x) { return x < 0 ? Math.ceil(x) : Math.floor(x); }
+
+  /* bgr: cv.Mat CV_8UC3 (BGR). Returns {crop128 (cv.Mat), detected, box, mode}.
+     128x128 inputs are benchmark crops and follow the evaluation pipeline directly. */
+  function cropFace(cv, cascade, bgr, forceDetect) {
+    var h = bgr.rows, w = bgr.cols;
+    if (!forceDetect && h === STORE && w === STORE) {
+      return { crop128: bgr.clone(), detected: null, box: [0, 0, STORE, STORE], mode: "benchmark" };
+    }
+    var gray = new cv.Mat();
+    cv.cvtColor(bgr, gray, cv.COLOR_BGR2GRAY);
+    var dets = new cv.RectVector();
+    var ms = trunc(0.15 * Math.min(h, w));
+    cascade.detectMultiScale(gray, dets, 1.12, 5, 0, new cv.Size(ms, ms), new cv.Size(0, 0));
+    var fx, fy, fw, fh, detected;
+    if (dets.size() === 0) {
+      var side0 = trunc(0.86 * Math.min(h, w));
+      fx = Math.floor((w - side0) / 2);
+      fy = trunc((h - side0) * 0.45);
+      fw = fh = side0;
+      detected = false;
+    } else {
+      var best = null;
+      for (var i = 0; i < dets.size(); i++) {
+        var d = dets.get(i);
+        if (!best || d.width * d.height > best.width * best.height) best = d;
+      }
+      fx = best.x; fy = best.y; fw = best.width; fh = best.height;
+      detected = true;
+    }
+    gray.delete(); dets.delete();
+    var cx = fx + fw / 2.0, cy = fy + fh / 2.0;
+    var side = trunc(pyRound(Math.max(fw, fh) * (1.0 + 2 * 0.12)));
+    side = Math.min(side, h, w);
+    var x0 = trunc(pyRound(cx - side / 2.0));
+    var y0 = trunc(pyRound(cy - side / 2.0));
+    x0 = Math.max(0, Math.min(x0, w - side));
+    y0 = Math.max(0, Math.min(y0, h - side));
+    var roi = bgr.roi(new cv.Rect(x0, y0, side, side));
+    var crop = new cv.Mat();
+    cv.resize(roi, crop, new cv.Size(STORE, STORE), 0, 0, cv.INTER_AREA);
+    roi.delete();
+    return { crop128: crop, detected: detected, box: [x0, y0, side, side], mode: "detect",
+             face: [fx, fy, fw, fh] };
+  }
+
+  /* crop128: cv.Mat BGR 128x128 -> {tensor Float32Array(3*112*112), crop112 Uint8 BGR} */
+  function toTensor(crop128) {
+    var o = (STORE - IMG) / 2, d = crop128.data, t = new Float32Array(3 * IMG * IMG);
+    var c112 = new Uint8Array(IMG * IMG * 3);
+    for (var y = 0; y < IMG; y++) {
+      for (var x = 0; x < IMG; x++) {
+        var s = ((y + o) * STORE + (x + o)) * 3, p = y * IMG + x;
+        for (var c = 0; c < 3; c++) {
+          var v = d[s + c];
+          c112[p * 3 + c] = v;
+          t[c * IMG * IMG + p] = (v / 255 - 0.5) / 0.5;
+        }
+      }
+    }
+    return { tensor: t, crop112: c112 };
+  }
+
+  function mean(a) { var s = 0; for (var i = 0; i < a.length; i++) s += a[i]; return s / a.length; }
+  function std(a) { var m = mean(a), s = 0; for (var i = 0; i < a.length; i++) s += (a[i] - m) * (a[i] - m); return Math.sqrt(s / a.length); }
+
+  function regionProfile(m) {
+    var H = LOC, W = LOC, out = [];
+    REGIONS.forEach(function (r) {
+      var s = 0, n = 0, y, x;
+      if (r[0] === "face boundary") {
+        var b = Math.max(2, trunc(0.14 * H));
+        for (y = 0; y < H; y++) for (x = 0; x < W; x++) {
+          if (y >= b && y < H - b && x >= b && x < W - b) continue;
+          s += m[y * W + x]; n++;
+        }
+      } else {
+        var y0 = trunc(r[2] * H), y1 = trunc(r[4] * H), x0 = trunc(r[1] * W), x1 = trunc(r[3] * W);
+        for (y = y0; y < y1; y++) for (x = x0; x < x1; x++) { s += m[y * W + x]; n++; }
+      }
+      out.push([r[0], s / n]);
+    });
+    return out;
+  }
+
+  function spatialStats(m) {
+    var n = m.length, above = 0, sum = 0, peak = -Infinity, i;
+    for (i = 0; i < n; i++) { if (m[i] > 0.5) above++; sum += m[i]; if (m[i] > peak) peak = m[i]; }
+    var tot = Math.max(sum, 1e-8), ent = 0;
+    for (i = 0; i < n; i++) { var p = m[i] / tot; ent -= p * Math.log(p + 1e-12); }
+    return { area: above / n, dispersion: ent / Math.log(n), peak: peak };
+  }
+
+  function spectralDescriptors(prof) {
+    var nr = 16, na = 12, rad = [], ang = [], r, a;
+    for (r = 0; r < nr; r++) { var s = 0; for (a = 0; a < na; a++) s += prof[r * na + a]; rad.push(s / na); }
+    for (a = 0; a < na; a++) { var t = 0; for (r = 0; r < nr; r++) t += prof[r * na + a]; ang.push(t / nr); }
+    var rm = mean(rad), rs = std(rad) + 1e-8;
+    var hi = rad.slice(nr / 2).map(function (v) { return (v - rm) / rs; });
+    var arg = 0; for (var i = 1; i < hi.length; i++) if (hi[i] > hi[arg]) arg = i;
+    return {
+      radial_peak_norm_freq: (nr / 2 + arg) / nr,
+      radial_peak_prominence: hi[arg],
+      azimuthal_anisotropy: std(ang) / (mean(ang) + 1e-8)
+    };
+  }
+
+  function riskLabel(r) {
+    for (var i = 0; i < RISK_BANDS.length; i++) if (r < RISK_BANDS[i][0]) return RISK_BANDS[i][1];
+    return "Critical";
+  }
+
+  function buildRecord(o, basisInfo) {
+    var prob = Array.from(o.prob), k = 0;
+    for (var i = 1; i < prob.length; i++) if (prob[i] > prob[k]) k = i;
+    var name = CLASSES[k], vac = o.vacuity, risk = o.risk;
+    var rp = regionProfile(o.loc).slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 3);
+    var decision = vac >= 0.55
+      ? "refer to human review (evidence insufficient / attack outside known taxonomy)"
+      : (k === 0 ? "accept" : "reject");
+    var modes = [];
+    if (o.born && basisInfo) {
+      var idx = Array.from(o.born).map(function (v, j) { return [v, j]; })
+        .sort(function (a, b) { return b[0] - a[0]; }).slice(0, 3);
+      idx.forEach(function (e) {
+        modes.push({ mode: e[1], aligned_with: basisInfo[e[1]]["class"], activation: e[0],
+                     selectivity: basisInfo[e[1]].selectivity });
+      });
+    }
+    var post = {}; CLASSES.forEach(function (c, j) { post[c] = prob[j]; });
+    return {
+      predicted_class: name, predicted_id: k, confidence: prob[k], vacuity: vac,
+      is_attack: k !== 0, attack_probability: 1 - prob[0], superclass: SUPER[SUPERCLASS[k]],
+      risk_score: risk, risk_level: riskLabel(risk), decision: decision,
+      top_regions: rp.map(function (e) { return { region: e[0], activation: e[1] }; }),
+      spatial: spatialStats(o.loc),
+      spectral: o.spec ? spectralDescriptors(o.spec) : {},
+      quantum_modes: modes, gate_mean: o.gate, class_posterior: post
+    };
+  }
+
+  function f(v, d) { return v.toFixed(d); }
+
+  function headline(r) {
+    return "Attack: " + PRETTY[r.predicted_class] + "\nConfidence: " + f(r.confidence * 100, 0) +
+      "%\nRisk: " + r.risk_level;
+  }
+
+  function explain(r) {
+    var S = [];
+    if (!r.is_attack) {
+      S.push("The sample is accepted as a genuine live capture with " + f(r.confidence * 100, 0) + "% posterior probability.");
+    } else {
+      S.push("The sample is classified as a " + PRETTY[r.predicted_class].toLowerCase() + " (" + r.superclass +
+        ") with " + f(r.confidence * 100, 0) + "% posterior probability; the probability that it is an attack of any kind is " +
+        f(r.attack_probability * 100, 1) + "%.");
+      S.push("That class is characterised by " + MECHANISM[r.predicted_class] + ".");
+    }
+    if (r.top_regions.length && (r.spatial.area || 0) > 0.02) {
+      var best = r.top_regions[0];
+      var others = r.top_regions.slice(1).map(function (t) { return t.region; }).join(", ");
+      S.push("Evidence is concentrated in the " + best.region + " (mean response " + f(best.activation, 2) +
+        "), followed by " + others + "; it covers " + f(r.spatial.area * 100, 0) + "% of the crop with a spatial dispersion of " +
+        f(r.spatial.dispersion, 2) + ".");
+    } else if (r.is_attack) {
+      S.push("The evidence is diffuse rather than localised, which is consistent with a whole-frame capture medium rather than a region-level edit.");
+    }
+    if (r.quantum_modes.length) {
+      var m = r.quantum_modes[0];
+      S.push("The dominant quantum evidence mode is #" + m.mode + ", whose learned selectivity is highest for '" +
+        m.aligned_with + "' (activation " + f(m.activation, 3) + "), corroborating the class decision.");
+    }
+    if (r.spectral && (r.spectral.radial_peak_prominence || 0) > 1.0) {
+      var sp = r.spectral;
+      S.push("The Fourier magnitude shows a peak at normalised frequency " + f(sp.radial_peak_norm_freq, 2) +
+        " with prominence " + f(sp.radial_peak_prominence, 2) + " and azimuthal anisotropy " +
+        f(sp.azimuthal_anisotropy, 3) + ", a signature of a periodic acquisition or up-sampling lattice.");
+    }
+    if (r.vacuity >= 0.55) {
+      S.push("Vacuity is high (" + f(r.vacuity, 2) + "): the accumulated evidence does not match any family in the learned taxonomy well, so the class label should be treated as provisional and the sample may be an unseen attack type.");
+    } else if (r.vacuity >= 0.30) {
+      S.push("Vacuity is moderate (" + f(r.vacuity, 2) + "); the decision is supported but not saturated.");
+    } else {
+      S.push("Vacuity is low (" + f(r.vacuity, 2) + "): the evidence is strong and consistent with a single known family.");
+    }
+    if (r.gate_mean !== null && r.gate_mean !== undefined) {
+      S.push("The adaptive attention gate settled at " + f(r.gate_mean, 2) + ", i.e. " + f(r.gate_mean * 100, 0) +
+        "% of the attention score came from the Born (interference) channel rather than the classical dot product.");
+    }
+    S.push("Recommended action: " + r.decision + " (risk score " + f(r.risk_score, 2) + " -> " + r.risk_level + ").");
+    return S.join(" ");
+  }
+
+  /* Runs the ONNX session on a prepared tensor; returns plain arrays. */
+  function runModel(ort, session, tensor) {
+    var feeds = { x: new ort.Tensor("float32", tensor, [1, 3, IMG, IMG]) };
+    return session.run(feeds).then(function (o) {
+      return { prob: o.prob.data, vacuity: o.vacuity.data[0], risk: o.risk.data[0], loc: o.loc.data,
+               born: o.born.data, gate: o.gate.data[0], spec: o.spec.data };
+    });
+  }
+
+  // OpenCV COLORMAP_JET approximation (cv.applyColorMap is not in opencv.js)
+  function jet(t) {
+    function c(v) { return Math.max(0, Math.min(1, v)); }
+    return [c(1.5 - Math.abs(4 * t - 3)), c(1.5 - Math.abs(4 * t - 2)), c(1.5 - Math.abs(4 * t - 1))];
+  }
+
+  /* RGBA pixel arrays (112x112) for the crop, the heatmap and the 55/45 overlay. */
+  function renderImages(crop112, loc) {
+    var N = IMG, crop = new Uint8ClampedArray(N * N * 4), heat = new Uint8ClampedArray(N * N * 4),
+        over = new Uint8ClampedArray(N * N * 4), sc = (LOC - 1) / (N - 1);
+    for (var y = 0; y < N; y++) for (var x = 0; x < N; x++) {
+      // bilinear upsample of the 56x56 map (align-corners style)
+      var sx = (x + 0.5) * LOC / N - 0.5, sy = (y + 0.5) * LOC / N - 0.5;
+      sx = Math.max(0, Math.min(LOC - 1, sx)); sy = Math.max(0, Math.min(LOC - 1, sy));
+      var x0 = Math.floor(sx), y0 = Math.floor(sy), x1 = Math.min(LOC - 1, x0 + 1), y1 = Math.min(LOC - 1, y0 + 1);
+      var ax = sx - x0, ay = sy - y0;
+      var v = (1 - ay) * ((1 - ax) * loc[y0 * LOC + x0] + ax * loc[y0 * LOC + x1]) +
+              ay * ((1 - ax) * loc[y1 * LOC + x0] + ax * loc[y1 * LOC + x1]);
+      var j = jet(v), p = (y * N + x), q = p * 4;
+      var b = crop112[p * 3], g = crop112[p * 3 + 1], r = crop112[p * 3 + 2];
+      crop[q] = r; crop[q + 1] = g; crop[q + 2] = b; crop[q + 3] = 255;
+      heat[q] = j[0] * 255; heat[q + 1] = j[1] * 255; heat[q + 2] = j[2] * 255; heat[q + 3] = 255;
+      over[q] = 0.55 * r + 0.45 * j[0] * 255; over[q + 1] = 0.55 * g + 0.45 * j[1] * 255;
+      over[q + 2] = 0.55 * b + 0.45 * j[2] * 255; over[q + 3] = 255;
+    }
+    void sc;
+    return { crop: crop, heat: heat, overlay: over };
+  }
+
+  var api = { CLASSES: CLASSES, PRETTY: PRETTY, cropFace: cropFace, toTensor: toTensor, runModel: runModel,
+              buildRecord: buildRecord, headline: headline, explain: explain, renderImages: renderImages };
+  root.XUADPipe = api;
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+})(typeof self !== "undefined" ? self : globalThis);
+
+</script>
+<script>
+(function(){
+  "use strict";
+  var P = window.XUADPipe;
+  var BASIS = [{"basis": 0, "class": "reenact", "selectivity": 2.5545788663335043}, {"basis": 1, "class": "mask3d", "selectivity": 1.8640681570095432}, {"basis": 2, "class": "synth", "selectivity": 2.180191509594684}, {"basis": 3, "class": "bonafide", "selectivity": 2.530581475433854}, {"basis": 4, "class": "mask3d", "selectivity": 1.665829727068675}, {"basis": 5, "class": "replay", "selectivity": 1.5283632364699173}, {"basis": 6, "class": "print", "selectivity": 2.411922011065}, {"basis": 7, "class": "faceswap", "selectivity": 1.5936934171788433}];
+  var CV_URL = "lib/opencv.js";
+  var ORT_URL = "lib/ort.min.js";
+
+  // Adds a script tag, retrying a few times: downloads on slow networks sometimes drop.
+  function loadScript(url, tries){
+    return new Promise(function(res, rej){
+      var left = tries || 3;
+      (function attempt(){
+        var s = document.createElement("script");
+        s.src = url; s.async = true;
+        s.onload = function(){ res(); };
+        s.onerror = function(){
+          s.remove(); left--;
+          if (left > 0) setTimeout(attempt, 1500); else rej(new Error("download failed"));
+        };
+        document.head.appendChild(s);
+      })();
+    });
+  }
+  var SAMPLES = ["print_1","bonafide_1","replay_1","mask3d_1","faceswap_1","reenact_1","synth_1","adversarial_1",
+                 "print_2","bonafide_2","replay_2","mask3d_2","faceswap_2","reenact_2","synth_2","adversarial_2"];
+  var $ = function(id){ return document.getElementById(id); };
+  var session = null, cvP = null, cascade = null, busy = false;
+
+  function setStatus(state, text){
+    $("status").className = "status" + (state ? " " + state : "");
+    $("status-text").textContent = text;
+  }
+
+  // ---- sample gallery ----
+  var gal = $("gallery");
+  SAMPLES.forEach(function(n){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "thumb"; b.dataset.name = n;
+    b.setAttribute("aria-label", "Run test image " + n.replace("_", " "));
+    var im = document.createElement("img"); im.src = "samples/" + n + ".png"; im.alt = "";
+    var sp = document.createElement("span"); sp.textContent = n.split("_")[0];
+    b.appendChild(im); b.appendChild(sp);
+    b.addEventListener("click", function(){ runSample(n); });
+    gal.appendChild(b);
+  });
+  function setActive(n){
+    Array.prototype.forEach.call(gal.children, function(b){ b.classList.toggle("active", b.dataset.name === n); });
+  }
+  function setBusy(v){
+    busy = v; $("res").setAttribute("aria-busy", v ? "true" : "false");
+    Array.prototype.forEach.call(gal.children, function(b){ b.disabled = v; });
+  }
+
+  // ---- loading ----
+  async function loadModel(){
+    if (location.protocol === "file:") {
+      throw new Error("browsers block the model when the page is opened as a file. Start the site with start_website.bat (or run: python -m http.server 8000 in the website folder) and open http://localhost:8000.");
+    }
+    if (!window.ort) {
+      setStatus("", "Downloading the model runtime…");
+      try { await loadScript(ORT_URL, 3); }
+      catch (e) { throw new Error("the model runtime (onnxruntime-web) could not be downloaded after 3 tries. Check the internet connection and reload the page."); }
+    }
+    ort.env.wasm.numThreads = 1;
+    ort.env.wasm.proxy = false;
+    ort.env.wasm.wasmPaths = new URL("lib/", location.href).href;
+    setStatus("", "Loading the model…");
+    var r = await fetch("model/xuad.onnx");
+    if (!r.ok) throw new Error("the model file could not be loaded (HTTP " + r.status + ").");
+    var buf = new Uint8Array(await r.arrayBuffer());
+    setStatus("", "Starting the model…");
+    session = await ort.InferenceSession.create(buf, { executionProviders: ["wasm"] });
+  }
+
+  function loadCV(){
+    if (cvP) return cvP;
+    cvP = new Promise(function(res, rej){
+      loadScript(CV_URL, 3).then(function(){
+        var t0 = Date.now();
+        (function poll(){
+          var c = window.cv;
+          // OpenCV's Module object defines its own then(); never hand it to a promise directly
+          if (c && c.Mat && c.CascadeClassifier) { res({ cv: c }); return; }
+          if (Date.now() - t0 > 180000) { rej(new Error("The face detector took too long to start. Test images still work.")); return; }
+          setTimeout(poll, 150);
+        })();
+      }, function(){ rej(new Error("The face detector (OpenCV.js) could not be downloaded after 3 tries. Test images still work; try the upload again.")); });
+    }).then(async function(w){
+      var cv = w.cv;
+      var r = await fetch("model/haarcascade_frontalface_default.xml");
+      if (!r.ok) throw new Error("The face detector model could not be downloaded.");
+      var xml = new Uint8Array(await r.arrayBuffer());
+      try { cv.FS_unlink("/haar.xml"); } catch (e) { /* not there yet */ }
+      cv.FS_createDataFile("/", "haar.xml", xml, true, false, false);
+      cascade = new cv.CascadeClassifier();
+      if (!cascade.load("haar.xml")) throw new Error("The face detector model failed to load.");
+      return { cv: cv };
+    });
+    cvP.catch(function(){ cvP = null; });
+    return cvP;
+  }
+
+  // ---- image handling ----
+  function decode(src){
+    return new Promise(function(res, rej){
+      var im = new Image();
+      im.onload = function(){
+        var c = document.createElement("canvas");
+        c.width = im.naturalWidth; c.height = im.naturalHeight;
+        var x = c.getContext("2d", { willReadFrequently: true });
+        x.drawImage(im, 0, 0);
+        res(x.getImageData(0, 0, c.width, c.height));
+      };
+      im.onerror = function(){ rej(new Error("That file could not be opened as an image. Try a JPG or PNG.")); };
+      im.src = src;
+    });
+  }
+  function rgbaToBgr(d){
+    var n = d.length / 4, o = new Uint8Array(n * 3);
+    for (var i = 0; i < n; i++) { o[i*3] = d[i*4+2]; o[i*3+1] = d[i*4+1]; o[i*3+2] = d[i*4]; }
+    return o;
+  }
+
+  async function analyse(img, truth, label){
+    if (!session) throw new Error("The model is still loading. Try again in a moment.");
+    var t0 = performance.now(), crop, mode, warn = null;
+    if (img.width === 128 && img.height === 128) {
+      crop = { data: rgbaToBgr(img.data) };
+      mode = "benchmark crop, centre 112 × 112 fed directly (same as the accuracy evaluation)";
+    } else {
+      setStatus("", "Loading the face detector…");
+      var cv = (await loadCV()).cv;
+      setStatus("", "Finding the face…");
+      var rgba = cv.matFromImageData(img), bgr = new cv.Mat();
+      cv.cvtColor(rgba, bgr, cv.COLOR_RGBA2BGR); rgba.delete();
+      var fc = P.cropFace(cv, cascade, bgr, false); bgr.delete();
+      crop = { data: new Uint8Array(fc.crop128.data) }; fc.crop128.delete();
+      if (fc.detected) {
+        mode = "face detected at (" + fc.face.slice(0, 2).join(", ") + "), size " + fc.face[2] + " px; cropped with 12% margin to 128 × 128, centre 112 × 112";
+      } else {
+        mode = "no face detected, centred fallback crop";
+        warn = "No face was found in this image, so a centred crop was used instead. Results may be less reliable.";
+      }
+    }
+    var tt = P.toTensor(crop);
+    var t1 = performance.now();
+    var o = await P.runModel(ort, session, tt.tensor);
+    var t2 = performance.now();
+    var rec = P.buildRecord(o, BASIS);
+    render(rec, o, tt.crop112, truth, warn, label, mode, t2 - t1, t2 - t0, img);
+  }
+
+  function pct(v, d){ return (v * 100).toFixed(d) + "%"; }
+
+  function render(rec, o, crop112, truth, warn, label, mode, tInf, tAll, img){
+    var ims = P.renderImages(crop112, o.loc);
+    [["c-crop", ims.crop], ["c-heat", ims.heat], ["c-over", ims.overlay]].forEach(function(p){
+      $(p[0]).getContext("2d").putImageData(new ImageData(p[1], 112, 112), 0, 0);
+    });
+    $("r-cls").textContent = P.PRETTY[rec.predicted_class];
+    var rk = $("r-risk"); rk.textContent = "Risk: " + rec.risk_level; rk.className = "chip " + rec.risk_level.toLowerCase();
+    var tr = $("r-truth");
+    if (truth) {
+      var ok = truth === rec.predicted_class;
+      tr.hidden = false; tr.className = "chip " + (ok ? "truth-ok" : "truth-bad");
+      tr.textContent = "True class: " + truth + (ok ? " · correct" : " · wrong");
+    } else { tr.hidden = true; tr.textContent = ""; }
+    $("r-conf").textContent = pct(rec.confidence, 1); $("m-conf").style.width = pct(rec.confidence, 1);
+    $("r-atk").textContent = pct(rec.attack_probability, 1); $("m-atk").style.width = pct(rec.attack_probability, 1);
+    $("r-vac").textContent = rec.vacuity.toFixed(2); $("m-vac").style.width = pct(rec.vacuity, 1);
+    var dec = rec.decision.split(" (")[0];
+    $("r-dec").textContent = dec.charAt(0).toUpperCase() + dec.slice(1);
+    var w = $("r-warn"); w.hidden = !warn; w.textContent = warn || "";
+    var pr = $("r-probs"); pr.textContent = "";
+    P.CLASSES.forEach(function(c, i){
+      var row = document.createElement("div");
+      if (i === rec.predicted_id) row.className = "top";
+      var a = document.createElement("span"); a.textContent = c;
+      var t = document.createElement("div"); t.className = "t";
+      var f = document.createElement("div"); f.className = "f"; f.style.width = (o.prob[i] * 100).toFixed(2) + "%";
+      t.appendChild(f);
+      var b = document.createElement("span"); b.textContent = (o.prob[i] * 100).toFixed(2) + "%";
+      row.appendChild(a); row.appendChild(t); row.appendChild(b); pr.appendChild(row);
+    });
+    $("r-text").textContent = P.explain(rec);
+    $("r-meta").textContent = "Input: " + label + " (" + img.width + " × " + img.height + " px). Processing: " + mode +
+      ". Model time " + Math.round(tInf) + " ms, total " + Math.round(tAll) + " ms. Checkpoint: xuad_P1_regionpool_detached (ONNX export).";
+    $("empty").hidden = true; $("out").hidden = false;
+  }
+
+  async function run(src, truth, label, active){
+    if (busy) return;
+    setBusy(true); setActive(active || null);
+    setStatus("", "Analysing " + label + "…");
+    try {
+      var img = await decode(src);
+      await analyse(img, truth, label);
+      setStatus("ready", "Done. Upload another image or pick a test image.");
+    } catch (e) {
+      setStatus("error", e && e.message ? e.message : String(e));
+    } finally { setBusy(false); }
+  }
+  function runSample(n){ return run("samples/" + n + ".png", n.split("_")[0], "test image " + n, n); }
+
+  // ---- upload ----
+  var fileEl = $("file"), drop = $("drop");
+  function takeFile(f){
+    if (!f) return;
+    if (!/^image\//.test(f.type)) { setStatus("error", "That file is not an image. Choose a JPG or PNG."); return; }
+    var url = URL.createObjectURL(f);
+    run(url, null, "“" + f.name + "”").finally(function(){ URL.revokeObjectURL(url); });
+  }
+  fileEl.addEventListener("change", function(){ takeFile(fileEl.files[0]); fileEl.value = ""; });
+  ["dragenter", "dragover"].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add("over"); }); });
+  ["dragleave", "drop"].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove("over"); }); });
+  drop.addEventListener("drop", function(e){ if (e.dataTransfer && e.dataTransfer.files.length) takeFile(e.dataTransfer.files[0]); });
+
+  // ---- start ----
+  setBusy(true);
+  loadModel().then(function(){
+    setBusy(false);
+    setStatus("ready", "Model ready. Upload an image or pick a test image.");
+    return runSample(SAMPLES[0]);
+  }).then(function(){
+    setTimeout(function(){ loadCV().catch(function(){ /* uploads will retry */ }); }, 1000);
+  }).catch(function(e){
+    setBusy(false);
+    setStatus("error", "The model could not start: " + (e && e.message ? e.message : e));
+  });
+})();
+
+</script>
+</body>
+</html>

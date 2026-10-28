@@ -1,0 +1,77 @@
+== pilot_cdcn: model=cdcn params=0.53M  train=16800 val=4200 test=8400  excl=(7,)
+/root/xuad/xuad/losses.py:104: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  logs["cls"] = float(l_cls)
+  ep0 step40/1750 cls=2.022 loc=1.180 sup=1.010 total=3.033  16s
+  ep0 step80/1750 cls=1.984 loc=1.160 sup=1.002 total=2.981  33s
+  ep0 step120/1750 cls=1.945 loc=1.159 sup=0.999 total=2.941  51s
+  ep0 step160/1750 cls=1.840 loc=1.150 sup=0.968 total=2.821  68s
+  ep0 step200/1750 cls=1.721 loc=1.138 sup=0.927 total=2.681  86s
+  ep0 step240/1750 cls=1.614 loc=1.127 sup=0.884 total=2.556  104s
+  ep0 step280/1750 cls=1.532 loc=1.119 sup=0.848 total=2.457  122s
+  ep0 step320/1750 cls=1.464 loc=1.108 sup=0.816 total=2.373  140s
+[ep 0] val AUC=85.94 ACER=31.50 ACC=62.33 ECE=4.70 (163s)
+  ep1 step360/1750 cls=0.906 loc=0.983 sup=0.533 total=1.655  168s
+  ep1 step400/1750 cls=0.962 loc=1.006 sup=0.573 total=1.737  187s
+  ep1 step440/1750 cls=0.957 loc=1.001 sup=0.562 total=1.726  205s
+  ep1 step480/1750 cls=0.943 loc=0.988 sup=0.557 total=1.703  224s
+  ep1 step520/1750 cls=0.926 loc=0.982 sup=0.549 total=1.679  244s
+  ep1 step560/1750 cls=0.907 loc=0.972 sup=0.535 total=1.651  260s
+  ep1 step600/1750 cls=0.886 loc=0.963 sup=0.519 total=1.619  276s
+  ep1 step640/1750 cls=0.873 loc=0.957 sup=0.512 total=1.601  293s
+  ep1 step680/1750 cls=0.858 loc=0.953 sup=0.500 total=1.580  310s
+[ep 1] val AUC=88.08 ACER=29.42 ACC=57.76 ECE=17.28 (329s)
+  ep2 step720/1750 cls=0.639 loc=0.867 sup=0.335 total=1.260  337s
+  ep2 step760/1750 cls=0.644 loc=0.871 sup=0.328 total=1.265  354s
+  ep2 step800/1750 cls=0.646 loc=0.859 sup=0.325 total=1.258  370s
+  ep2 step840/1750 cls=0.622 loc=0.853 sup=0.306 total=1.226  387s
+  ep2 step880/1750 cls=0.611 loc=0.847 sup=0.293 total=1.207  404s
+  ep2 step920/1750 cls=0.599 loc=0.841 sup=0.283 total=1.189  422s
+  ep2 step960/1750 cls=0.587 loc=0.834 sup=0.273 total=1.170  438s
+  ep2 step1000/1750 cls=0.579 loc=0.830 sup=0.266 total=1.157  455s
+  ep2 step1040/1750 cls=0.568 loc=0.828 sup=0.257 total=1.142  471s
+[ep 2] val AUC=99.91 ACER=2.67 ACC=87.95 ECE=5.70 (485s)
+  ep3 step1080/1750 cls=0.484 loc=0.788 sup=0.180 total=1.011  497s
+  ep3 step1120/1750 cls=0.458 loc=0.781 sup=0.176 total=0.979  513s
+  ep3 step1160/1750 cls=0.450 loc=0.779 sup=0.171 total=0.969  529s
+  ep3 step1200/1750 cls=0.439 loc=0.773 sup=0.163 total=0.952  544s
+  ep3 step1240/1750 cls=0.439 loc=0.775 sup=0.164 total=0.953  560s
+  ep3 step1280/1750 cls=0.432 loc=0.771 sup=0.160 total=0.942  575s
+  ep3 step1320/1750 cls=0.427 loc=0.766 sup=0.157 total=0.933  591s
+  ep3 step1360/1750 cls=0.424 loc=0.767 sup=0.155 total=0.931  606s
+  ep3 step1400/1750 cls=0.419 loc=0.763 sup=0.151 total=0.922  622s
+[ep 3] val AUC=99.98 ACER=1.67 ACC=91.45 ECE=4.16 (632s)
+  ep4 step1440/1750 cls=0.376 loc=0.727 sup=0.122 total=0.850  648s
+  ep4 step1480/1750 cls=0.369 loc=0.717 sup=0.115 total=0.834  664s
+  ep4 step1520/1750 cls=0.371 loc=0.724 sup=0.118 total=0.841  680s
+  ep4 step1560/1750 cls=0.365 loc=0.721 sup=0.113 total=0.831  696s
+  ep4 step1600/1750 cls=0.361 loc=0.721 sup=0.111 total=0.827  712s
+  ep4 step1640/1750 cls=0.360 loc=0.722 sup=0.112 total=0.827  728s
+  ep4 step1680/1750 cls=0.360 loc=0.725 sup=0.113 total=0.828  743s
+  ep4 step1720/1750 cls=0.361 loc=0.726 sup=0.114 total=0.831  759s
+[ep 4] val AUC=99.98 ACER=1.75 ACC=92.12 ECE=3.45 (782s)
+{
+ "APCER": 2.667,
+ "BPCER": 1.167,
+ "ACER": 1.917,
+ "AUC": 99.882,
+ "EER": 0.931,
+ "ACC": 91.012,
+ "ACC_bin": 99.179,
+ "macroF1": 91.164,
+ "ECE": 3.739,
+ "Brier": 0.133,
+ "mean_vacuity": 0.127,
+ "threshold": 0.848,
+ "loc_IoU": 0.824,
+ "loc_Dice": 0.893,
+ "loc_pixel_AUC": 0.939,
+ "params_M": 0.526,
+ "train_seconds": 783.207,
+ "model": "cdcn",
+ "protocol": "P1",
+ "epochs": 5,
+ "n_train": 16800,
+ "n_test": 8400,
+ "seed": 0
+}

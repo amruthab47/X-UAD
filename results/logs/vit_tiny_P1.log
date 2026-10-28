@@ -1,0 +1,133 @@
+== vit_tiny_P1: model=vit_tiny params=0.64M  train=19200 val=4800 test=9600  excl=()
+  ep0 step40/4000 cls=2.091 sup=1.001 total=2.391  11s
+  ep0 step80/4000 cls=2.012 sup=0.974 total=2.305  22s
+  ep0 step120/4000 cls=1.872 sup=0.933 total=2.152  33s
+  ep0 step160/4000 cls=1.783 sup=0.909 total=2.056  44s
+  ep0 step200/4000 cls=1.719 sup=0.886 total=1.985  55s
+  ep0 step240/4000 cls=1.669 sup=0.869 total=1.930  66s
+  ep0 step280/4000 cls=1.632 sup=0.858 total=1.889  78s
+  ep0 step320/4000 cls=1.596 sup=0.846 total=1.850  88s
+  ep0 step360/4000 cls=1.577 sup=0.839 total=1.829  99s
+  ep0 step400/4000 cls=1.565 sup=0.836 total=1.816  110s
+[ep 0] val AUC=67.89 ACER=52.25 ACC=36.54 ECE=11.98 (117s)
+  ep1 step440/4000 cls=1.448 sup=0.796 total=1.687  126s
+  ep1 step480/4000 cls=1.422 sup=0.774 total=1.654  137s
+  ep1 step520/4000 cls=1.418 sup=0.774 total=1.650  148s
+  ep1 step560/4000 cls=1.415 sup=0.771 total=1.646  159s
+  ep1 step600/4000 cls=1.406 sup=0.769 total=1.636  170s
+  ep1 step640/4000 cls=1.395 sup=0.763 total=1.623  181s
+  ep1 step680/4000 cls=1.396 sup=0.763 total=1.625  193s
+  ep1 step720/4000 cls=1.392 sup=0.761 total=1.620  203s
+  ep1 step760/4000 cls=1.387 sup=0.759 total=1.615  214s
+  ep1 step800/4000 cls=1.387 sup=0.759 total=1.615  226s
+[ep 1] val AUC=69.30 ACER=52.25 ACC=41.75 ECE=2.60 (235s)
+  ep2 step840/4000 cls=1.367 sup=0.756 total=1.594  246s
+  ep2 step880/4000 cls=1.384 sup=0.765 total=1.614  257s
+  ep2 step920/4000 cls=1.377 sup=0.760 total=1.605  269s
+  ep2 step960/4000 cls=1.361 sup=0.753 total=1.587  281s
+  ep2 step1000/4000 cls=1.352 sup=0.749 total=1.577  294s
+  ep2 step1040/4000 cls=1.347 sup=0.744 total=1.570  308s
+  ep2 step1080/4000 cls=1.334 sup=0.736 total=1.555  321s
+  ep2 step1120/4000 cls=1.332 sup=0.735 total=1.552  334s
+  ep2 step1160/4000 cls=1.332 sup=0.736 total=1.553  347s
+  ep2 step1200/4000 cls=1.332 sup=0.735 total=1.553  361s
+[ep 2] val AUC=71.80 ACER=50.17 ACC=47.06 ECE=1.54 (371s)
+  ep3 step1240/4000 cls=1.233 sup=0.680 total=1.437  383s
+  ep3 step1280/4000 cls=1.249 sup=0.690 total=1.456  395s
+  ep3 step1320/4000 cls=1.269 sup=0.703 total=1.480  408s
+  ep3 step1360/4000 cls=1.267 sup=0.694 total=1.475  421s
+  ep3 step1400/4000 cls=1.271 sup=0.698 total=1.481  434s
+  ep3 step1440/4000 cls=1.267 sup=0.696 total=1.476  449s
+  ep3 step1480/4000 cls=1.274 sup=0.698 total=1.483  464s
+  ep3 step1520/4000 cls=1.275 sup=0.699 total=1.485  479s
+  ep3 step1560/4000 cls=1.283 sup=0.706 total=1.494  494s
+  ep3 step1600/4000 cls=1.280 sup=0.706 total=1.491  509s
+[ep 3] val AUC=72.01 ACER=50.00 ACC=47.65 ECE=3.29 (521s)
+  ep4 step1640/4000 cls=1.247 sup=0.668 total=1.447  536s
+  ep4 step1680/4000 cls=1.271 sup=0.687 total=1.477  550s
+  ep4 step1720/4000 cls=1.262 sup=0.682 total=1.467  563s
+  ep4 step1760/4000 cls=1.255 sup=0.682 total=1.459  576s
+  ep4 step1800/4000 cls=1.251 sup=0.682 total=1.456  590s
+  ep4 step1840/4000 cls=1.247 sup=0.679 total=1.451  606s
+  ep4 step1880/4000 cls=1.248 sup=0.680 total=1.452  622s
+  ep4 step1920/4000 cls=1.242 sup=0.678 total=1.445  636s
+  ep4 step1960/4000 cls=1.236 sup=0.674 total=1.439  650s
+  ep4 step2000/4000 cls=1.235 sup=0.675 total=1.438  664s
+[ep 4] val AUC=72.92 ACER=49.83 ACC=49.40 ECE=2.02 (673s)
+  ep5 step2040/4000 cls=1.219 sup=0.647 total=1.413  688s
+  ep5 step2080/4000 cls=1.218 sup=0.656 total=1.415  705s
+  ep5 step2120/4000 cls=1.211 sup=0.657 total=1.408  720s
+  ep5 step2160/4000 cls=1.208 sup=0.658 total=1.406  736s
+  ep5 step2200/4000 cls=1.201 sup=0.656 total=1.397  750s
+  ep5 step2240/4000 cls=1.199 sup=0.656 total=1.396  765s
+  ep5 step2280/4000 cls=1.194 sup=0.652 total=1.390  780s
+  ep5 step2320/4000 cls=1.194 sup=0.652 total=1.390  796s
+  ep5 step2360/4000 cls=1.195 sup=0.652 total=1.390  810s
+  ep5 step2400/4000 cls=1.190 sup=0.650 total=1.385  825s
+[ep 5] val AUC=72.34 ACER=49.83 ACC=49.98 ECE=1.02 (835s)
+  ep6 step2440/4000 cls=1.185 sup=0.648 total=1.380  850s
+  ep6 step2480/4000 cls=1.171 sup=0.636 total=1.362  865s
+  ep6 step2520/4000 cls=1.171 sup=0.643 total=1.364  879s
+  ep6 step2560/4000 cls=1.174 sup=0.643 total=1.367  893s
+  ep6 step2600/4000 cls=1.178 sup=0.645 total=1.371  909s
+  ep6 step2640/4000 cls=1.177 sup=0.643 total=1.370  924s
+  ep6 step2680/4000 cls=1.180 sup=0.647 total=1.374  937s
+  ep6 step2720/4000 cls=1.178 sup=0.644 total=1.371  952s
+  ep6 step2760/4000 cls=1.176 sup=0.642 total=1.368  966s
+  ep6 step2800/4000 cls=1.176 sup=0.641 total=1.368  981s
+[ep 6] val AUC=73.05 ACER=50.17 ACC=50.19 ECE=1.16 (991s)
+  ep7 step2840/4000 cls=1.155 sup=0.630 total=1.344  1005s
+  ep7 step2880/4000 cls=1.155 sup=0.629 total=1.344  1019s
+  ep7 step2920/4000 cls=1.153 sup=0.628 total=1.342  1033s
+  ep7 step2960/4000 cls=1.146 sup=0.626 total=1.334  1047s
+  ep7 step3000/4000 cls=1.154 sup=0.633 total=1.343  1061s
+  ep7 step3040/4000 cls=1.152 sup=0.632 total=1.342  1075s
+  ep7 step3080/4000 cls=1.154 sup=0.632 total=1.343  1088s
+  ep7 step3120/4000 cls=1.153 sup=0.630 total=1.342  1102s
+  ep7 step3160/4000 cls=1.152 sup=0.628 total=1.341  1116s
+  ep7 step3200/4000 cls=1.150 sup=0.625 total=1.337  1130s
+[ep 7] val AUC=73.56 ACER=49.83 ACC=50.33 ECE=1.02 (1140s)
+  ep8 step3240/4000 cls=1.153 sup=0.619 total=1.339  1156s
+  ep8 step3280/4000 cls=1.152 sup=0.615 total=1.337  1172s
+  ep8 step3320/4000 cls=1.149 sup=0.621 total=1.335  1186s
+  ep8 step3360/4000 cls=1.145 sup=0.618 total=1.330  1200s
+  ep8 step3400/4000 cls=1.143 sup=0.616 total=1.328  1215s
+  ep8 step3440/4000 cls=1.142 sup=0.616 total=1.327  1230s
+  ep8 step3480/4000 cls=1.138 sup=0.613 total=1.322  1246s
+  ep8 step3520/4000 cls=1.134 sup=0.611 total=1.317  1260s
+  ep8 step3560/4000 cls=1.133 sup=0.612 total=1.317  1274s
+  ep8 step3600/4000 cls=1.133 sup=0.613 total=1.317  1288s
+[ep 8] val AUC=73.55 ACER=49.42 ACC=51.12 ECE=1.17 (1297s)
+  ep9 step3640/4000 cls=1.126 sup=0.597 total=1.305  1310s
+  ep9 step3680/4000 cls=1.126 sup=0.611 total=1.309  1323s
+  ep9 step3720/4000 cls=1.130 sup=0.615 total=1.314  1337s
+  ep9 step3760/4000 cls=1.125 sup=0.610 total=1.308  1351s
+  ep9 step3800/4000 cls=1.128 sup=0.612 total=1.312  1364s
+  ep9 step3840/4000 cls=1.128 sup=0.611 total=1.311  1379s
+  ep9 step3880/4000 cls=1.130 sup=0.611 total=1.313  1393s
+  ep9 step3920/4000 cls=1.130 sup=0.609 total=1.312  1406s
+  ep9 step3960/4000 cls=1.128 sup=0.609 total=1.310  1419s
+  ep9 step4000/4000 cls=1.124 sup=0.607 total=1.306  1432s
+[ep 9] val AUC=73.59 ACER=49.50 ACC=51.90 ECE=1.41 (1440s)
+{
+ "APCER": 60.667,
+ "BPCER": 38.833,
+ "ACER": 49.75,
+ "AUC": 73.426,
+ "EER": 34.655,
+ "ACC": 51.271,
+ "ACC_bin": 67.021,
+ "macroF1": 46.036,
+ "ECE": 0.674,
+ "Brier": 0.513,
+ "mean_vacuity": 0.493,
+ "threshold": 0.799,
+ "params_M": 0.637,
+ "train_seconds": 1441.643,
+ "model": "vit_tiny",
+ "protocol": "P1",
+ "epochs": 10,
+ "n_train": 19200,
+ "n_test": 9600,
+ "seed": 0
+}

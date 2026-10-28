@@ -1,0 +1,14 @@
+== diagC_ce: model=xuad_no_evid params=1.25M  train=7136 val=4800 test=9600  excl=()
+  ep0 step40/444 cls=1.993 loc=1.159 basis=2.069 sup=0.974 coh=0.719 total=3.512  58s
+  ep0 step80/444 cls=1.763 loc=1.129 basis=1.927 sup=0.901 coh=0.704 total=3.206  115s
+  ep0 step120/444 cls=1.630 loc=1.112 basis=1.813 sup=0.860 coh=0.605 total=3.021  171s
+[ep 0] val AUC=73.32 ACER=51.67 ACC=47.08 ECE=6.85 (264s)
+  ep1 step160/444 cls=1.261 loc=1.061 basis=1.350 sup=0.772 coh=0.000 total=2.466  284s
+  ep1 step200/444 cls=1.302 loc=1.039 basis=1.325 sup=0.777 coh=0.002 total=2.490  347s
+  ep1 step240/444 cls=1.222 loc=1.026 basis=1.253 sup=0.738 coh=0.001 total=2.372  410s
+  ep1 step280/444 cls=1.171 loc=1.019 basis=1.199 sup=0.710 coh=0.001 total=2.296  469s
+[ep 1] val AUC=82.06 ACER=55.08 ACC=58.33 ECE=6.94 (541s)
+  ep2 step320/444 cls=0.985 loc=0.966 basis=0.997 sup=0.611 coh=0.000 total=1.997  580s
+  ep2 step360/444 cls=0.931 loc=0.953 basis=0.953 sup=0.575 coh=0.000 total=1.914  642s
+  ep2 step400/444 cls=0.901 loc=0.935 basis=0.923 sup=0.554 coh=0.000 total=1.859  707s
+  ep2 step440/444 cls=0.882 loc=0.928 basis=0.908 sup=0.542 coh=0.000 total=1.829  766s

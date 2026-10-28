@@ -1,0 +1,14 @@
+\begin{tabular}{lcccccc}
+\toprule
+Variant & ACER$\downarrow$ & AUC$\uparrow$ & ACC$_8\uparrow$ & F1$_{\text{macro}}\uparrow$ & ECE$\downarrow$ & IoU$_{\text{loc}}\uparrow$ \\
+\midrule
+\textbf{X-UAD (full, reduced budget)} & 38.00 & 87.57 & 69.62 & 69.65 & 2.66 & 64.62 \\
+\midrule
+\quad w/o Adaptive Quantum Attention & 32.75\,\tiny{(-5.25)} & 91.05\,\tiny{(+3.49)} & 67.45\,\tiny{(-2.18)} & 65.04\,\tiny{(-4.61)} & 3.62\,\tiny{(+0.96)} & 63.36\,\tiny{(-1.26)} \\
+\quad w/o evidential head (softmax) & 30.54\,\tiny{(-7.46)} & 91.06\,\tiny{(+3.49)} & 72.07\,\tiny{(+2.45)} & 71.88\,\tiny{(+2.23)} & 3.27\,\tiny{(+0.61)} & 65.02\,\tiny{(+0.41)} \\
+\quad w/o spectral branch & 31.13\,\tiny{(-6.87)} & 88.44\,\tiny{(+0.88)} & 70.67\,\tiny{(+1.04)} & 68.92\,\tiny{(-0.73)} & 3.12\,\tiny{(+0.47)} & 64.54\,\tiny{(-0.07)} \\
+\quad w/o central-difference stem & 49.08\,\tiny{(+11.08)} & 73.64\,\tiny{(-13.93)} & 48.62\,\tiny{(-21.00)} & 42.16\,\tiny{(-27.49)} & 3.03\,\tiny{(+0.37)} & 52.63\,\tiny{(-11.99)} \\
+\quad w/o pseudo-unseen suppression & 26.04\,\tiny{(-11.96)} & 91.08\,\tiny{(+3.51)} & 72.90\,\tiny{(+3.27)} & 72.85\,\tiny{(+3.20)} & 2.83\,\tiny{(+0.17)} & 64.23\,\tiny{(-0.39)} \\
+\quad w/o localisation supervision & 33.58\,\tiny{(-4.42)} & 89.17\,\tiny{(+1.61)} & 70.56\,\tiny{(+0.94)} & 68.78\,\tiny{(-0.87)} & 2.41\,\tiny{(-0.25)} & 34.34\,\tiny{(-30.27)} \\
+\bottomrule
+\end{tabular}
